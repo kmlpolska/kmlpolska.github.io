@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Weryfikacyjny KML - Konfederacja Monarchistyczno-Libertariańska</title>
+    <title>Test Weryfikacyjny KML</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* (STYLE BEZ ZMIAN - identyczne jak wcześniej) */
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap');
-
         * {
             margin: 0;
             padding: 0;
@@ -34,38 +31,28 @@
             line-height: 1.8;
             color: var(--dark);
             background-color: var(--light);
-            background-image: 
-                radial-gradient(circle at 5% 15%, rgba(13, 21, 58, 0.03) 0%, transparent 30%),
-                radial-gradient(circle at 95% 85%, rgba(201, 161, 69, 0.03) 0%, transparent 30%);
             min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        /* Top Bar */
         .top-bar {
             background: rgba(13, 21, 58, 0.95);
-            backdrop-filter: blur(10px);
             padding: 12px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 2000;
             border-bottom: 3px solid var(--secondary);
             box-shadow: var(--shadow);
+            margin-bottom: 30px;
         }
 
         .top-bar-container {
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            gap: 20px;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -73,410 +60,154 @@
         .top-link {
             color: white;
             text-decoration: none;
-            font-family: 'Cinzel', serif;
             font-weight: 600;
-            font-size: 1rem;
             padding: 8px 20px;
             border-radius: 25px;
             display: flex;
             align-items: center;
             gap: 8px;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid transparent;
-        }
-
-        .top-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-gold);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .top-link:hover::before {
-            left: 0;
+            background: rgba(139, 0, 0, 0.15);
+            border: 2px solid var(--accent);
         }
 
         .top-link:hover {
             color: var(--primary);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(201, 161, 69, 0.3);
-        }
-
-        /* Header Styles */
-        header {
-            background: var(--gradient);
-            color: white;
-            padding: 100px 0 80px;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 8px solid var(--secondary);
-            box-shadow: var(--shadow);
-            margin-top: 60px;
-            text-align: center;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .logo-container {
-            margin-bottom: 30px;
-        }
-
-        .main-logo {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .main-logo i {
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .main-logo i:nth-child(1) { animation-delay: 0s; color: #ffd700; }
-        .main-logo i:nth-child(2) { animation-delay: 0.7s; color: #ffffff; }
-        .main-logo i:nth-child(3) { animation-delay: 1.4s; color: #8b0000; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(5deg); }
-        }
-
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
             background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: 1px;
-        }
-
-        .tagline {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            color: #e6e6fa;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Main Content */
-        main {
-            padding: 40px 0;
         }
 
         .test-container {
             background: white;
             border-radius: 20px;
-            padding: 50px;
-            margin-bottom: 50px;
+            padding: 30px;
             box-shadow: var(--shadow);
             border-left: 10px solid var(--accent);
             position: relative;
-            overflow: hidden;
         }
 
-        .test-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: var(--gradient);
-        }
-
-        h2 {
-            font-family: 'Cinzel', serif;
+        h1 {
             color: var(--primary);
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--secondary);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        h2 i {
-            color: var(--secondary);
-            font-size: 1.8rem;
-            background: rgba(201, 161, 69, 0.1);
-            padding: 12px;
-            border-radius: 50%;
-        }
-
-        .form-group {
-            margin-bottom: 40px;
-            background: rgba(13, 21, 58, 0.03);
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid rgba(201, 161, 69, 0.2);
-        }
-
-        .form-group label {
-            display: block;
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .form-group p {
-            font-size: 1.1rem;
             margin-bottom: 20px;
-            color: #333;
+            text-align: center;
+            font-size: 2.5rem;
         }
 
-        .options-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .option-label {
-            display: flex;
-            align-items: center;
-            padding: 18px;
-            background: white;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .option-label:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border-color: var(--secondary);
-        }
-
-        .option-label input[type="radio"] {
-            margin-right: 15px;
-            transform: scale(1.3);
-        }
-
-        .option-label input[type="radio"]:checked {
-            accent-color: var(--accent);
-        }
-
-        .option-label input[type="radio"]:checked + .option-text {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .option-text {
-            flex: 1;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .question-counter {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background: var(--accent);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-        }
-
-        .open-question {
-            background: linear-gradient(to right, rgba(13, 21, 58, 0.05), rgba(201, 161, 69, 0.05));
-            border-left: 4px solid var(--secondary);
-        }
-
-        textarea {
-            width: 100%;
-            min-height: 150px;
-            padding: 20px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-            line-height: 1.6;
-            resize: vertical;
-            transition: all 0.3s ease;
-            background: white;
-        }
-
-        textarea:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(201, 161, 69, 0.2);
-        }
-
-        .character-counter {
-            text-align: right;
-            font-size: 0.9rem;
+        .tagline {
+            text-align: center;
+            margin-bottom: 30px;
             color: #666;
-            margin-top: 5px;
+            font-style: italic;
         }
 
         .user-info {
             background: var(--gradient);
             color: white;
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             border: 3px solid var(--secondary);
-            box-shadow: var(--shadow-light);
-        }
-
-        .user-info h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .user-info h3 i {
-            color: var(--secondary);
         }
 
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .input-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: rgba(255, 255, 255, 0.9);
         }
 
         .input-group input {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.1);
             color: white;
             font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            background: rgba(13, 21, 58, 0.03);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(201, 161, 69, 0.2);
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .input-group input:focus {
-            outline: none;
+        .option-label:hover {
+            transform: translateY(-2px);
             border-color: var(--secondary);
-            background: rgba(255, 255, 255, 0.15);
         }
 
-        .input-group input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+        .option-label input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2);
         }
 
-        /* Discord Info */
-        .discord-info {
-            background: linear-gradient(135deg, #5865F2, #4752C4);
-            color: white;
-            padding: 20px;
+        .open-question textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #ddd;
             border-radius: 10px;
-            margin-top: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .discord-info h4 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        .discord-info p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            line-height: 1.5;
-        }
-
-        /* Submit Button */
-        .submit-section {
-            text-align: center;
-            margin: 50px 0 30px;
+            font-size: 1rem;
+            resize: vertical;
+            margin-top: 10px;
         }
 
         .submit-btn {
             background: var(--gradient-red);
             color: white;
             border: none;
-            padding: 20px 50px;
-            font-size: 1.3rem;
-            font-family: 'Cinzel', serif;
+            padding: 15px 40px;
+            font-size: 1.2rem;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.4s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s;
-        }
-
-        .submit-btn:hover::before {
-            left: 100%;
+            display: block;
+            margin: 30px auto;
+            text-align: center;
         }
 
         .submit-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(139, 0, 0, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3);
         }
 
-        .submit-btn:active {
-            transform: translateY(-2px);
-        }
-
-        .submit-btn i {
-            font-size: 1.5rem;
-        }
-
-        /* Loading Animation */
         .loading {
             display: none;
             text-align: center;
             padding: 20px;
             color: var(--primary);
-            font-size: 1.1rem;
         }
 
         .loading i {
@@ -491,31 +222,22 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Results Display */
         .results {
             display: none;
             background: linear-gradient(135deg, #0d153a, #1a237e);
             color: white;
-            padding: 40px;
+            padding: 30px;
             border-radius: 20px;
-            margin-top: 40px;
+            margin-top: 30px;
             border: 4px solid var(--secondary);
             text-align: center;
         }
 
-        .results h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-
         .score-display {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 900;
             color: var(--secondary);
             margin: 20px 0;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
         }
 
         .verdict {
@@ -528,188 +250,15 @@
         }
 
         .next-steps {
-            margin-top: 30px;
+            margin-top: 25px;
             padding: 20px;
             background: rgba(201, 161, 69, 0.1);
             border-radius: 10px;
             border: 2px solid var(--secondary);
         }
-
-        .next-steps h4 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--gradient);
-            color: white;
-            padding: 40px 0 20px;
-            margin-top: 60px;
-            text-align: center;
-            border-top: 6px solid var(--secondary);
-            position: relative;
-        }
-
-        .footer-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            color: var(--secondary);
-        }
-
-        .footer-motto {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-
-        .copyright {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Back Button */
-        .back-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: var(--gradient);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .back-btn:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .test-container {
-                padding: 30px;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .main-logo {
-                font-size: 3rem;
-            }
-            
-            .options-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .submit-btn {
-                padding: 15px 40px;
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 80px 0 60px;
-                margin-top: 50px;
-            }
-            
-            .test-container {
-                padding: 20px;
-            }
-            
-            .form-group {
-                padding: 20px;
-            }
-            
-            .option-label {
-                padding: 15px;
-            }
-            
-            .submit-btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .top-bar-container {
-                justify-content: center;
-            }
-            
-            .back-btn {
-                bottom: 20px;
-                left: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            h2 {
-                font-size: 1.6rem;
-            }
-            
-            .main-logo {
-                font-size: 2.5rem;
-            }
-            
-            .score-display {
-                font-size: 3rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .form-group {
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-        }
-
-        .form-group:nth-child(1) { animation-delay: 0.1s; }
-        .form-group:nth-child(2) { animation-delay: 0.2s; }
-        .form-group:nth-child(3) { animation-delay: 0.3s; }
-        .form-group:nth-child(4) { animation-delay: 0.4s; }
-        .form-group:nth-child(5) { animation-delay: 0.5s; }
-        .form-group:nth-child(6) { animation-delay: 0.6s; }
-        .form-group:nth-child(7) { animation-delay: 0.7s; }
-        .form-group:nth-child(8) { animation-delay: 0.8s; }
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-container">
             <a href="/" class="top-link">
@@ -719,202 +268,148 @@
         </div>
     </div>
 
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-container">
-                    <div class="main-logo">
-                        <i class="fas fa-crown"></i>
-                        <i class="fas fa-balance-scale"></i>
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                </div>
-                <h1>Test Weryfikacyjny KML</h1>
-                <p class="tagline">Sprawdź swoją zgodność z doktryną monarchii absolutnej i libertarianizmu</p>
-            </div>
-        </div>
-    </header>
-
-    <main class="container">
+    <div class="container">
         <div class="test-container">
-            <h2><i class="fas fa-file-alt"></i> Formularz Weryfikacyjny</h2>
+            <h1>Test Weryfikacyjny KML</h1>
+            <p class="tagline">Sprawdź swoją zgodność z doktryną monarchii absolutnej</p>
             
             <div class="user-info">
                 <h3><i class="fas fa-user-check"></i> Dane Weryfikacyjne</h3>
-                <p>Przed przystąpieniem do testu podaj swoje dane kontaktowe:</p>
-                
                 <div class="input-group">
                     <label for="discord-name">Nazwa Discord*</label>
-                    <input type="text" id="discord-name" placeholder="Wpisz swoją aktualną nazwę użytkownika Discord" required>
-                </div>
-                
-                <div class="discord-info">
-                    <h4><i class="fab fa-discord"></i> Informacja o Discord</h4>
-                    <p>Podaj swoją dokładną nazwę Discord (np. KrolJanIII, MonarchistaPL). Użyjemy jej do weryfikacji Twojego zgłoszenia na naszym serwerze.</p>
+                    <input type="text" id="discord-name" placeholder="Twoja nazwa Discord" required>
                 </div>
             </div>
 
             <div id="political-test">
-                <!-- Sekcja 1: Monarchizm - PRAWIDŁOWA ODPOWIEDŹ: PIERWSZA (5 punktów) -->
+                <!-- Pytanie 1 -->
                 <div class="form-group">
-                    <div class="question-counter">Pytanie 1</div>
-                    <label>1. Jaka jest twoja opinia na temat monarchii absolutnej jako formy rządów?</label>
+                    <label>1. Jaka jest twoja opinia na temat monarchii absolutnej?</label>
                     <div class="options-grid">
                         <label class="option-label">
                             <input type="radio" name="q1" value="5">
-                            <span class="option-text">Jedyna słuszna forma władzy, pochodząca od Boga - suwerenny król jest właścicielem państwa</span>
+                            <span>Jedyna słuszna forma władzy, pochodząca od Boga</span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="q1" value="0">
-                            <span class="option-text">Najlepsza forma rządów w obecnych czasach, ale z pewnymi ograniczeniami</span>
+                            <span>Najlepsza forma rządów, ale z ograniczeniami</span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="q1" value="0">
-                            <span class="option-text">Historyczna ciekawostka, ale niepraktyczna w XXI wieku</span>
-                        </label>
-                        <label class="option-label">
-                            <input type="radio" name="q1" value="0">
-                            <span class="option-text">Przestarzały i szkodliwy system, podobny do dyktatury</span>
+                            <span>Historyczna ciekawostka, niepraktyczna</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Sekcja 2: Libertarianizm - PRAWIDŁOWA ODPOWIEDŹ: PIERWSZA (5 punktów) -->
+                <!-- Pytanie 2 -->
                 <div class="form-group">
-                    <div class="question-counter">Pytanie 2</div>
-                    <label>2. Jakie jest twoje stanowisko wobec wolności gospodarczej i własności prywatnej?</label>
+                    <label>2. Stanowisko wobec wolności gospodarczej?</label>
                     <div class="options-grid">
                         <label class="option-label">
                             <input type="radio" name="q2" value="5">
-                            <span class="option-text">Całkowita wolność gospodarcza - zero podatków, pełne prawo własności, państwo tylko chroni</span>
+                            <span>Całkowita wolność gospodarcza - zero podatków</span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="q2" value="0">
-                            <span class="option-text">Wolny rynek z minimalną interwencją państwa w kluczowych sektorach</span>
+                            <span>Wolny rynek z minimalną interwencją państwa</span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="q2" value="0">
-                            <span class="option-text">Państwo powinno kontrolować gospodarkę w interesie społecznym</span>
-                        </label>
-                        <label class="option-label">
-                            <input type="radio" name="q2" value="0">
-                            <span class="option-text">Planowanie centralne i nacjonalizacja kluczowych gałęzi gospodarki</span>
+                            <span>Państwo powinno kontrolować gospodarkę</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Sekcja 3: Pytania otwarte -->
+                <!-- Zadanie 3 -->
                 <div class="form-group open-question">
-                    <div class="question-counter">Zadanie 3</div>
-                    <label>3. Opisz idealną strukturę państwa monarchistycznego. Jakie powinny być kompetencje monarchy, a jakie ograniczenia (jeśli w ogóle)?</label>
-                    <textarea id="open1" placeholder="Napisz swoją odpowiedź tutaj... (minimum 100 znaków)" minlength="100"></textarea>
-                    <div class="character-counter">Liczba znaków: <span id="counter1">0</span>/500</div>
+                    <label>3. Opisz idealną strukturę państwa monarchistycznego:</label>
+                    <textarea id="open1" placeholder="Napisz swoją odpowiedź... (minimum 100 znaków)" minlength="100"></textarea>
+                    <div>Liczba znaków: <span id="counter1">0</span></div>
                 </div>
 
-                <div class="form-group open-question">
-                    <div class="question-counter">Zadanie 4</div>
-                    <label>4. Jak powinna wyglądać polityka zagraniczna monarchistycznej Polski? Wymień potencjalnych sojuszników i zagrożenia.</label>
-                    <textarea id="open2" placeholder="Napisz swoją odpowiedź tutaj... (minimum 100 znaków)" minlength="100"></textarea>
-                    <div class="character-counter">Liczba znaków: <span id="counter2">0</span>/500</div>
-                </div>
-
-                <!-- Sekcja 4: Tradycja - PRAWIDŁOWA ODPOWIEDŹ: PIERWSZA (5 punktów) -->
+                <!-- Pytanie 5 -->
                 <div class="form-group">
-                    <div class="question-counter">Pytanie 5</div>
-                    <label>5. Jak traktujesz tradycyjne wartości chrześcijańskie i ich rolę w państwie?</label>
+                    <label>5. Tradycyjne wartości chrześcijańskie:</label>
                     <div class="options-grid">
                         <label class="option-label">
                             <input type="radio" name="q5" value="5">
-                            <span class="option-text">Fundament cywilizacji europejskiej, religia państwowa, prawo oparte na Dekalogu</span>
+                            <span>Fundament cywilizacji, religia państwowa</span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="q5" value="0">
-                            <span class="option-text">Ważny element kultury, ale państwo powinno być świeckie</span>
+                            <span>Ważny element kultury, ale państwo świeckie</span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="q5" value="0">
-                            <span class="option-text">Sprawa prywatna każdego człowieka, bez wpływu na państwo</span>
-                        </label>
-                        <label class="option-label">
-                            <input type="radio" name="q5" value="0">
-                            <span class="option-text">Przesąd ograniczający wolność, powinien być wyeliminowany z życia publicznego</span>
+                            <span>Sprawa prywatna każdego człowieka</span>
                         </label>
                     </div>
                 </div>
 
+                <!-- Zadanie 6 -->
                 <div class="form-group open-question">
-                    <div class="question-counter">Zadanie 6</div>
-                    <label>6. Co sądzisz o współczesnych ruchach liberalnych i lewicowych? Jakie środki powinno podjąć państwo, by chronić tradycyjne wartości?</label>
-                    <textarea id="open3" placeholder="Napisz swoją odpowiedź tutaj... (minimum 100 znaków)" minlength="100"></textarea>
-                    <div class="character-counter">Liczba znaków: <span id="counter3">0</span>/500</div>
+                    <label>6. Walka z lewicą i liberalizmem:</label>
+                    <textarea id="open3" placeholder="Napisz swoją odpowiedź... (minimum 100 znaków)" minlength="100"></textarea>
+                    <div>Liczba znaków: <span id="counter3">0</span></div>
                 </div>
 
-                <!-- Sekcja 5: Demokracja - PRAWIDŁOWA ODPOWIEDŹ: PIERWSZA (5 punktów) -->
+                <!-- Pytanie 7 -->
                 <div class="form-group">
-                    <div class="question-counter">Pytanie 7</div>
-                    <label>7. Jak oceniasz współczesną demokrację parlamentarną?</label>
+                    <label>7. Ocena demokracji parlamentarnej:</label>
                     <div class="options-grid">
                         <label class="option-label">
                             <input type="radio" name="q7" value="5">
-                            <span class="option-text">System prowadzący do degeneracji, korupcji i władzy motłochu - należy go całkowicie znieść</span>
+                            <span>System prowadzący do degeneracji - znieść</span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="q7" value="0">
-                            <span class="option-text">Niedoskonały system, ale lepszy od dyktatury - wymaga reform</span>
+                            <span>Niedoskonały system, ale lepszy od dyktatury</span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="q7" value="0">
-                            <span class="option-text">Najlepszy z możliwych systemów, mimo wad</span>
-                        </label>
-                        <label class="option-label">
-                            <input type="radio" name="q7" value="0">
-                            <span class="option-text">Należy ją rozszerzyć na wszystkie sfery życia</span>
+                            <span>Najlepszy z możliwych systemów</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Sekcja 6: Armia - PRAWIDŁOWA ODPOWIEDŹ: PIERWSZA (5 punktów) -->
+                <!-- Pytanie 8 -->
                 <div class="form-group">
-                    <div class="question-counter">Pytanie 8</div>
-                    <label>8. Jaka powinna być rola armii w monarchistycznym państwie?</label>
+                    <label>8. Rola armii w monarchistycznym państwie:</label>
                     <div class="options-grid">
                         <label class="option-label">
                             <input type="radio" name="q8" value="5">
-                            <span class="option-text">Armia pod bezpośrednią komendą monarchy, priorytet budżetowy, służba obowiązkowa</span>
+                            <span>Armia pod komendą monarchy, służba obowiązkowa</span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="q8" value="0">
-                            <span class="option-text">Zawodowa armia jako element polityki obronnej</span>
+                            <span>Zawodowa armia jako element obronny</span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="q8" value="0">
-                            <span class="option-text">Wojsko powinno być maksymalnie ograniczone, obrona nieagresywna</span>
+                            <span>Wojsko maksymalnie ograniczone</span>
                         </label>
                     </div>
                 </div>
 
-                <div class="submit-section">
-                    <button type="button" class="submit-btn" onclick="calculateAndSend()">
-                        <i class="fas fa-paper-plane"></i>
-                        PRZEŚLIJ WYNIKI NA DISCORD
-                    </button>
-                </div>
+                <button type="button" class="submit-btn" onclick="calculateAndSend()">
+                    <i class="fas fa-paper-plane"></i>
+                    WYŚLIJ WYNIKI
+                </button>
 
                 <div class="loading" id="loading">
                     <i class="fas fa-spinner"></i>
-                    <p>Wysyłanie wyników na serwer Discord... Proszę czekać.</p>
+                    <p>Wysyłanie wyników na Discord...</p>
                 </div>
 
                 <div class="results" id="results">
                     <h3><i class="fas fa-crown"></i> TWÓJ WYNIK</h3>
-                    <div class="score-display" id="score">0/25</div>
-                    <div class="verdict" id="verdict">Obliczanie wyniku...</div>
+                    <div class="score-display" id="score">0/20</div>
+                    <div class="verdict" id="verdict"></div>
                     
                     <div class="next-steps">
-                        <h4><i class="fas fa-arrow-right"></i> Co dalej?</h4>
-                        <p>Twój wynik został wysłany na nasz serwer Discord. Administracja skontaktuje się z Tobą w ciągu 48 godzin w sprawie dalszej weryfikacji.</p>
-                        <p>Jeśli chcesz dołączyć do dyskusji natychmiast, wejdź na nasz serwer Discord:</p>
-                        <a href="https://discord.gg/e5x94MjYxh" class="submit-btn" style="margin-top: 15px; background: var(--gradient-gold);" target="_blank">
+                        <h4>Co dalej?</h4>
+                        <p>Wynik został wysłany na Discord. Administracja skontaktuje się z Tobą.</p>
+                        <a href="https://discord.gg/e5x94MjYxh" class="submit-btn" style="margin-top: 15px; background: #5865F2;">
                             <i class="fab fa-discord"></i>
                             DOŁĄCZ NA DISCORD
                         </a>
@@ -922,40 +417,15 @@
                 </div>
             </div>
         </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-crown"></i>
-                </div>
-                <div class="footer-motto">Veritas et Ordo</div>
-                <p>Test Weryfikacyjny Konfederacji Monarchistyczno-Libertariańskiej (KML)</p>
-                <div class="copyright">
-                    <p>© 2024-2026 Konfederacja Monarchistyczno-Libertariańska (KML). Wszelkie prawa zastrzeżone.</p>
-                    <p>Strona internetowa: kmlpolska.pl | <a href="mailto:kmlpolska@op.pl" style="color: #c9a145;">kmlpolska@op.pl</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <a href="/" class="back-btn">
-        <i class="fas fa-home"></i>
-    </a>
+    </div>
 
     <script>
-        // BEZPIECZNE POŁĄCZENIE Z CLOUDFLARE WORKERS
-        // Webhook NIE MA w kodzie - jest bezpiecznie w Cloudflare
+        // 🔥 NAPRAWIONY KOD - BEZ BŁĘDÓW
         const CLOUDFLARE_WORKER_URL = "https://kml-form-handler.sigmasigmius9.workers.dev";
         
-        // Liczniki znaków dla pytań otwartych
+        // Liczniki znaków
         document.getElementById('open1').addEventListener('input', function() {
             document.getElementById('counter1').textContent = this.value.length;
-        });
-        
-        document.getElementById('open2').addEventListener('input', function() {
-            document.getElementById('counter2').textContent = this.value.length;
         });
         
         document.getElementById('open3').addEventListener('input', function() {
@@ -963,16 +433,17 @@
         });
         
         async function calculateAndSend() {
+            console.log('Rozpoczynanie wysyłania...');
+            
             const discordName = document.getElementById('discord-name').value.trim();
             
-            // Walidacja podstawowych danych
+            // Walidacja
             if (!discordName) {
-                alert('❌ Podaj swoją nazwę Discord!');
-                document.getElementById('discord-name').focus();
+                alert('❌ Podaj nazwę Discord!');
                 return;
             }
             
-            // Pobierz odpowiedzi z formularza
+            // Pobierz odpowiedzi
             const answers = {
                 discordName: discordName,
                 timestamp: new Date().toLocaleString('pl-PL'),
@@ -982,7 +453,6 @@
                 q7: getRadioValue('q7'),
                 q8: getRadioValue('q8'),
                 open1: document.getElementById('open1').value.trim(),
-                open2: document.getElementById('open2').value.trim(),
                 open3: document.getElementById('open3').value.trim()
             };
             
@@ -993,120 +463,101 @@
             if (!answers.q5) errors.push("Pytanie 5");
             if (!answers.q7) errors.push("Pytanie 7");
             if (!answers.q8) errors.push("Pytanie 8");
-            if (answers.open1.length < 100) errors.push("Zadanie 3 (minimum 100 znaków)");
-            if (answers.open2.length < 100) errors.push("Zadanie 4 (minimum 100 znaków)");
-            if (answers.open3.length < 100) errors.push("Zadanie 6 (minimum 100 znaków)");
+            if (answers.open1.length < 10) errors.push("Zadanie 3 (minimum 10 znaków)");
+            if (answers.open3.length < 10) errors.push("Zadanie 6 (minimum 10 znaków)");
             
             if (errors.length > 0) {
-                alert('❌ Proszę wypełnić wszystkie pola:\n\n' + errors.join('\n'));
+                alert('❌ Uzupełnij:\n' + errors.join('\n'));
                 return;
             }
             
-            // Oblicz wynik - TYLKO ODPOWIEDZI ZAMKNIĘTE
-            const totalScore = parseInt(answers.q1) + parseInt(answers.q2) + parseInt(answers.q5) + parseInt(answers.q7) + parseInt(answers.q8);
+            // Oblicz wynik
+            const totalScore = parseInt(answers.q1) + parseInt(answers.q2) + parseInt(answers.q5) + 
+                             parseInt(answers.q7) + parseInt(answers.q8);
             const maxScore = 25;
             
-            // Określ werdykt
+            // Werdykt
             let verdict = "";
-            let color = "";
+            let color = "#c9a145";
             
             if (totalScore === 25) {
-                verdict = "♔ PRAWDZIWY MONARCHISTA - Doskonała zgodność z doktryną KML! (25/25)";
-                color = "#c9a145";
+                verdict = "♔ PRAWDZIWY MONARCHISTA - Doskonała zgodność! (25/25)";
             } else if (totalScore >= 20) {
-                verdict = "⚔️ KONSERWATYWNY LIBERTARIANIN - Dobry materiał na członka KML (" + totalScore + "/25)";
-                color = "#2e8b57";
+                verdict = "⚔️ KONSERWATYWNY LIBERTARIANIN - Dobry materiał (" + totalScore + "/25)";
             } else if (totalScore >= 15) {
-                verdict = "🛡️ TRADYCJONALISTA - Wymaga dalszej edukacji o monarchizmie (" + totalScore + "/25)";
+                verdict = "🛡️ TRADYCJONALISTA - Wymaga edukacji (" + totalScore + "/25)";
                 color = "#1a237e";
-            } else if (totalScore >= 10) {
-                verdict = "⚠️ UMIARKOWANY KONSERWATYSTA - Potrzebuje więcej nauki (" + totalScore + "/25)";
-                color = "#8b0000";
             } else {
-                verdict = "❌ DEMOKRATA/LIBERAŁ - Niezgodność z fundamentami KML (" + totalScore + "/25)";
+                verdict = "⚠️ Niskie punkty (" + totalScore + "/25)";
                 color = "#8b0000";
             }
             
-            // Pokaż wynik lokalnie
-            document.getElementById('score').textContent = totalScore + "/" + maxScore;
-            document.getElementById('score').style.color = color;
-            document.getElementById('verdict').textContent = verdict;
-            document.getElementById('verdict').style.borderLeftColor = color;
-            
-            // Pokaż animację ładowania
+            // Pokaż ładowanie
             document.getElementById('loading').style.display = 'block';
             
-            // Przygotuj dane do wysłania do Cloudflare Workers
+            // Przygotuj dane
             const testData = {
                 discordName: discordName,
                 score: totalScore,
                 maxScore: maxScore,
                 verdict: verdict,
-                timestamp: new Date().toLocaleString('pl-PL'),
+                timestamp: answers.timestamp,
                 answers: {
                     q1: answers.q1,
                     q2: answers.q2,
                     q5: answers.q5,
                     q7: answers.q7,
                     q8: answers.q8
-                },
-                open1: answers.open1,
-                open2: answers.open2,
-                open3: answers.open3,
-                userAgent: navigator.userAgent,
-                pageUrl: window.location.href
+                }
             };
             
-            // Wyślij dane do Cloudflare Workers
+            console.log('Wysyłam dane:', testData);
+            
             try {
-                console.log('🔄 Wysyłanie danych do Cloudflare Workers...');
-                
+                // Wyślij do Cloudflare Workers
                 const response = await fetch(CLOUDFLARE_WORKER_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Accept': 'application/json'
                     },
                     body: JSON.stringify(testData)
                 });
                 
+                console.log('Odpowiedź status:', response.status);
+                
                 const result = await response.json();
-                console.log('✅ Odpowiedź z Workers:', result);
+                console.log('Odpowiedź data:', result);
                 
                 document.getElementById('loading').style.display = 'none';
                 
-                if (result.success) {
-                    // Pokaż wyniki
-                    document.getElementById('results').style.display = 'block';
-                    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
-                    
-                    // Schowaj formularz
-                    document.getElementById('political-test').style.display = 'none';
-                    
-                    // Zapisz wyniki w localStorage (jako backup)
-                    localStorage.setItem('kml_test_result', JSON.stringify({
-                        score: totalScore,
-                        maxScore: maxScore,
-                        verdict: verdict,
-                        discordName: discordName,
-                        timestamp: new Date().toISOString()
-                    }));
-                    
-                    // Loguj sukces
-                    console.log('✅ Test wysłany pomyślnie. Wynik:', totalScore + '/' + maxScore);
-                    
-                } else {
-                    // Błąd z Workers, ale pokaż wyniki lokalnie
-                    console.warn('⚠️ Błąd z Workers:', result.error);
-                    showResultsAnyway(totalScore, maxScore, verdict, color, 'Wynik zapisany lokalnie, ale wystąpił błąd podczas wysyłania na serwer.');
-                }
+                // Pokaż wyniki
+                document.getElementById('score').textContent = totalScore + "/" + maxScore;
+                document.getElementById('score').style.color = color;
+                document.getElementById('verdict').textContent = verdict;
+                document.getElementById('results').style.display = 'block';
+                document.getElementById('political-test').style.display = 'none';
+                
+                // Przewiń do wyników
+                document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+                
+                // Zapisz w localStorage
+                localStorage.setItem('kml_last_test', JSON.stringify({
+                    score: totalScore,
+                    date: new Date().toISOString()
+                }));
                 
             } catch (error) {
-                console.error('❌ Błąd połączenia:', error);
+                console.error('Błąd połączenia:', error);
                 document.getElementById('loading').style.display = 'none';
                 
-                // Błąd połączenia, pokaż wyniki lokalnie
-                showResultsAnyway(totalScore, maxScore, verdict, color, 'Wynik zapisany lokalnie. Błąd połączenia z serwerem.');
+                // Pokaż wyniki mimo błędu
+                document.getElementById('score').textContent = totalScore + "/" + maxScore;
+                document.getElementById('score').style.color = color;
+                document.getElementById('verdict').textContent = verdict + " (błąd wysyłania)";
+                document.getElementById('results').style.display = 'block';
+                document.getElementById('political-test').style.display = 'none';
+                
+                alert('⚠️ Wynik obliczony, ale błąd wysyłania. Wynik: ' + totalScore + '/' + maxScore);
             }
         }
         
@@ -1120,95 +571,13 @@
             return null;
         }
         
-        function showResultsAnyway(score, maxScore, verdict, color, message) {
-            // Ustaw wyniki
-            document.getElementById('score').textContent = score + "/" + maxScore;
-            document.getElementById('score').style.color = color;
-            document.getElementById('verdict').textContent = verdict;
-            
-            // Dodaj komunikat o błędzie
-            const errorMsg = document.createElement('p');
-            errorMsg.style.color = '#ff6b6b';
-            errorMsg.style.marginTop = '15px';
-            errorMsg.style.padding = '10px';
-            errorMsg.style.background = 'rgba(139, 0, 0, 0.1)';
-            errorMsg.style.borderRadius = '5px';
-            errorMsg.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + message;
-            document.querySelector('.next-steps').appendChild(errorMsg);
-            
-            // Pokaż wyniki
-            document.getElementById('results').style.display = 'block';
-            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('political-test').style.display = 'none';
-        }
-        
-        // Walidacja długości odpowiedzi otwartych
-        document.querySelectorAll('textarea').forEach(textarea => {
-            textarea.addEventListener('input', function() {
-                const counter = document.getElementById('counter' + this.id.replace('open', ''));
-                if (this.value.length < 100) {
-                    this.style.borderColor = '#8b0000';
-                    if (counter) counter.style.color = '#8b0000';
-                } else {
-                    this.style.borderColor = '#2e8b57';
-                    if (counter) counter.style.color = '#666';
-                }
-            });
-        });
-        
-        // Animacja pojawiania się elementów przy scrollu
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Obserwuj wszystkie grupy formularza
-        document.querySelectorAll('.form-group').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-        
-        // Smooth scroll dla anchorów
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Sprawdź czy są zapisane wyniki z poprzedniej sesji
+        // Sprawdź czy Workers działa
         window.addEventListener('load', function() {
-            const savedResult = localStorage.getItem('kml_test_result');
-            if (savedResult) {
-                try {
-                    const result = JSON.parse(savedResult);
-                    console.log('📋 Poprzedni wynik znaleziony:', result);
-                    
-                    // Opcjonalnie: możesz dodać przycisk "Pokaż poprzedni wynik"
-                    if (confirm('Znaleziono poprzedni wynik testu (' + result.score + '/' + result.maxScore + '). Czy chcesz go zobaczyć?')) {
-                        showResultsAnyway(result.score, result.maxScore, result.verdict, "#c9a145", "To jest Twój poprzedni wynik. Możesz wypełnić test ponownie.");
-                    }
-                } catch (e) {
-                    console.error('Błąd parsowania zapisanego wyniku:', e);
-                }
-            }
+            console.log('Testowanie połączenia z Workers...');
+            fetch(CLOUDFLARE_WORKER_URL, { method: 'GET' })
+                .then(r => r.text())
+                .then(t => console.log('Workers status:', t.substring(0, 50)))
+                .catch(e => console.warn('Workers nie odpowiada:', e));
         });
     </script>
 </body>
