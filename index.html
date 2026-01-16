@@ -144,7 +144,7 @@
             position: relative;
         }
         
-        /* LEWA NAWIGACJA - BARDZO SZEROKA */
+        /* LEWA NAWIGACJA - BARDZO SZEROKA Z WIDOCZNYMI WSKAZÓWKAMI */
         .nav-left {
             position: fixed;
             left: 40px;
@@ -169,7 +169,7 @@
             }
         }
         
-        /* PRAWA NAWIGACJA - BARDZO SZEROKA */
+        /* PRAWA NAWIGACJA - BARDZO SZEROKA Z WIDOCZNYMI WSKAZÓWKAMI */
         .nav-right {
             position: fixed;
             right: 40px;
@@ -194,23 +194,79 @@
             }
         }
         
-        /* STYLE DLA LINKÓW NAWIGACYJNYCH - EKSTRA SZEROKIE */
+        /* WSKAZÓWKA - KLIKNIJ MNIE! */
+        .nav-hint {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
+            pointer-events: none;
+            animation: pulseHint 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseHint {
+            0%, 100% { opacity: 0.7; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-3px); }
+        }
+        
+        .nav-left .nav-hint {
+            text-align: left;
+            padding-left: 10px;
+        }
+        
+        .nav-right .nav-hint {
+            text-align: right;
+            padding-right: 10px;
+        }
+        
+        /* STYLE DLA LINKÓW NAWIGACYJNYCH - EKSTRA SZEROKIE Z OCZYWISTYMI WSKAZÓWKAMI */
         .nav-person {
             display: flex;
             align-items: center;
             text-decoration: none;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            padding: 20px 25px;
+            padding: 25px 30px;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.98) 100%);
             border-radius: 25px;
-            border: 4px solid transparent;
+            border: 4px solid var(--primary);
             box-shadow: 
                 0 20px 50px rgba(0, 0, 0, 0.3),
-                inset 0 0 40px rgba(255, 255, 255, 0.7);
+                inset 0 0 40px rgba(255, 255, 255, 0.7),
+                0 0 0 2px rgba(201, 161, 69, 0.5);
             position: relative;
             overflow: hidden;
-            min-height: 120px;
+            min-height: 130px;
             width: 100%;
+            cursor: pointer;
+        }
+        
+        /* STRZAŁKA WSKAZUJĄCA NA MOBILNY CHARAKTER */
+        .nav-arrow {
+            position: absolute;
+            color: var(--accent);
+            font-size: 2rem;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .nav-left .nav-arrow {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .nav-right .nav-arrow {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%) scaleX(-1);
         }
         
         .nav-person::before {
@@ -221,9 +277,9 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(135deg, 
-                rgba(13, 21, 58, 0.1) 0%, 
-                rgba(139, 0, 0, 0.1) 50%, 
-                rgba(201, 161, 69, 0.1) 100%);
+                rgba(13, 21, 58, 0.15) 0%, 
+                rgba(139, 0, 0, 0.15) 50%, 
+                rgba(201, 161, 69, 0.15) 100%);
             border-radius: 21px;
             z-index: 1;
             opacity: 0;
@@ -239,7 +295,18 @@
             border-color: var(--accent);
             box-shadow: 
                 0 25px 60px rgba(0, 0, 0, 0.4),
-                inset 0 0 50px rgba(255, 255, 255, 0.8);
+                inset 0 0 50px rgba(255, 255, 255, 0.8),
+                0 0 0 3px rgba(201, 161, 69, 0.8);
+        }
+        
+        .nav-person:hover .nav-arrow {
+            opacity: 1;
+            transform: translateY(-50%) translateX(5px);
+            color: var(--accent);
+        }
+        
+        .nav-right .nav-person:hover .nav-arrow {
+            transform: translateY(-50%) scaleX(-1) translateX(-5px);
         }
         
         /* SPECJALNY STYL DLA KRÓLA */
@@ -249,6 +316,7 @@
             box-shadow: 
                 0 20px 50px rgba(0, 0, 0, 0.35),
                 inset 0 0 40px rgba(255, 255, 255, 0.8),
+                0 0 0 3px rgba(255, 215, 0, 0.6),
                 0 0 50px rgba(201, 161, 69, 0.5) !important;
             animation: kingGlow 3s ease-in-out infinite;
         }
@@ -258,12 +326,14 @@
                 box-shadow: 
                     0 20px 50px rgba(0, 0, 0, 0.35),
                     inset 0 0 40px rgba(255, 255, 255, 0.8),
+                    0 0 0 3px rgba(255, 215, 0, 0.6),
                     0 0 50px rgba(201, 161, 69, 0.5);
             }
             50% { 
                 box-shadow: 
                     0 20px 50px rgba(0, 0, 0, 0.35),
                     inset 0 0 40px rgba(255, 255, 255, 0.8),
+                    0 0 0 3px rgba(255, 215, 0, 0.8),
                     0 0 70px rgba(201, 161, 69, 0.7);
             }
         }
@@ -273,15 +343,22 @@
             box-shadow: 
                 0 30px 70px rgba(0, 0, 0, 0.45),
                 inset 0 0 60px rgba(255, 255, 255, 0.9),
+                0 0 0 4px rgba(255, 215, 0, 1),
                 0 0 80px rgba(201, 161, 69, 0.8) !important;
+        }
+        
+        .king-person .nav-arrow {
+            color: var(--accent) !important;
+            font-size: 2.2rem;
+            opacity: 0.9;
         }
         
         .nav-icon-wrapper {
             position: relative;
             z-index: 2;
             margin-right: 25px;
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -289,6 +366,7 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             flex-shrink: 0;
+            border: 3px solid rgba(255, 255, 255, 0.8);
         }
         
         .nav-left .nav-person {
@@ -305,15 +383,16 @@
         }
         
         .nav-person:hover .nav-icon-wrapper {
-            transform: scale(1.15) rotate(8deg);
+            transform: scale(1.15) rotate(10deg);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            border-color: white;
         }
         
         .nav-icon {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: white;
             transition: all 0.3s ease;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
         .nav-person:hover .nav-icon {
@@ -330,7 +409,7 @@
         
         .nav-name {
             font-family: 'Cinzel', serif;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: var(--primary);
             font-weight: 900;
             line-height: 1.2;
@@ -342,10 +421,10 @@
         }
         
         .nav-role {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #666;
             line-height: 1.3;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.3px;
             word-wrap: break-word;
             overflow-wrap: break-word;
@@ -360,6 +439,41 @@
         .nav-right .nav-name,
         .nav-right .nav-role {
             text-align: right;
+        }
+        
+        /* DODATKOWA WSKAZÓWKA DLA UŻYTKOWNIKÓW */
+        .click-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 101;
+            animation: fadeInHint 3s ease-out 2s both;
+        }
+        
+        @keyframes fadeInHint {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .click-hint-text {
+            display: inline-block;
+            background: rgba(13, 21, 58, 0.9);
+            color: var(--gold);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: 2px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+            50% { box-shadow: 0 10px 40px rgba(201, 161, 69, 0.4); }
         }
         
         /* KOLORY DLA POSZCZEGÓLNYCH OSÓB */
@@ -381,6 +495,7 @@
         
         .nav-person[href*="StretchyDev"] .nav-icon-wrapper {
             background: linear-gradient(135deg, #c9a145 0%, #ffd700 100%) !important;
+            border: 3px solid rgba(255, 215, 0, 0.8) !important;
         }
         
         .letter-content {
@@ -556,7 +671,7 @@
             }
             
             .nav-left, .nav-right {
-                width: 320px;
+                width: 340px;
             }
         }
         
@@ -566,7 +681,7 @@
             }
             
             .nav-left, .nav-right {
-                width: 300px;
+                width: 320px;
             }
         }
         
@@ -576,7 +691,11 @@
             }
             
             .nav-left, .nav-right {
-                width: 280px;
+                width: 300px;
+            }
+            
+            .nav-person {
+                padding: 22px 25px;
             }
         }
         
@@ -586,7 +705,15 @@
             }
             
             .nav-left, .nav-right {
-                width: 260px;
+                width: 280px;
+            }
+            
+            .nav-person {
+                padding: 20px 22px;
+            }
+            
+            .nav-name {
+                font-size: 1.5rem;
             }
         }
         
@@ -596,7 +723,11 @@
             }
             
             .nav-left, .nav-right {
-                width: 240px;
+                width: 260px;
+            }
+            
+            .nav-person {
+                padding: 18px 20px;
             }
         }
         
@@ -607,7 +738,7 @@
             
             .nav-left, .nav-right {
                 position: fixed;
-                bottom: 25px;
+                bottom: 70px;
                 top: auto;
                 left: 0;
                 right: 0;
@@ -624,7 +755,7 @@
             @keyframes slideUp {
                 from {
                     opacity: 0;
-                    transform: translateY(60px);
+                    transform: translateY(80px);
                 }
                 to {
                     opacity: 1;
@@ -632,23 +763,31 @@
                 }
             }
             
+            .nav-hint {
+                display: none;
+            }
+            
             .nav-person {
                 width: 180px;
-                min-height: 120px;
+                min-height: 140px;
                 padding: 20px 15px;
                 flex-direction: column !important;
                 align-items: center;
                 text-align: center;
             }
             
+            .nav-arrow {
+                display: none;
+            }
+            
             .nav-icon-wrapper {
-                margin: 0 0 12px 0 !important;
-                width: 65px;
-                height: 65px;
+                margin: 0 0 15px 0 !important;
+                width: 70px;
+                height: 70px;
             }
             
             .nav-icon {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
             }
             
             .nav-text {
@@ -658,39 +797,48 @@
             }
             
             .nav-name {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
                 text-align: center !important;
             }
             
             .nav-role {
-                font-size: 0.85rem;
+                font-size: 0.95rem;
                 text-align: center !important;
+            }
+            
+            .click-hint {
+                bottom: 10px;
+            }
+            
+            .click-hint-text {
+                font-size: 1rem;
+                padding: 12px 25px;
             }
         }
         
         @media (max-width: 850px) {
             .nav-person {
                 width: 160px;
-                min-height: 115px;
+                min-height: 135px;
                 padding: 18px 12px;
             }
             
             .nav-icon-wrapper {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 10px !important;
+                width: 65px;
+                height: 65px;
+                margin-bottom: 12px !important;
             }
             
             .nav-icon {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
             
             .nav-name {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
             
             .nav-role {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
         }
         
@@ -759,12 +907,44 @@
             
             .nav-left, .nav-right {
                 gap: 15px;
+                bottom: 65px;
             }
             
             .nav-person {
                 width: 150px;
-                min-height: 110px;
+                min-height: 130px;
                 padding: 16px 12px;
+            }
+            
+            .nav-icon-wrapper {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 10px !important;
+            }
+            
+            .nav-icon {
+                font-size: 2.1rem;
+            }
+            
+            .nav-name {
+                font-size: 1.2rem;
+            }
+            
+            .nav-role {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 650px) {
+            .nav-left, .nav-right {
+                gap: 12px;
+                bottom: 60px;
+            }
+            
+            .nav-person {
+                width: 140px;
+                min-height: 125px;
+                padding: 14px 10px;
             }
             
             .nav-icon-wrapper {
@@ -774,7 +954,7 @@
             }
             
             .nav-icon {
-                font-size: 2rem;
+                font-size: 1.9rem;
             }
             
             .nav-name {
@@ -782,38 +962,7 @@
             }
             
             .nav-role {
-                font-size: 0.75rem;
-            }
-        }
-        
-        @media (max-width: 650px) {
-            .nav-left, .nav-right {
-                gap: 12px;
-                bottom: 20px;
-            }
-            
-            .nav-person {
-                width: 140px;
-                min-height: 105px;
-                padding: 14px 10px;
-            }
-            
-            .nav-icon-wrapper {
-                width: 50px;
-                height: 50px;
-                margin-bottom: 6px !important;
-            }
-            
-            .nav-icon {
-                font-size: 1.8rem;
-            }
-            
-            .nav-name {
-                font-size: 1rem;
-            }
-            
-            .nav-role {
-                font-size: 0.7rem;
+                font-size: 0.8rem;
             }
         }
         
@@ -821,12 +970,12 @@
             .nav-left, .nav-right {
                 flex-wrap: wrap;
                 gap: 15px;
-                bottom: 20px;
+                bottom: 70px;
             }
             
             .nav-person {
                 width: calc(50% - 15px);
-                min-height: 120px;
+                min-height: 140px;
                 padding: 16px 12px;
             }
         }
@@ -846,59 +995,46 @@
             
             .nav-person {
                 width: calc(50% - 12px);
-                min-height: 115px;
+                min-height: 135px;
                 padding: 14px 10px;
             }
             
             .nav-icon-wrapper {
-                width: 45px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
                 margin-bottom: 6px !important;
             }
             
             .nav-icon {
-                font-size: 1.6rem;
+                font-size: 1.7rem;
             }
             
             .nav-name {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
             
             .nav-role {
-                font-size: 0.65rem;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .nav-person {
-                width: calc(50% - 10px);
-                min-height: 110px;
-                padding: 12px 8px;
+                font-size: 0.75rem;
             }
             
-            .nav-icon-wrapper {
-                width: 40px;
-                height: 40px;
-                margin-bottom: 5px !important;
-            }
-            
-            .nav-icon {
-                font-size: 1.4rem;
-            }
-            
-            .nav-name {
+            .click-hint-text {
                 font-size: 0.9rem;
-            }
-            
-            .nav-role {
-                font-size: 0.6rem;
+                padding: 10px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- LEWA NAWIGACJA (Król + teek) - EKSTRA SZEROKA -->
+    <!-- WSKAZÓWKA DLA UŻYTKOWNIKÓW -->
+    <div class="click-hint">
+        <div class="click-hint-text">
+            ⚡ KLIKNIJ NA DOWOLNY PANEL ABY PRZEJŚĆ DO PROFILU ⚡
+        </div>
+    </div>
+    
+    <!-- LEWA NAWIGACJA -->
     <div class="nav-left">
+        <div class="nav-hint">⬅️ KLIKNIJ BY PRZEJŚĆ</div>
         <a href="https://kmlpolska.pl/StretchyDev/" class="nav-person king-person" target="_blank">
             <div class="nav-icon-wrapper">
                 <div class="nav-icon">👑</div>
@@ -907,6 +1043,7 @@
                 <div class="nav-name">STRETCHYDEV</div>
                 <div class="nav-role">Król KML<br>Założyciel</div>
             </div>
+            <div class="nav-arrow">➡️</div>
         </a>
         
         <a href="https://kmlpolska.pl/teek/" class="nav-person" target="_blank">
@@ -917,12 +1054,15 @@
                 <div class="nav-name">TEEK</div>
                 <div class="nav-role">Specjalista ds.<br>Rekrutacji</div>
             </div>
+            <div class="nav-arrow">➡️</div>
         </a>
     </div>
     
-    <!-- PRAWA NAWIGACJA (Mateusz + Jakub + Nabizon) - EKSTRA SZEROKA -->
+    <!-- PRAWA NAWIGACJA -->
     <div class="nav-right">
+        <div class="nav-hint">KLIKNIJ BY PRZEJŚĆ ➡️</div>
         <a href="https://kmlpolska.pl/Mateusz/" class="nav-person" target="_blank">
+            <div class="nav-arrow">⬅️</div>
             <div class="nav-icon-wrapper">
                 <div class="nav-icon">🎯</div>
             </div>
@@ -933,6 +1073,7 @@
         </a>
         
         <a href="https://kmlpolska.pl/jakub/" class="nav-person" target="_blank">
+            <div class="nav-arrow">⬅️</div>
             <div class="nav-icon-wrapper">
                 <div class="nav-icon">⚖️</div>
             </div>
@@ -943,6 +1084,7 @@
         </a>
         
         <a href="https://kmlpolska.pl/Nabizon/" class="nav-person" target="_blank">
+            <div class="nav-arrow">⬅️</div>
             <div class="nav-icon-wrapper">
                 <div class="nav-icon">🛡️</div>
             </div>
@@ -1096,10 +1238,19 @@
                 link.addEventListener('mouseenter', function() {
                     const iconWrapper = this.querySelector('.nav-icon-wrapper');
                     const icon = this.querySelector('.nav-icon');
+                    const arrow = this.querySelector('.nav-arrow');
                     
                     // Efekt bounce dla ikony
-                    iconWrapper.style.transform = 'scale(1.15) rotate(8deg)';
+                    iconWrapper.style.transform = 'scale(1.15) rotate(10deg)';
                     icon.style.transform = 'scale(1.1)';
+                    
+                    // Animacja strzałki
+                    if (arrow) {
+                        arrow.style.opacity = '1';
+                        arrow.style.transform = arrow.style.transform.includes('scaleX(-1)') 
+                            ? 'translateY(-50%) scaleX(-1) translateX(-8px)' 
+                            : 'translateY(-50%) translateX(8px)';
+                    }
                     
                     // Jeśli to król, dodatkowe efekty
                     if (this.classList.contains('king-person')) {
@@ -1110,9 +1261,18 @@
                 link.addEventListener('mouseleave', function() {
                     const iconWrapper = this.querySelector('.nav-icon-wrapper');
                     const icon = this.querySelector('.nav-icon');
+                    const arrow = this.querySelector('.nav-arrow');
                     
                     iconWrapper.style.transform = 'scale(1) rotate(0deg)';
                     icon.style.transform = 'scale(1)';
+                    
+                    // Reset animacji strzałki
+                    if (arrow) {
+                        arrow.style.opacity = '0.7';
+                        arrow.style.transform = arrow.style.transform.includes('scaleX(-1)') 
+                            ? 'translateY(-50%) scaleX(-1)' 
+                            : 'translateY(-50%)';
+                    }
                     
                     // Reset efektów króla
                     if (this.classList.contains('king-person')) {
@@ -1126,15 +1286,30 @@
             if (kingLink) {
                 kingLink.addEventListener('click', function(e) {
                     const icon = this.querySelector('.nav-icon');
+                    const arrow = this.querySelector('.nav-arrow');
                     
                     // Animacja "koronacja"
                     icon.style.transition = 'all 0.5s ease';
                     icon.style.transform = 'scale(1.4) rotate(360deg)';
                     icon.style.filter = 'drop-shadow(0 0 20px gold) brightness(1.2)';
                     
+                    if (arrow) {
+                        arrow.style.transition = 'all 0.5s ease';
+                        arrow.style.transform = arrow.style.transform.includes('scaleX(-1)') 
+                            ? 'translateY(-50%) scaleX(-1) translateX(-15px)' 
+                            : 'translateY(-50%) translateX(15px)';
+                        arrow.style.opacity = '1';
+                    }
+                    
                     setTimeout(() => {
                         icon.style.transform = 'scale(1) rotate(0deg)';
                         icon.style.filter = 'none';
+                        if (arrow) {
+                            arrow.style.transform = arrow.style.transform.includes('scaleX(-1)') 
+                                ? 'translateY(-50%) scaleX(-1)' 
+                                : 'translateY(-50%)';
+                            arrow.style.opacity = '0.7';
+                        }
                     }, 500);
                 });
             }
@@ -1149,6 +1324,18 @@
                     document.querySelector('.letter-wrapper').style.filter = 'brightness(1)';
                 });
             });
+            
+            // Ukryj wskazówkę po kliknięciu
+            const clickHint = document.querySelector('.click-hint');
+            if (clickHint) {
+                document.addEventListener('click', function() {
+                    clickHint.style.opacity = '0';
+                    clickHint.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        clickHint.style.display = 'none';
+                    }, 500);
+                }, { once: true });
+            }
         });
     </script>
 </body>
