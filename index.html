@@ -3,704 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pożegnanie z Konfederacją Monarchistyczno-Libertariańską</title>
+    <title>Ostatnie Pożegnanie - Konfederacja Monarchistyczno-Libertariańska</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700;900&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
         :root {
             --primary: #0d153a;
-            --secondary: #c9a145;
             --accent: #8b0000;
+            --gold: #c9a145;
             --light: #f5f5f5;
             --dark: #1a1a1a;
-            --gradient: linear-gradient(135deg, #0d153a 0%, #1a237e 100%);
-            --gradient-gold: linear-gradient(135deg, #c9a145 0%, #ffd700 100%);
-            --gradient-red: linear-gradient(135deg, #8b0000 0%, #b22222 100%);
-            --gradient-green: linear-gradient(135deg, #2e8b57 0%, #3cb371 100%);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+        
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.8;
             color: var(--dark);
-            background-color: var(--light);
-            background-image:
-                radial-gradient(circle at 5% 15%, rgba(13, 21, 58, 0.03) 0%, transparent 30%),
-                radial-gradient(circle at 95% 85%, rgba(201, 161, 69, 0.03) 0%, transparent 30%);
+            background: linear-gradient(135deg, #0d153a 0%, #1a1a1a 100%);
             min-height: 100vh;
-        }
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        /* Top Bar - Usunięta, bo nieaktualna */
-        /* Header Styles - Zmodyfikowany na pożegnalny */
-        header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d153a 100%);
-            color: white;
-            padding: 100px 0 120px;
             position: relative;
-            overflow: hidden;
-            border-bottom: 8px solid var(--accent);
-            box-shadow: var(--shadow);
+            overflow-x: hidden;
         }
-        header::before {
+        
+        body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.3;
-        }
-        .header-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .logo-container {
-            margin-bottom: 40px;
-        }
-        .main-logo {
-            font-size: 6rem;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-        .main-logo i {
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            animation: float 4s ease-in-out infinite;
-        }
-        .main-logo i:nth-child(1) { animation-delay: 0s; color: #ffd700; }
-        .main-logo i:nth-child(2) { animation-delay: 0.7s; color: #ffffff; }
-        .main-logo i:nth-child(3) { animation-delay: 1.4s; color: #8b0000; }
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(5deg); }
-        }
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3.8rem;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-            background: var(--gradient-red);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: 1px;
-        }
-        .tagline {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-style: italic;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            color: #e6e6fa;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        /* Main Navigation - Zmodyfikowana na pożegnalną */
-        .main-nav {
-            background-color: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
-            border-radius: 15px;
-            padding: 15px 30px;
-            margin: -60px auto 40px;
-            max-width: 1000px;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 80px;
-            z-index: 1000;
-            border: 2px solid var(--accent);
-        }
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .nav-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 700;
-            padding: 12px 25px;
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Cinzel', serif;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-            font-size: 1rem;
-        }
-        .nav-link::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-red);
-            transition: left 0.4s ease;
-            z-index: -1;
-        }
-        .nav-link:hover::before, .nav-link.active::before {
-            left: 0;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
-            border-color: var(--accent);
-        }
-        /* Quick Links - Usunięte, nieaktualne */
-        /* Main Content - Zmodyfikowane na pożegnalne sekcje */
-        main {
-            padding: 20px 0;
-        }
-        .section-card {
-            background: white;
-            border-radius: 20px;
-            padding: 50px;
-            margin-bottom: 50px;
-            box-shadow: var(--shadow-light);
-            border-left: 10px solid var(--accent);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .section-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
-        .section-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: var(--gradient-red);
-        }
-        h2 {
-            font-family: 'Cinzel', serif;
-            color: var(--primary);
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 4px solid var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            position: relative;
-        }
-        h2::after {
-            content: "";
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 120px;
-            height: 4px;
-            background: var(--gradient-red);
-        }
-        h2 i {
-            color: var(--accent);
-            font-size: 2.2rem;
-            background: rgba(139, 0, 0, 0.1);
-            padding: 15px;
-            border-radius: 50%;
-        }
-        /* Pillars Section - Zmodyfikowane na retrospektywne */
-        .pillars-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .pillar-card {
-            background: white;
-            border-radius: 15px;
-            padding: 35px;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            transition: all 0.3s ease;
-            border-top: 6px solid;
-            position: relative;
-            overflow: hidden;
-        }
-        .pillar-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
-        .pillar-card.monarchy {
-            border-top-color: #c9a145;
-            background: linear-gradient(to bottom, rgba(201, 161, 69, 0.05), white);
-        }
-        .pillar-card.libertarian {
-            border-top-color: #2e8b57;
-            background: linear-gradient(to bottom, rgba(46, 139, 87, 0.05), white);
-        }
-        .pillar-card.conservative {
-            border-top-color: #8b0000;
-            background: linear-gradient(to bottom, rgba(139, 0, 0, 0.05), white);
-        }
-        .pillar-icon {
-            font-size: 3.2rem;
-            margin-bottom: 25px;
-            height: 100px;
-            width: 100px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            color: white;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-        .pillar-card.monarchy .pillar-icon {
-            background: var(--gradient-gold);
-        }
-        .pillar-card.libertarian .pillar-icon {
-            background: var(--gradient-green);
-        }
-        .pillar-card.conservative .pillar-icon {
-            background: var(--gradient-red);
-        }
-        .pillar-card h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        /* Structure Section - Zmodyfikowane na podsumowanie */
-        .structure-list {
-            list-style-type: none;
-            margin-top: 25px;
-        }
-        .structure-list li {
-            padding: 15px 0 15px 70px;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        .structure-list li:hover {
-            background: rgba(139, 0, 0, 0.05);
-            padding-left: 80px;
-        }
-        .structure-list li:last-child {
-            border-bottom: none;
-        }
-        .structure-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 15px;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-red);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            font-size: 1.3rem;
-        }
-        .structure-list li:nth-child(1)::before { content: "\f0c0"; }
-        .structure-list li:nth-child(2)::before { content: "\f0e3"; }
-        .structure-list li:nth-child(3)::before { content: "\f1c0"; }
-        .structure-list li:nth-child(4)::before { content: "\f0c0"; }
-        .structure-list li:nth-child(5)::before { content: "\f06e"; }
-        .structure-list li:nth-child(6)::before { content: "\f085"; }
-        .structure-list li:nth-child(7)::before { content: "\f521"; }
-        /* Join Section - Zmodyfikowana na podziękowania */
-        .join-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 30px;
-        }
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .social-button {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px 25px;
-            background: white;
-            border-radius: 15px;
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            box-shadow: var(--shadow-light);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        .social-button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(139, 0, 0, 0.1);
-            transition: left 0.3s ease;
+            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.4;
             z-index: 0;
         }
-        .social-button:hover::before {
-            left: 0;
-        }
-        .social-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-            border-color: var(--accent);
-        }
-        .social-button.discord {
-            background: linear-gradient(135deg, #5865F2, #4752C4);
-            color: white;
-        }
-        .social-button.twitter {
-            background: linear-gradient(135deg, #1DA1F2, #0d8bd9);
-            color: white;
-        }
-        .social-button.email {
-            background: linear-gradient(135deg, #EA4335, #D14836);
-            color: white;
-        }
-        .social-icon {
-            font-size: 1.8rem;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            position: relative;
-            z-index: 1;
-        }
-        .social-button .text {
-            position: relative;
-            z-index: 1;
-        }
-        .social-button h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-        .requirements {
-            background: rgba(13, 21, 58, 0.08);
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-            border-left: 6px solid var(--accent);
-            position: relative;
-            overflow: hidden;
-        }
-        .requirements h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .requirements h3 i {
-            color: var(--accent);
-        }
-        /* Contact Section - Zmodyfikowana na archiwalną */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .contact-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--shadow-light);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        .contact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-            border-color: var(--accent);
-        }
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(139, 0, 0, 0.1);
-            margin: 0 auto 20px;
-        }
-        .contact-card h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        .contact-card a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        .contact-card a:hover {
-            color: var(--accent);
-            text-decoration: underline;
-        }
-        /* Footer - Zmodyfikowany na pożegnalny */
-        footer {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d153a 100%);
-            color: white;
-            padding: 60px 0 30px;
-            margin-top: 60px;
-            text-align: center;
-            border-top: 6px solid var(--accent);
-            position: relative;
-            overflow: hidden;
-        }
-        footer::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-red);
-        }
-        .footer-content {
-            max-width: 1000px;
+        
+        .container {
+            max-width: 900px;
             margin: 0 auto;
+            padding: 40px 20px;
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
-        .footer-logo {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            animation: pulse 2s infinite;
+        
+        .letter-wrapper {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+            animation: fadeIn 1s ease-out;
         }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        .footer-motto {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            color: var(--accent);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        .footer-motto::before, .footer-motto::after {
-            content: "✧";
-            margin: 0 15px;
-            color: white;
-            opacity: 0.7;
-        }
-        .copyright {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-        /* Scroll to top button */
-        .scroll-top {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-red);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-        }
-        .scroll-top.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        .scroll-top:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .section-card {
-                padding: 40px 30px;
-            }
-            h1 {
-                font-size: 3.2rem;
-            }
-            .main-logo {
-                font-size: 5rem;
-            }
-        }
-        @media (max-width: 992px) {
-            .join-container {
-                grid-template-columns: 1fr;
-            }
-            h1 {
-                font-size: 2.8rem;
-            }
-            h2 {
-                font-size: 2.2rem;
-            }
-            .main-nav {
-                padding: 12px 20px;
-                margin: -50px auto 30px;
-            }
-            .nav-container {
-                gap: 8px;
-            }
-            .nav-link {
-                padding: 10px 20px;
-                font-size: 0.95rem;
-            }
-            .pillars-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 768px) {
-            .main-logo {
-                font-size: 3.5rem;
-                gap: 20px;
-            }
-            h1 {
-                font-size: 2.4rem;
-            }
-            .tagline {
-                font-size: 1.3rem;
-            }
-            .section-card {
-                padding: 30px 20px;
-                margin-bottom: 30px;
-            }
-            h2 {
-                font-size: 1.8rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-            h2 i {
-                padding: 12px;
-                font-size: 1.8rem;
-            }
-            .pillar-icon {
-                height: 80px;
-                width: 80px;
-                font-size: 2.8rem;
-            }
-            .structure-list li {
-                padding: 12px 0 12px 60px;
-                font-size: 1rem;
-            }
-            .structure-list li::before {
-                width: 45px;
-                height: 45px;
-                top: 12px;
-                font-size: 1.1rem;
-            }
-            .social-button {
-                padding: 15px 20px;
-            }
-            .social-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.6rem;
-            }
-            .nav-container {
-                flex-direction: column;
-                gap: 5px;
-            }
-            .nav-link {
-                width: 100%;
-                justify-content: center;
-            }
-            header {
-                padding: 80px 0 80px;
-            }
-            footer {
-                padding: 40px 0 20px;
-            }
-            .footer-logo {
-                font-size: 2.5rem;
-            }
-            .footer-motto {
-                font-size: 1.5rem;
-            }
-        }
-        @media (max-width: 480px) {
-            .main-logo {
-                font-size: 2.8rem;
-                gap: 15px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            h2 {
-                font-size: 1.6rem;
-            }
-            .pillar-card {
-                padding: 25px 15px;
-            }
-            .pillar-icon {
-                height: 70px;
-                width: 70px;
-                font-size: 2.5rem;
-            }
-            .contact-card {
-                padding: 20px 15px;
-            }
-        }
-        /* Animations */
-        @keyframes fadeInUp {
+        
+        @keyframes fadeIn {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -710,290 +71,440 @@
                 transform: translateY(0);
             }
         }
-        .section-card, .pillar-card, .social-button, .contact-card {
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
+        
+        .letter-header {
+            background: linear-gradient(135deg, var(--accent) 0%, #660000 100%);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            border-bottom: 6px solid var(--gold);
         }
-        .section-card:nth-child(1) { animation-delay: 0.3s; }
-        .section-card:nth-child(2) { animation-delay: 0.4s; }
-        .section-card:nth-child(3) { animation-delay: 0.5s; }
-        .section-card:nth-child(4) { animation-delay: 0.6s; }
-        .section-card:nth-child(5) { animation-delay: 0.7s; }
+        
+        .letter-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .emblems {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .emblem {
+            font-size: 4rem;
+            color: var(--gold);
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .emblem:nth-child(1) { animation-delay: 0s; }
+        .emblem:nth-child(2) { animation-delay: 0.5s; }
+        .emblem:nth-child(3) { animation-delay: 1s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+        
+        .letter-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+            line-height: 1.2;
+        }
+        
+        .letter-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .letter-body {
+            padding: 60px 50px;
+        }
+        
+        .salutation {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .letter-body p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            color: #2a2a2a;
+            text-align: justify;
+            line-height: 1.9;
+        }
+        
+        .letter-body strong {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.08) 0%, rgba(139, 0, 0, 0.03) 100%);
+            border-left: 6px solid var(--accent);
+            padding: 30px;
+            margin: 35px 0;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .highlight-box::before {
+            content: "\f06e";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.15;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .principles-list {
+            margin: 30px 0;
+            padding-left: 20px;
+        }
+        
+        .principles-list li {
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            color: #2a2a2a;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .principles-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+        
+        .closing {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        .closing-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-top: 20px;
+            font-weight: 700;
+        }
+        
+        .signature-detail {
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .letter-footer {
+            background: linear-gradient(135deg, var(--primary) 0%, #0a0f28 100%);
+            padding: 40px;
+            text-align: center;
+            color: white;
+            border-top: 4px solid var(--gold);
+        }
+        
+        .footer-motto {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .footer-motto::before,
+        .footer-motto::after {
+            content: "✧";
+            margin: 0 15px;
+            opacity: 0.7;
+        }
+        
+        .footer-info {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .archive-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .archive-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .archive-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .archive-link i {
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .letter-header {
+                padding: 40px 25px;
+            }
+            
+            .emblems {
+                gap: 25px;
+            }
+            
+            .emblem {
+                font-size: 3rem;
+            }
+            
+            .letter-title {
+                font-size: 2rem;
+            }
+            
+            .letter-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .letter-body {
+                padding: 40px 30px;
+            }
+            
+            .letter-body p,
+            .principles-list li {
+                font-size: 1.05rem;
+            }
+            
+            .salutation {
+                font-size: 1.3rem;
+            }
+            
+            .highlight-box {
+                padding: 25px 20px;
+            }
+            
+            .highlight-box::before {
+                font-size: 2rem;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .signature {
+                font-size: 1.5rem;
+            }
+            
+            .footer-motto {
+                font-size: 1.2rem;
+            }
+            
+            .archive-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .archive-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .letter-title {
+                font-size: 1.7rem;
+            }
+            
+            .letter-body {
+                padding: 30px 20px;
+            }
+            
+            .letter-footer {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-container">
-                    <div class="main-logo">
-                        <i class="fas fa-crown"></i>
-                        <i class="fas fa-balance-scale"></i>
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+    <div class="container">
+        <div class="letter-wrapper">
+            <div class="letter-header">
+                <div class="emblems">
+                    <i class="fas fa-crown emblem"></i>
+                    <i class="fas fa-balance-scale emblem"></i>
+                    <i class="fas fa-shield-alt emblem"></i>
                 </div>
-                <h1>Pożegnanie z Konfederacją Monarchistyczno-Libertariańską</h1>
-                <p class="tagline">Veritas et Ordo. Vincit qui se vincit. – Kończymy ten rozdział.</p>
+                <h1 class="letter-title">Ostateczne Pożegnanie</h1>
+                <p class="letter-subtitle">Veritas et Ordo. Vincit qui se vincit.</p>
             </div>
-        </div>
-    </header>
-    <nav class="main-nav">
-        <div class="container">
-            <div class="nav-container">
-                <a href="#wiadomosc" class="nav-link active"><i class="fas fa-scroll"></i> Wiadomość Pożegnalna</a>
-                <a href="#ideologia" class="nav-link"><i class="fas fa-dna"></i> Nasza Ideologia</a>
-                <a href="#struktura" class="nav-link"><i class="fas fa-sitemap"></i> Nasza Struktura</a>
-                <a href="#podziekowania" class="nav-link"><i class="fas fa-heart"></i> Podziękowania</a>
-                <a href="#kontakt" class="nav-link"><i class="fas fa-archive"></i> Archiwum</a>
-            </div>
-        </div>
-    </nav>
-    <main class="container">
-        <section id="wiadomosc" class="section-card">
-            <h2><i class="fas fa-scroll"></i> Ostateczne Pożegnanie</h2>
-            <p>Drodzy Członkowie, Sympatycy, wszyscy co szli z nami tą dziwną, piękną i cholernie trudną drogą… 💔</p>
-            <p>Z wielkim bólem ogłaszam: <strong>Konfederacja Monarchistyczno-Libertariańska przestaje istnieć.</strong> Rozwiązujemy KML – formalnie i definitywnie.</p>
-            <p>Pomimo setek godzin rozmów, weryfikacji, memów, eventów, wiadomości o 4 rano, prób ratowania wszystkiego… <strong>nie udało się</strong>.</p>
-            <p>Nie było dramatu, zdrady ani wybuchu. Był <strong>powolny, cichy rozkład</strong> – motywacja gasła, ludzie odchodzili po cichu, ogień stał się wspomnieniem.</p>
-            <p>Próbowaliśmy wszystkiego: rygor → luz → hybryda → małe cele → wielkie wizje → eventy → cisza → reanimacje. Nic nie przetrwało próby czasu.</p>
-            <p>Utrzymywanie na siłę martwego projektu byłoby <strong>zdradą</strong> wobec tego, co głosiliśmy: jakość > ilość • autentyczność > fasada • wolność > przymus trwania.</p>
-            <p>Dlatego składam <strong>oficjalną demisję</strong> i kończymy ten rozdział. <strong>Kropka.</strong></p>
-            <p>Nie będzie KML 2.0, rebrandu ani soft resetu.</p>
-            <p>Ale chcę, żeby zostało coś więcej: ✦ Nie żałuję <strong>ani minuty</strong> ✦ Poznałem tu ludzi, których szanuję i z którymi zostanę w kontakcie ✦ Idee monarchistyczno-libertariańskie <strong>żyją dalej</strong> – są większe niż jeden serwer ✦ To co robiliśmy, <strong>miało sens</strong> – nawet jeśli wynik inny niż marzyliśmy</p>
-            <p>Jeśli kiedyś – za rok, za 5 lat – zechcecie wrócić do tych idei w innej formie… wiedzcie: <strong>nie jesteście pierwsi</strong>. Ktoś już tę drogę przeszedł. I nie na darmo.</p>
-            <p>Na dziś naprawdę kończymy.</p>
-            <p>Z głębokim szacunkiem, wdzięcznością i cichym smutkiem,<br>Michał<br>(od pierwszego dnia do ostatniego) 🖤</p>
-        </section>
-        <section id="ideologia" class="section-card">
-            <h2><i class="fas fa-dna"></i> Trzy Filary, Które Nas Prowadziły</h2>
-            <p>Nasza doktryna opierała się na trzech nienaruszalnych filarach, które stanowiły fundament naszego ruchu. Choć kończymy, idee te pozostają wieczne:</p>
-            <div class="pillars-container">
-                <div class="pillar-card monarchy">
-                    <div class="pillar-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>Monarchizm Absolutny</h3>
-                    <p>Wiara w <strong>absolutną, dziedziczną i dożywotnią władzę monarchy</strong> jako jedynego suwerena. Odrzucenie demokracji, parlamentaryzmu i wyborów. Król jest właścicielem państwa, nie urzędnikiem. Jego władza pochodzi od Boga i tradycji, nie od ludu.</p>
-                </div>
-                <div class="pillar-card libertarian">
-                    <div class="pillar-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>Libertarianizm Radykalny</h3>
-                    <p><strong>Całkowita wolność jednostki</strong> w sferze gospodarczej i osobistej. Państwo minimum, zniesienie podatków, deregulacja, pełne prawo własności. Król chroni granice i utrzymuje porządek, ale nie ingeruje w życie i majątek poddanych.</p>
-                </div>
-                <div class="pillar-card conservative">
-                    <div class="pillar-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Konserwatyzm Tradycjonalistyczny</h3>
-                    <p>Obrona <strong>tradycji, rodziny, religii i moralności chrześcijańskiej</strong> jako fundamentów cywilizacji. Sprzeciw wobec rewolucji kulturowej, marksizmu i postmodernizmu. Szacunek dla dorobku przodków i naturalnego porządku.</p>
-                </div>
-            </div>
-        </section>
-        <section id="struktura" class="section-card">
-            <h2><i class="fas fa-sitemap"></i> Nasza Struktura i Cele</h2>
-            <p>Nasza organizacja opierała się na przejrzystej i efektywnej strukturze hierarchicznej. Oto co nas budowało:</p>
-            <ul class="structure-list">
-                <li><strong>Naczelnik KML:</strong> Najwyższy przywódca ruchu, odpowiedzialny za strategię i wizję</li>
-                <li><strong>Rada Najwyższa:</strong> Organ doradczy złożony z doświadczonych monarchistów</li>
-                <li><strong>Departament Ideologiczny:</strong> Opracowanie i promocja doktryny monarchii absolutnej</li>
-                <li><strong>Departament Gospodarczy:</strong> Propagowanie libertarianizmu i wolnego rynku</li>
-                <li><strong>Departament Mediów:</strong> Obecność w mediach, tworzenie treści edukacyjnych</li>
-                <li><strong>Cel krótkoterminowy:</strong> Budowa świadomości i ruchu społecznego</li>
-                <li><strong>Cel długoterminowy:</strong> Przywrócenie monarchii absolutnej w Polsce</li>
-            </ul>
-            <p>Choć nie osiągnęliśmy pełni celów, nasza struktura pozwoliła na inspirujące dyskusje i działania.</p>
-        </section>
-        <section id="podziekowania" class="section-card">
-            <h2><i class="fas fa-heart"></i> Podziękowania</h2>
-            <p><strong>Dziękuję z całego serca</strong> każdemu, kto: • napisał porządną odpowiedź weryfikacyjną • siedział do nocy na moderacji • bronił zasad do końca • memował z nami do rana • naprawdę uwierzył w to połączenie idei</p>
-            <div class="join-container">
-                <div>
-                    <p>Jako członkowie KML mieliśmy możliwość:</p>
-                    <ul class="structure-list">
-                        <li>Uczestnictwa w dyskusjach o monarchizmie absolutnym</li>
-                        <li>Dostępu do ekskluzywnych materiałów ideologicznych</li>
-                        <li>Działać dla idei, które wykraczały poza codzienność</li>
-                        <li>Tworzyć społeczność opartą na szacunku i wolności</li>
-                        <li>Inspirować innych do myślenia o lepszej Polsce</li>
+            
+            <div class="letter-body">
+                <p class="salutation">Drodzy Członkowie, Sympatycy, wszyscy co szli z nami tą dziwną, piękną i cholernie trudną drogą… 💔</p>
+                
+                <p>Z wielkim bólem ogłaszam: <strong>Konfederacja Monarchistyczno-Libertariańska przestaje istnieć.</strong> Rozwiązujemy KML – formalnie i definitywnie.</p>
+                
+                <p>Pomimo setek godzin rozmów, weryfikacji, memów, eventów, wiadomości o 4 rano, prób ratowania wszystkiego… <strong>nie udało się</strong>.</p>
+                
+                <p>Nie było dramatu, zdrady ani wybuchu. Był <strong>powolny, cichy rozkład</strong> – motywacja gasła, ludzie odchodzili po cichu, ogień stał się wspomnieniem.</p>
+                
+                <p>Próbowaliśmy wszystkiego: rygor → luz → hybryda → małe cele → wielkie wizje → eventy → cisza → reanimacje. Nic nie przetrwało próby czasu.</p>
+                
+                <p>Utrzymywanie na siłę martwego projektu byłoby <strong>zdradą</strong> wobec tego, co głosiliśmy: jakość > ilość • autentyczność > fasada • wolność > przymus trwania.</p>
+                
+                <p>Dlatego składam <strong>oficjalną demisję</strong> i kończymy ten rozdział. <strong>Kropka.</strong></p>
+                
+                <p>Nie będzie KML 2.0, rebrandu ani soft resetu.</p>
+                
+                <div class="highlight-box">
+                    <p>Ale chcę, żeby zostało coś więcej:</p>
+                    <ul class="principles-list">
+                        <li>Nie żałuję <strong>ani minuty</strong></li>
+                        <li>Poznałem tu ludzi, których szanuję i z którymi zostanę w kontakcie</li>
+                        <li>Idee monarchistyczno-libertariańskie <strong>żyją dalej</strong> – są większe niż jeden serwer</li>
+                        <li>To co robiliśmy, <strong>miało sens</strong> – nawet jeśli wynik inny niż marzyliśmy</li>
                     </ul>
                 </div>
-                <div class="social-links">
-                    <a href="https://discord.gg/e5x94MjYxh" class="social-button discord" target="_blank">
-                        <div class="social-icon">
-                            <i class="fab fa-discord"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Archiwalny Discord</h3>
-                            <p>Do wspomnień – serwer zamknięty</p>
-                        </div>
-                    </a>
-                    <a href="https://x.com/KonfederacjaML" class="social-button twitter" target="_blank">
-                        <div class="social-icon">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Archiwalny Twitter</h3>
-                            <p>@KonfederacjaML – ostatnie wpisy</p>
-                        </div>
-                    </a>
-                    <a href="mailto:kmlpolska@op.pl" class="social-button email">
-                        <div class="social-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Ostatni Kontakt</h3>
-                            <p>kmlpolska@op.pl – do pożegnań</p>
-                        </div>
-                    </a>
+                
+                <p>Jeśli kiedyś – za rok, za 5 lat – zechcecie wrócić do tych idei w innej formie… wiedzcie: <strong>nie jesteście pierwsi</strong>. Ktoś już tę drogę przeszedł. I nie na darmo.</p>
+                
+                <p><strong>Dziękuję z całego serca</strong> każdemu, kto:</p>
+                
+                <ul class="principles-list">
+                    <li>napisał porządną odpowiedź weryfikacyjną</li>
+                    <li>siedział do nocy na moderacji</li>
+                    <li>bronił zasad do końca</li>
+                    <li>memował z nami do rana</li>
+                    <li>naprawdę uwierzył w to połączenie idei</li>
+                </ul>
+                
+                <p>Na dziś naprawdę kończymy.</p>
+                
+                <div class="closing">
+                    <p class="closing-text">Z głębokim szacunkiem, wdzięcznością i cichym smutkiem,</p>
+                    <p class="signature">Michał</p>
+                    <p class="signature-detail">(od pierwszego dnia do ostatniego) 🖤</p>
                 </div>
             </div>
-            <div class="requirements">
-                <h3><i class="fas fa-user-check"></i> Co Pozostaje:</h3>
-                <p>Idee nie umierają. Zachęcamy do kontynuowania w nowych formach, z zachowaniem zasad monarchii absolutnej, libertarianizmu i konserwatyzmu. Dziękujemy za wiarę i zaangażowanie.</p>
-            </div>
-        </section>
-        <section id="kontakt" class="section-card">
-            <h2><i class="fas fa-archive"></i> Archiwum i Kontakt</h2>
-            <p>Strona pozostaje jako archiwum naszej działalności. W razie pytań o historię KML:</p>
-            <div class="contact-info">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-at"></i>
-                    </div>
-                    <h3>E-mail</h3>
-                    <p><a href="mailto:kmlpolska@op.pl">kmlpolska@op.pl</a></p>
-                    <p>Archiwalne zapytania</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-twitter"></i>
-                    </div>
-                    <h3>Twitter / X</h3>
-                    <p><a href="https://x.com/KonfederacjaML" target="_blank">@KonfederacjaML</a></p>
-                    <p>Archiwalne wpisy</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-discord"></i>
-                    </div>
-                    <h3>Discord</h3>
-                    <p><a href="https://discord.gg/e5x94MjYxh" target="_blank">Archiwalny serwer</a></p>
-                    <p>Do wspomnień</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Historia</h3>
-                    <p>Rzeczpospolita Polska</p>
-                    <p>2024-2026</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-crown"></i>
-                </div>
+            
+            <div class="letter-footer">
                 <div class="footer-motto">Veritas et Ordo – Na Zawsze w Naszych Sercach</div>
-                <p>Konfederacja Monarchistyczno-Libertariańska (KML) - Monarchia Absolutna, Wolny Rynek, Tradycja. Kończymy działalność.</p>
-                <div class="copyright">
-                    <p>© 2024-2026 Konfederacja Monarchistyczno-Libertariańska (KML). Wszelkie prawa zastrzeżone.</p>
-                    <p>Strona archiwalna: kmipolska.pl | <a href="mailto:kmlpolska@op.pl" style="color: #8b0000;">kmlpolska@op.pl</a></p>
+                <div class="footer-info">
+                    <p><strong>Konfederacja Monarchistyczno-Libertariańska (KML)</strong></p>
+                    <p>Monarchia Absolutna • Wolny Rynek • Tradycja</p>
+                    <p style="margin-top: 20px; opacity: 0.8;">2024-2026 • Rzeczpospolita Polska</p>
                 </div>
+                <div class="archive-links">
+                    <a href="https://discord.gg/e5x94MjYxh" class="archive-link" target="_blank">
+                        <i class="fab fa-discord"></i>
+                        <span>Archiwalny Discord</span>
+                    </a>
+                    <a href="https://x.com/KonfederacjaML" class="archive-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                        <span>@KonfederacjaML</span>
+                    </a>
+                    <a href="mailto:kmlpolska@op.pl" class="archive-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>kmlpolska@op.pl</span>
+                    </a>
+                </div>
+                <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.7;">
+                    © 2024-2026 Konfederacja Monarchistyczno-Libertariańska. Wszelkie prawa zastrzeżone.
+                </p>
             </div>
         </div>
-    </footer>
-    <div class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
     </div>
+    
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                window.scrollTo({
-                    top: targetSection.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-                // Update active nav link
-                document.querySelectorAll('.nav-link').forEach(item => {
-                    item.classList.remove('active');
-                });
-                this.classList.add('active');
+        // Add subtle parallax effect on mouse move
+        document.addEventListener('mousemove', function(e) {
+            const emblems = document.querySelectorAll('.emblem');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            emblems.forEach((emblem, index) => {
+                const speed = (index + 1) * 0.5;
+                const xMove = (x - 0.5) * speed * 10;
+                const yMove = (y - 0.5) * speed * 10;
+                emblem.style.transform = `translate(${xMove}px, ${yMove}px)`;
             });
         });
-        // Update active nav link on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.section-card');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const scrollTopBtn = document.getElementById('scrollTop');
-            let currentSection = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    currentSection = '#' + section.getAttribute('id');
+        
+        // Fade in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === currentSection) {
-                    link.classList.add('active');
-                }
-            });
-            // Show/hide scroll to top button
-            if (window.scrollY > 500) {
-                scrollTopBtn.classList.add('show');
-            } else {
-                scrollTopBtn.classList.remove('show');
-            }
-        });
-        // Scroll to top functionality
-        document.getElementById('scrollTop').addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        // Add hover effect to cards
-        document.querySelectorAll('.section-card, .pillar-card, .contact-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.zIndex = '10';
-            });
-            card.addEventListener('mouseleave', function() {
-                this.style.zIndex = '1';
-            });
-        });
-        // Add animation to page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Trigger animations
-            setTimeout(() => {
-                document.querySelectorAll('.section-card, .pillar-card, .contact-card').forEach((el, index) => {
-                    setTimeout(() => {
-                        el.style.animation = 'fadeInUp 0.6s ease-out forwards';
-                    }, index * 100);
-                });
-            }, 300);
-            // Add floating effect to logo icons
-            const logoIcons = document.querySelectorAll('.main-logo i');
-            logoIcons.forEach((icon, index) => {
-                icon.style.animationDelay = `${index * 0.7}s`;
-            });
-        });
-        // Parallax effect for header
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const header = document.querySelector('header');
-            if (header) {
-                header.style.transform = `translateY(${scrolled * 0.15}px)`;
-            }
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.letter-body p, .highlight-box, .closing').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
