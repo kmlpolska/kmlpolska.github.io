@@ -91,38 +91,6 @@
             opacity: 0.3;
         }
         
-        .king-section {
-            position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            z-index: 3;
-        }
-        
-        .king-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 25px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 3px solid var(--gold);
-            border-radius: 50px;
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        
-        .king-badge:hover {
-            background: rgba(0, 0, 0, 0.9);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-        }
-        
         .emblems {
             display: flex;
             justify-content: center;
@@ -130,7 +98,6 @@
             margin-bottom: 30px;
             position: relative;
             z-index: 2;
-            margin-top: 20px;
         }
         
         .emblem {
@@ -175,74 +142,109 @@
             position: relative;
         }
         
-        .members-container {
-            position: absolute;
-            top: 0;
-            bottom: 0;
+        /* NOWA NAWIGACJA - LEWA STRONA */
+        .nav-left {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 30px;
-            z-index: 1;
+            gap: 20px;
+            z-index: 100;
         }
         
-        .members-left {
-            left: -180px;
-            align-items: flex-end;
+        /* NOWA NAWIGACJA - PRAWA STRONA */
+        .nav-right {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 100;
         }
         
-        .members-right {
-            right: -180px;
-            align-items: flex-start;
-        }
-        
-        .member-link {
+        .nav-person {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
-            width: 140px;
-            padding: 15px;
             text-decoration: none;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 2px solid transparent;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            border: 3px solid transparent;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 100px;
         }
         
-        .members-left .member-link {
-            text-align: right;
+        .nav-left .nav-person {
+            align-items: flex-start;
         }
         
-        .members-right .member-link {
-            text-align: left;
+        .nav-right .nav-person {
+            align-items: flex-end;
         }
         
-        .member-link:hover {
-            transform: translateY(-5px);
+        .nav-person:hover {
+            transform: translateY(-5px) scale(1.05);
             border-color: var(--accent);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
         
-        .member-icon {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 5px;
+        .nav-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
         }
         
-        .member-name {
+        .nav-person:hover .nav-icon {
+            transform: scale(1.2);
+        }
+        
+        .nav-name {
             font-family: 'Cinzel', serif;
             font-size: 1rem;
             color: var(--primary);
             font-weight: 700;
+            text-align: center;
             line-height: 1.2;
         }
         
-        .member-role {
+        .nav-role {
             font-size: 0.8rem;
             color: #666;
             text-align: center;
+            margin-top: 5px;
+            line-height: 1.2;
+        }
+        
+        .nav-left .nav-name,
+        .nav-left .nav-role {
+            text-align: left;
+        }
+        
+        .nav-right .nav-name,
+        .nav-right .nav-role {
+            text-align: right;
+        }
+        
+        /* KRÓL SPECJALNIE WYRÓŻNIONY */
+        .king-nav {
+            background: linear-gradient(135deg, #c9a145 0%, #ffd700 100%);
+            border-color: var(--accent) !important;
+            width: 120px;
+            padding: 20px;
+        }
+        
+        .king-nav .nav-icon {
+            color: var(--accent);
+        }
+        
+        .king-nav .nav-name {
+            color: var(--accent);
         }
         
         .letter-content {
@@ -412,6 +414,44 @@
         }
         
         /* Responsive */
+        @media (max-width: 1200px) {
+            .nav-left, .nav-right {
+                position: fixed;
+                bottom: 20px;
+                top: auto;
+                left: 0;
+                right: 0;
+                transform: none;
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+                padding: 0 20px;
+            }
+            
+            .nav-person {
+                width: 80px;
+                padding: 10px;
+            }
+            
+            .king-nav {
+                width: 90px;
+                padding: 12px;
+            }
+            
+            .nav-icon {
+                font-size: 1.8rem;
+            }
+            
+            .nav-name {
+                font-size: 0.9rem;
+            }
+            
+            .nav-role {
+                font-size: 0.7rem;
+                display: none;
+            }
+        }
+        
         @media (max-width: 768px) {
             .container {
                 padding: 20px 15px;
@@ -419,32 +459,6 @@
             
             .letter-header {
                 padding: 40px 25px;
-            }
-            
-            .king-section {
-                position: relative;
-                top: 0;
-                margin-bottom: 20px;
-            }
-            
-            .members-container {
-                position: static;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-                margin-bottom: 30px;
-            }
-            
-            .members-left, .members-right {
-                position: static;
-                flex-direction: row;
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .member-link {
-                width: 120px;
             }
             
             .emblems {
@@ -504,6 +518,27 @@
                 max-width: 300px;
                 justify-content: center;
             }
+            
+            .nav-left, .nav-right {
+                gap: 5px;
+            }
+            
+            .nav-person {
+                width: 70px;
+                padding: 8px;
+            }
+            
+            .king-nav {
+                width: 80px;
+            }
+            
+            .nav-icon {
+                font-size: 1.5rem;
+            }
+            
+            .nav-name {
+                font-size: 0.8rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -519,31 +554,62 @@
                 padding: 30px 20px;
             }
             
-            .member-link {
-                width: 100px;
-                padding: 10px;
+            .nav-person {
+                width: 60px;
+                padding: 5px;
             }
             
-            .member-name {
-                font-size: 0.9rem;
+            .nav-icon {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
             }
             
-            .member-role {
+            .nav-name {
                 font-size: 0.7rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- NAWIGACJA LEWA STRONA -->
+    <div class="nav-left">
+        <a href="https://kmlpolska.pl/teek/" class="nav-person" target="_blank">
+            <div class="nav-icon">📋</div>
+            <div class="nav-name">teek</div>
+            <div class="nav-role">Specjalista<br>ds. Rekrutacji</div>
+        </a>
+        
+        <a href="https://kmlpolska.pl/Nabizon/" class="nav-person" target="_blank">
+            <div class="nav-icon">🛡️</div>
+            <div class="nav-name">Nabizon</div>
+            <div class="nav-role">Strażnik<br>Dyscypliny</div>
+        </a>
+    </div>
+    
+    <!-- NAWIGACJA PRAWA STRONA -->
+    <div class="nav-right">
+        <a href="https://kmlpolska.pl/Mateusz/" class="nav-person" target="_blank">
+            <div class="nav-icon">🎯</div>
+            <div class="nav-name">Mateusz</div>
+            <div class="nav-role">Naczelnik KML<br>Wizjoner</div>
+        </a>
+        
+        <a href="https://kmlpolska.pl/jakub/" class="nav-person" target="_blank">
+            <div class="nav-icon">⚖️</div>
+            <div class="nav-name">Jakub</div>
+            <div class="nav-role">Wiceprzewodniczący<br>Rady Najwyższej</div>
+        </a>
+    </div>
+    
+    <!-- KRÓL W ŚRODKU NA GÓRZE -->
     <div class="container">
         <div class="letter-wrapper">
             <div class="letter-header">
-                <div class="king-section">
-                    <a href="https://kmlpolska.pl/StretchyDev/" class="king-badge" target="_blank">
-                        <i class="fas fa-crown"></i>
-                        <span>Król KML - StretchyDev</span>
-                    </a>
-                </div>
+                <a href="https://kmlpolska.pl/StretchyDev/" class="king-nav" target="_blank" style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); z-index: 3;">
+                    <div class="nav-icon">👑</div>
+                    <div class="nav-name">Król KML</div>
+                    <div class="nav-role">StretchyDev</div>
+                </a>
                 
                 <div class="emblems">
                     <i class="fas fa-crown emblem"></i>
@@ -555,36 +621,6 @@
             </div>
             
             <div class="letter-body">
-                <!-- Lewa kolumna z 2 członkami -->
-                <div class="members-container members-left">
-                    <a href="https://kmlpolska.pl/teek/" class="member-link" target="_blank">
-                        <i class="fas fa-user-tie member-icon"></i>
-                        <span class="member-name">teek</span>
-                        <span class="member-role">Poseł Rady Najwyższej<br>Specjalista ds. Rekrutacji</span>
-                    </a>
-                    
-                    <a href="https://kmlpolska.pl/Nabizon/" class="member-link" target="_blank">
-                        <i class="fas fa-shield-alt member-icon"></i>
-                        <span class="member-name">Nabizon</span>
-                        <span class="member-role">Poseł Rady Najwyższej<br>Strażnik Dyscypliny</span>
-                    </a>
-                </div>
-                
-                <!-- Prawa kolumna z 2 członkami -->
-                <div class="members-container members-right">
-                    <a href="https://kmlpolska.pl/Mateusz/" class="member-link" target="_blank">
-                        <i class="fas fa-lightbulb member-icon"></i>
-                        <span class="member-name">Mateusz</span>
-                        <span class="member-role">Naczelnik KML<br>Wizjoner i Architekt</span>
-                    </a>
-                    
-                    <a href="https://kmlpolska.pl/jakub/" class="member-link" target="_blank">
-                        <i class="fas fa-balance-scale member-icon"></i>
-                        <span class="member-name">Jakub</span>
-                        <span class="member-role">Wiceprzewodniczący<br>Rady Najwyższej</span>
-                    </a>
-                </div>
-                
                 <div class="letter-content">
                     <p class="salutation">Drodzy Członkowie, Sympatycy, wszyscy co szli z nami tą dziwną, piękną i cholernie trudną drogą… 💔</p>
                     
@@ -694,19 +730,34 @@
             observer.observe(el);
         });
         
-        // Animate member cards on hover
-        document.querySelectorAll('.member-link').forEach(link => {
+        // Animate navigation icons on hover
+        document.querySelectorAll('.nav-person').forEach(link => {
             link.addEventListener('mouseenter', function() {
-                const icon = this.querySelector('.member-icon');
-                icon.style.transform = 'scale(1.2)';
+                const icon = this.querySelector('.nav-icon');
+                icon.style.transform = 'scale(1.2) rotate(5deg)';
                 icon.style.transition = 'transform 0.3s ease';
             });
             
             link.addEventListener('mouseleave', function() {
-                const icon = this.querySelector('.member-icon');
-                icon.style.transform = 'scale(1)';
+                const icon = this.querySelector('.nav-icon');
+                icon.style.transform = 'scale(1) rotate(0deg)';
             });
         });
+        
+        // Special animation for king
+        const kingLink = document.querySelector('.king-nav');
+        if (kingLink) {
+            kingLink.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.nav-icon');
+                icon.style.transform = 'scale(1.3) rotate(10deg)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            
+            kingLink.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.nav-icon');
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        }
     </script>
 </body>
 </html>
