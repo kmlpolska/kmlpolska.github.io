@@ -46,9 +46,9 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 40px 180px;
             position: relative;
             z-index: 1;
         }
@@ -75,7 +75,7 @@
         
         .letter-header {
             background: linear-gradient(135deg, var(--accent) 0%, #660000 100%);
-            padding: 80px 40px 60px;
+            padding: 60px 40px;
             text-align: center;
             position: relative;
             border-bottom: 6px solid var(--gold);
@@ -90,127 +90,6 @@
             bottom: 0;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.3;
-        }
-        
-        /* KRÓL - CENTRALNA NAWIGACJA */
-        .king-navigation {
-            position: absolute;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-        
-        .king-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            background: linear-gradient(135deg, #c9a145 0%, #ffd700 100%);
-            border-radius: 20px;
-            padding: 15px 25px;
-            border: 3px solid var(--accent);
-            box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.4),
-                0 0 30px rgba(201, 161, 69, 0.4),
-                inset 0 0 20px rgba(255, 255, 255, 0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            animation: kingGlow 3s ease-in-out infinite;
-        }
-        
-        @keyframes kingGlow {
-            0%, 100% { 
-                box-shadow: 
-                    0 10px 30px rgba(0, 0, 0, 0.4),
-                    0 0 30px rgba(201, 161, 69, 0.4),
-                    inset 0 0 20px rgba(255, 255, 255, 0.3);
-            }
-            50% { 
-                box-shadow: 
-                    0 10px 30px rgba(0, 0, 0, 0.4),
-                    0 0 40px rgba(201, 161, 69, 0.6),
-                    inset 0 0 20px rgba(255, 255, 255, 0.4);
-            }
-        }
-        
-        .king-link:hover {
-            transform: translateX(-50%) scale(1.05);
-            border-color: #fff;
-            animation: kingHover 1.5s ease-in-out infinite;
-        }
-        
-        @keyframes kingHover {
-            0%, 100% { 
-                box-shadow: 
-                    0 15px 40px rgba(0, 0, 0, 0.5),
-                    0 0 40px rgba(201, 161, 69, 0.6),
-                    inset 0 0 25px rgba(255, 255, 255, 0.4);
-            }
-            50% { 
-                box-shadow: 
-                    0 15px 40px rgba(0, 0, 0, 0.5),
-                    0 0 50px rgba(201, 161, 69, 0.8),
-                    inset 0 0 25px rgba(255, 255, 255, 0.5);
-            }
-        }
-        
-        .king-link::before {
-            content: "";
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #ffd700, #c9a145, #ffd700);
-            border-radius: 22px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .king-link:hover::before {
-            opacity: 1;
-        }
-        
-        .king-icon {
-            font-size: 2.8rem;
-            color: var(--accent);
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .king-link:hover .king-icon {
-            transform: scale(1.2) rotate(10deg);
-            color: #fff;
-        }
-        
-        .king-name {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            color: var(--accent);
-            font-weight: 900;
-            text-align: center;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-        
-        .king-link:hover .king-name {
-            color: #fff;
-        }
-        
-        .king-role {
-            font-size: 0.85rem;
-            color: var(--accent);
-            text-align: center;
-            margin-top: 3px;
-            font-weight: 600;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-        
-        .king-link:hover .king-role {
-            color: #fff;
         }
         
         .emblems {
@@ -264,23 +143,24 @@
             position: relative;
         }
         
-        /* LEWA NAWIGACJA - POPRAWIONA */
+        /* LEWA NAWIGACJA - POWIĘKSZONA */
         .nav-left {
             position: fixed;
-            left: 30px;
+            left: 20px;
             top: 50%;
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
             gap: 25px;
             z-index: 100;
-            animation: slideInLeft 0.8s ease-out 0.2s both;
+            animation: slideInLeft 0.8s ease-out;
+            width: 180px;
         }
         
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateY(-50%) translateX(-30px);
+                transform: translateY(-50%) translateX(-50px);
             }
             to {
                 opacity: 1;
@@ -288,23 +168,24 @@
             }
         }
         
-        /* PRAWA NAWIGACJA - POPRAWIONA */
+        /* PRAWA NAWIGACJA - POWIĘKSZONA */
         .nav-right {
             position: fixed;
-            right: 30px;
+            right: 20px;
             top: 50%;
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
             gap: 25px;
             z-index: 100;
-            animation: slideInRight 0.8s ease-out 0.2s both;
+            animation: slideInRight 0.8s ease-out;
+            width: 180px;
         }
         
         @keyframes slideInRight {
             from {
                 opacity: 0;
-                transform: translateY(-50%) translateX(30px);
+                transform: translateY(-50%) translateX(50px);
             }
             to {
                 opacity: 1;
@@ -312,23 +193,23 @@
             }
         }
         
-        /* STYLE DLA LINKÓW NAWIGACYJNYCH */
+        /* STYLE DLA LINKÓW NAWIGACYJNYCH - POWIĘKSZONE */
         .nav-person {
             display: flex;
-            flex-direction: column;
             align-items: center;
             text-decoration: none;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            padding: 20px 15px;
+            padding: 20px;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.98) 100%);
             border-radius: 20px;
             border: 3px solid transparent;
             box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.2),
-                inset 0 0 20px rgba(255, 255, 255, 0.5);
-            width: 120px;
+                0 15px 40px rgba(0, 0, 0, 0.25),
+                inset 0 0 30px rgba(255, 255, 255, 0.6);
             position: relative;
             overflow: hidden;
+            min-height: 120px;
+            width: 100%;
         }
         
         .nav-person::before {
@@ -342,7 +223,7 @@
                 rgba(13, 21, 58, 0.1) 0%, 
                 rgba(139, 0, 0, 0.1) 50%, 
                 rgba(201, 161, 69, 0.1) 100%);
-            border-radius: 18px;
+            border-radius: 17px;
             z-index: 1;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -353,44 +234,82 @@
         }
         
         .nav-person:hover {
-            transform: translateY(-8px) scale(1.05);
+            transform: translateX(0) scale(1.05) translateY(-5px);
             border-color: var(--accent);
             box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.35),
+                inset 0 0 35px rgba(255, 255, 255, 0.7);
+        }
+        
+        /* SPECJALNY STYL DLA KRÓLA */
+        .king-person {
+            background: linear-gradient(135deg, rgba(201, 161, 69, 0.95) 0%, rgba(255, 215, 0, 0.95) 100%) !important;
+            border: 3px solid var(--accent) !important;
+            box-shadow: 
                 0 15px 40px rgba(0, 0, 0, 0.3),
-                inset 0 0 25px rgba(255, 255, 255, 0.6);
+                inset 0 0 30px rgba(255, 255, 255, 0.7),
+                0 0 40px rgba(201, 161, 69, 0.4) !important;
+            animation: kingGlow 3s ease-in-out infinite;
         }
         
-        .nav-left .nav-person {
-            align-items: flex-start;
+        @keyframes kingGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 15px 40px rgba(0, 0, 0, 0.3),
+                    inset 0 0 30px rgba(255, 255, 255, 0.7),
+                    0 0 40px rgba(201, 161, 69, 0.4);
+            }
+            50% { 
+                box-shadow: 
+                    0 15px 40px rgba(0, 0, 0, 0.3),
+                    inset 0 0 30px rgba(255, 255, 255, 0.7),
+                    0 0 50px rgba(201, 161, 69, 0.6);
+            }
         }
         
-        .nav-right .nav-person {
-            align-items: flex-end;
+        .king-person:hover {
+            border-color: #fff !important;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.4),
+                inset 0 0 35px rgba(255, 255, 255, 0.8),
+                0 0 60px rgba(201, 161, 69, 0.6) !important;
         }
         
         .nav-icon-wrapper {
             position: relative;
             z-index: 2;
-            margin-bottom: 12px;
-            width: 60px;
-            height: 60px;
+            margin-right: 20px;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .nav-left .nav-person {
+            flex-direction: row;
+        }
+        
+        .nav-right .nav-person {
+            flex-direction: row-reverse;
+        }
+        
+        .nav-right .nav-icon-wrapper {
+            margin-right: 0;
+            margin-left: 20px;
         }
         
         .nav-person:hover .nav-icon-wrapper {
-            transform: scale(1.15) rotate(5deg);
-            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transform: scale(1.15) rotate(8deg);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
         
         .nav-icon {
-            font-size: 2.2rem;
+            font-size: 3.5rem;
             color: white;
             transition: all 0.3s ease;
         }
@@ -402,25 +321,24 @@
         .nav-text {
             position: relative;
             z-index: 2;
+            flex-grow: 1;
         }
         
         .nav-name {
             font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--primary);
-            font-weight: 700;
-            text-align: center;
+            font-weight: 900;
             line-height: 1.2;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
         
         .nav-role {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: #666;
-            text-align: center;
-            line-height: 1.3;
-            font-weight: 500;
+            line-height: 1.4;
+            font-weight: 600;
         }
         
         .nav-left .nav-name,
@@ -433,21 +351,25 @@
             text-align: right;
         }
         
-        /* SPECJALNE STYLE DLA POSZCZEGÓLNYCH LINKÓW */
-        .nav-person:nth-child(1) .nav-icon-wrapper {
+        /* KOLORY DLA POSZCZEGÓLNYCH OSÓB */
+        .nav-person[href*="teek"] .nav-icon-wrapper {
             background: linear-gradient(135deg, #2c5282 0%, #2b6cb0 100%);
         }
         
-        .nav-person:nth-child(2) .nav-icon-wrapper {
+        .nav-person[href*="Nabizon"] .nav-icon-wrapper {
             background: linear-gradient(135deg, #234e52 0%, #285e61 100%);
         }
         
-        .nav-person:nth-child(3) .nav-icon-wrapper {
+        .nav-person[href*="Mateusz"] .nav-icon-wrapper {
             background: linear-gradient(135deg, #702459 0%, #97266d 100%);
         }
         
-        .nav-person:nth-child(4) .nav-icon-wrapper {
+        .nav-person[href*="jakub"] .nav-icon-wrapper {
             background: linear-gradient(135deg, #5a67d8 0%, #4c51bf 100%);
+        }
+        
+        .nav-person[href*="StretchyDev"] .nav-icon-wrapper {
+            background: linear-gradient(135deg, #c9a145 0%, #ffd700 100%) !important;
         }
         
         .letter-content {
@@ -617,10 +539,85 @@
         }
         
         /* RESPONSYWNOŚĆ */
+        @media (max-width: 1400px) {
+            .container {
+                padding: 40px 200px;
+            }
+            
+            .nav-left, .nav-right {
+                width: 160px;
+            }
+            
+            .nav-person {
+                padding: 18px;
+                min-height: 110px;
+            }
+            
+            .nav-icon-wrapper {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .nav-icon {
+                font-size: 3rem;
+            }
+            
+            .nav-name {
+                font-size: 1.2rem;
+            }
+            
+            .nav-role {
+                font-size: 0.85rem;
+            }
+        }
+        
         @media (max-width: 1200px) {
+            .container {
+                padding: 40px 180px;
+            }
+            
+            .nav-left, .nav-right {
+                width: 150px;
+            }
+            
+            .nav-person {
+                padding: 16px;
+                min-height: 105px;
+            }
+            
+            .nav-icon-wrapper {
+                width: 65px;
+                height: 65px;
+            }
+            
+            .nav-icon {
+                font-size: 2.8rem;
+            }
+            
+            .nav-name {
+                font-size: 1.15rem;
+            }
+        }
+        
+        @media (max-width: 1100px) {
+            .container {
+                padding: 40px 160px;
+            }
+            
+            .nav-left, .nav-right {
+                width: 140px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                padding: 30px 20px;
+                max-width: 800px;
+            }
+            
             .nav-left, .nav-right {
                 position: fixed;
-                bottom: 25px;
+                bottom: 20px;
                 top: auto;
                 left: 0;
                 right: 0;
@@ -628,14 +625,16 @@
                 flex-direction: row;
                 justify-content: center;
                 gap: 15px;
-                padding: 0 20px;
-                animation: slideUp 0.8s ease-out 0.2s both;
+                padding: 0 15px;
+                animation: slideUp 0.8s ease-out;
+                width: auto;
+                height: auto;
             }
             
             @keyframes slideUp {
                 from {
                     opacity: 0;
-                    transform: translateY(30px);
+                    transform: translateY(50px);
                 }
                 to {
                     opacity: 1;
@@ -644,56 +643,41 @@
             }
             
             .nav-person {
-                width: 110px;
-                padding: 15px 10px;
+                width: 160px;
+                min-height: 100px;
+                padding: 15px;
+                flex-direction: column !important;
+                align-items: center;
             }
             
             .nav-icon-wrapper {
-                width: 50px;
-                height: 50px;
-                margin-bottom: 8px;
+                margin: 0 0 12px 0 !important;
+                width: 60px;
+                height: 60px;
             }
             
             .nav-icon {
-                font-size: 1.8rem;
+                font-size: 2.5rem;
+            }
+            
+            .nav-text {
+                text-align: center !important;
             }
             
             .nav-name {
-                font-size: 1rem;
+                font-size: 1.1rem;
+                text-align: center !important;
             }
             
             .nav-role {
-                font-size: 0.75rem;
-            }
-            
-            .king-navigation {
-                top: 20px;
-            }
-            
-            .king-link {
-                padding: 12px 20px;
-            }
-            
-            .king-icon {
-                font-size: 2.2rem;
-            }
-            
-            .king-name {
-                font-size: 1rem;
-            }
-            
-            .king-role {
-                font-size: 0.75rem;
+                font-size: 0.8rem;
+                text-align: center !important;
             }
         }
         
         @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px;
-            }
-            
             .letter-header {
-                padding: 70px 25px 50px;
+                padding: 50px 25px;
             }
             
             .emblems {
@@ -705,7 +689,7 @@
             }
             
             .letter-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .letter-subtitle {
@@ -756,52 +740,67 @@
             
             .nav-left, .nav-right {
                 gap: 10px;
-                bottom: 20px;
             }
             
             .nav-person {
-                width: 100px;
-                padding: 12px 8px;
+                width: 140px;
+                min-height: 90px;
+                padding: 12px;
             }
             
             .nav-icon-wrapper {
-                width: 45px;
-                height: 45px;
-                margin-bottom: 6px;
+                width: 55px;
+                height: 55px;
+                margin-bottom: 8px !important;
             }
             
             .nav-icon {
-                font-size: 1.6rem;
+                font-size: 2.2rem;
             }
             
             .nav-name {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
             
             .nav-role {
-                font-size: 0.7rem;
+                font-size: 0.75rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .nav-left, .nav-right {
+                gap: 8px;
+                bottom: 15px;
             }
             
-            .king-link {
-                padding: 10px 15px;
+            .nav-person {
+                width: 120px;
+                min-height: 85px;
+                padding: 10px;
             }
             
-            .king-icon {
-                font-size: 1.8rem;
+            .nav-icon-wrapper {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 6px !important;
             }
             
-            .king-name {
-                font-size: 0.9rem;
+            .nav-icon {
+                font-size: 2rem;
             }
             
-            .king-role {
+            .nav-name {
+                font-size: 0.95rem;
+            }
+            
+            .nav-role {
                 font-size: 0.7rem;
             }
         }
         
         @media (max-width: 480px) {
             .letter-title {
-                font-size: 1.7rem;
+                font-size: 1.8rem;
             }
             
             .letter-body {
@@ -813,89 +812,73 @@
             }
             
             .nav-left, .nav-right {
+                flex-wrap: wrap;
                 gap: 8px;
-                bottom: 15px;
+                bottom: 10px;
             }
             
             .nav-person {
-                width: 85px;
-                padding: 10px 6px;
+                width: calc(50% - 8px);
+                min-height: 80px;
+                padding: 10px 8px;
+            }
+            
+            .nav-icon-wrapper {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .nav-icon {
+                font-size: 1.8rem;
+            }
+            
+            .nav-name {
+                font-size: 0.9rem;
+            }
+            
+            .nav-role {
+                font-size: 0.65rem;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .nav-person {
+                width: calc(50% - 6px);
+                padding: 8px 6px;
             }
             
             .nav-icon-wrapper {
                 width: 40px;
                 height: 40px;
-                margin-bottom: 5px;
             }
             
             .nav-icon {
-                font-size: 1.4rem;
-            }
-            
-            .nav-name {
-                font-size: 0.8rem;
-            }
-            
-            .nav-role {
-                font-size: 0.65rem;
-            }
-            
-            .king-navigation {
-                top: 15px;
-            }
-            
-            .king-link {
-                padding: 8px 12px;
-            }
-            
-            .king-icon {
                 font-size: 1.6rem;
-                margin-bottom: 4px;
-            }
-            
-            .king-name {
-                font-size: 0.85rem;
-            }
-            
-            .king-role {
-                font-size: 0.65rem;
-            }
-        }
-        
-        /* DLA BARDZO MAŁYCH EKRANÓW */
-        @media (max-width: 380px) {
-            .nav-left, .nav-right {
-                gap: 5px;
-            }
-            
-            .nav-person {
-                width: 75px;
-                padding: 8px 4px;
-            }
-            
-            .nav-icon-wrapper {
-                width: 35px;
-                height: 35px;
-            }
-            
-            .nav-icon {
-                font-size: 1.2rem;
             }
             
             .nav-name {
-                font-size: 0.75rem;
+                font-size: 0.85rem;
             }
             
             .nav-role {
                 font-size: 0.6rem;
-                display: none; /* Na bardzo małych ekranach ukrywamy role */
             }
         }
     </style>
 </head>
 <body>
-    <!-- LEWA NAWIGACJA -->
+    <!-- LEWA NAWIGACJA (Król + teek) -->
     <div class="nav-left">
+        <a href="https://kmlpolska.pl/StretchyDev/" class="nav-person king-person" target="_blank">
+            <div class="nav-icon-wrapper">
+                <div class="nav-icon">👑</div>
+            </div>
+            <div class="nav-text">
+                <div class="nav-name">StretchyDev</div>
+                <div class="nav-role">Król KML<br>Założyciel</div>
+            </div>
+        </a>
+        
         <a href="https://kmlpolska.pl/teek/" class="nav-person" target="_blank">
             <div class="nav-icon-wrapper">
                 <div class="nav-icon">📋</div>
@@ -905,19 +888,9 @@
                 <div class="nav-role">Specjalista<br>ds. Rekrutacji</div>
             </div>
         </a>
-        
-        <a href="https://kmlpolska.pl/Nabizon/" class="nav-person" target="_blank">
-            <div class="nav-icon-wrapper">
-                <div class="nav-icon">🛡️</div>
-            </div>
-            <div class="nav-text">
-                <div class="nav-name">Nabizon</div>
-                <div class="nav-role">Strażnik<br>Dyscypliny</div>
-            </div>
-        </a>
     </div>
     
-    <!-- PRAWA NAWIGACJA -->
+    <!-- PRAWA NAWIGACJA (Mateusz + Jakub + Nabizon) -->
     <div class="nav-right">
         <a href="https://kmlpolska.pl/Mateusz/" class="nav-person" target="_blank">
             <div class="nav-icon-wrapper">
@@ -938,21 +911,22 @@
                 <div class="nav-role">Wiceprzewodniczący<br>Rady Najwyższej</div>
             </div>
         </a>
+        
+        <a href="https://kmlpolska.pl/Nabizon/" class="nav-person" target="_blank">
+            <div class="nav-icon-wrapper">
+                <div class="nav-icon">🛡️</div>
+            </div>
+            <div class="nav-text">
+                <div class="nav-name">Nabizon</div>
+                <div class="nav-role">Strażnik<br>Dyscypliny</div>
+            </div>
+        </a>
     </div>
     
     <!-- GŁÓWNA ZAWARTOŚĆ -->
     <div class="container">
         <div class="letter-wrapper">
             <div class="letter-header">
-                <!-- KRÓL - CENTRALNY LINK -->
-                <div class="king-navigation">
-                    <a href="https://kmlpolska.pl/StretchyDev/" class="king-link" target="_blank">
-                        <div class="king-icon">👑</div>
-                        <div class="king-name">Król KML</div>
-                        <div class="king-role">StretchyDev</div>
-                    </a>
-                </div>
-                
                 <div class="emblems">
                     <i class="fas fa-crown emblem"></i>
                     <i class="fas fa-balance-scale emblem"></i>
@@ -1044,11 +1018,6 @@
         // Animacja ikon nawigacji
         document.addEventListener('DOMContentLoaded', function() {
             // Płynne pojawianie się elementów podczas scrollowania
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1056,7 +1025,10 @@
                         entry.target.style.transform = 'translateY(0)';
                     }
                 });
-            }, observerOptions);
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
             
             // Animacja dla paragrafów
             document.querySelectorAll('.letter-content p, .highlight-box, .closing').forEach(el => {
@@ -1082,8 +1054,8 @@
                 
                 emblems.forEach((emblem, index) => {
                     const speed = (index + 1) * 0.5;
-                    const xMove = (x - 0.5) * speed * 15;
-                    const yMove = (y - 0.5) * speed * 15;
+                    const xMove = (x - 0.5) * speed * 20;
+                    const yMove = (y - 0.5) * speed * 20;
                     emblem.style.transform = `translate(${xMove}px, ${yMove}px) rotate(${xMove * 0.5}deg)`;
                 });
             });
@@ -1095,48 +1067,60 @@
                     const iconWrapper = this.querySelector('.nav-icon-wrapper');
                     const icon = this.querySelector('.nav-icon');
                     
-                    // Dodanie efektu "pulse"
-                    iconWrapper.style.animation = 'pulse 0.5s ease';
-                    icon.style.transform = 'scale(1.1) rotate(5deg)';
+                    // Efekt bounce dla ikony
+                    iconWrapper.style.transform = 'scale(1.2) rotate(10deg)';
+                    icon.style.transform = 'scale(1.15)';
                     
-                    // Reset animacji po zakończeniu
-                    setTimeout(() => {
-                        iconWrapper.style.animation = '';
-                    }, 500);
+                    // Jeśli to król, dodatkowe efekty
+                    if (this.classList.contains('king-person')) {
+                        this.style.animation = 'kingGlow 1s ease-in-out infinite';
+                        icon.style.filter = 'drop-shadow(0 0 10px rgba(255, 215, 0, 0.8))';
+                    }
                 });
                 
                 link.addEventListener('mouseleave', function() {
+                    const iconWrapper = this.querySelector('.nav-icon-wrapper');
                     const icon = this.querySelector('.nav-icon');
-                    icon.style.transform = 'scale(1) rotate(0deg)';
+                    
+                    iconWrapper.style.transform = 'scale(1) rotate(0deg)';
+                    icon.style.transform = 'scale(1)';
+                    
+                    // Reset efektów króla
+                    if (this.classList.contains('king-person')) {
+                        this.style.animation = 'kingGlow 3s ease-in-out infinite';
+                        icon.style.filter = 'none';
+                    }
                 });
             });
             
-            // Specjalna animacja dla króla
-            const kingLink = document.querySelector('.king-link');
+            // Specjalna animacja dla króla na kliknięcie
+            const kingLink = document.querySelector('.king-person');
             if (kingLink) {
-                kingLink.addEventListener('mouseenter', function() {
-                    const icon = this.querySelector('.king-icon');
-                    icon.style.transform = 'scale(1.3) rotate(15deg)';
-                    icon.style.filter = 'drop-shadow(0 0 8px rgba(255, 215, 0, 0.8))';
-                });
-                
-                kingLink.addEventListener('mouseleave', function() {
-                    const icon = this.querySelector('.king-icon');
-                    icon.style.transform = 'scale(1) rotate(0deg)';
-                    icon.style.filter = 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))';
+                kingLink.addEventListener('click', function(e) {
+                    const icon = this.querySelector('.nav-icon');
+                    
+                    // Animacja "koronacja"
+                    icon.style.transition = 'all 0.5s ease';
+                    icon.style.transform = 'scale(1.5) rotate(360deg)';
+                    icon.style.filter = 'drop-shadow(0 0 20px gold)';
+                    
+                    setTimeout(() => {
+                        icon.style.transform = 'scale(1) rotate(0deg)';
+                        icon.style.filter = 'none';
+                    }, 500);
                 });
             }
             
-            // Dodanie styli dla animacji pulse
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes pulse {
-                    0% { transform: scale(1); }
-                    50% { transform: scale(1.1); }
-                    100% { transform: scale(1); }
-                }
-            `;
-            document.head.appendChild(style);
+            // Efekt rozjaśnienia dla całej strony przy hover na przelotnikach
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    document.querySelector('.letter-wrapper').style.filter = 'brightness(1.02)';
+                });
+                
+                link.addEventListener('mouseleave', () => {
+                    document.querySelector('.letter-wrapper').style.filter = 'brightness(1)';
+                });
+            });
         });
     </script>
 </body>
