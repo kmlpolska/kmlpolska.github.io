@@ -91,6 +91,38 @@
             opacity: 0.3;
         }
         
+        .king-section {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            z-index: 3;
+        }
+        
+        .king-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 3px solid var(--gold);
+            border-radius: 50px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        .king-badge:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+        
         .emblems {
             display: flex;
             justify-content: center;
@@ -98,6 +130,7 @@
             margin-bottom: 30px;
             position: relative;
             z-index: 2;
+            margin-top: 20px;
         }
         
         .emblem {
@@ -139,6 +172,82 @@
         
         .letter-body {
             padding: 60px 50px;
+            position: relative;
+        }
+        
+        .members-container {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+            z-index: 1;
+        }
+        
+        .members-left {
+            left: -180px;
+            align-items: flex-end;
+        }
+        
+        .members-right {
+            right: -180px;
+            align-items: flex-start;
+        }
+        
+        .member-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: 140px;
+            padding: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+        }
+        
+        .members-left .member-link {
+            text-align: right;
+        }
+        
+        .members-right .member-link {
+            text-align: left;
+        }
+        
+        .member-link:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .member-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .member-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .member-role {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+        }
+        
+        .letter-content {
+            position: relative;
+            z-index: 2;
         }
         
         .salutation {
@@ -149,7 +258,7 @@
             font-weight: 700;
         }
         
-        .letter-body p {
+        .letter-content p {
             font-size: 1.15rem;
             margin-bottom: 25px;
             color: #2a2a2a;
@@ -157,7 +266,7 @@
             line-height: 1.9;
         }
         
-        .letter-body strong {
+        .letter-content strong {
             color: var(--accent);
             font-weight: 700;
         }
@@ -312,6 +421,32 @@
                 padding: 40px 25px;
             }
             
+            .king-section {
+                position: relative;
+                top: 0;
+                margin-bottom: 20px;
+            }
+            
+            .members-container {
+                position: static;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+            
+            .members-left, .members-right {
+                position: static;
+                flex-direction: row;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .member-link {
+                width: 120px;
+            }
+            
             .emblems {
                 gap: 25px;
             }
@@ -332,7 +467,7 @@
                 padding: 40px 30px;
             }
             
-            .letter-body p,
+            .letter-content p,
             .principles-list li {
                 font-size: 1.05rem;
             }
@@ -383,6 +518,19 @@
             .letter-footer {
                 padding: 30px 20px;
             }
+            
+            .member-link {
+                width: 100px;
+                padding: 10px;
+            }
+            
+            .member-name {
+                font-size: 0.9rem;
+            }
+            
+            .member-role {
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
@@ -390,6 +538,13 @@
     <div class="container">
         <div class="letter-wrapper">
             <div class="letter-header">
+                <div class="king-section">
+                    <a href="https://kmlpolska.pl/StretchyDev/" class="king-badge" target="_blank">
+                        <i class="fas fa-crown"></i>
+                        <span>Król KML - StretchyDev</span>
+                    </a>
+                </div>
+                
                 <div class="emblems">
                     <i class="fas fa-crown emblem"></i>
                     <i class="fas fa-balance-scale emblem"></i>
@@ -400,50 +555,82 @@
             </div>
             
             <div class="letter-body">
-                <p class="salutation">Drodzy Członkowie, Sympatycy, wszyscy co szli z nami tą dziwną, piękną i cholernie trudną drogą… 💔</p>
-                
-                <p>Z wielkim bólem ogłaszam: <strong>Konfederacja Monarchistyczno-Libertariańska przestaje istnieć.</strong> Rozwiązujemy KML – formalnie i definitywnie.</p>
-                
-                <p>Pomimo setek godzin rozmów, weryfikacji, memów, eventów, wiadomości o 4 rano, prób ratowania wszystkiego… <strong>nie udało się</strong>.</p>
-                
-                <p>Nie było dramatu, zdrady ani wybuchu. Był <strong>powolny, cichy rozkład</strong> – motywacja gasła, ludzie odchodzili po cichu, ogień stał się wspomnieniem.</p>
-                
-                <p>Próbowaliśmy wszystkiego: rygor → luz → hybryda → małe cele → wielkie wizje → eventy → cisza → reanimacje. Nic nie przetrwało próby czasu.</p>
-                
-                <p>Utrzymywanie na siłę martwego projektu byłoby <strong>zdradą</strong> wobec tego, co głosiliśmy: jakość > ilość • autentyczność > fasada • wolność > przymus trwania.</p>
-                
-                <p>Dlatego składam <strong>oficjalną demisję</strong> i kończymy ten rozdział. <strong>Kropka.</strong></p>
-                
-                <p>Nie będzie KML 2.0, rebrandu ani soft resetu.</p>
-                
-                <div class="highlight-box">
-                    <p>Ale chcę, żeby zostało coś więcej:</p>
-                    <ul class="principles-list">
-                        <li>Nie żałuję <strong>ani minuty</strong></li>
-                        <li>Poznałem tu ludzi, których szanuję i z którymi zostanę w kontakcie</li>
-                        <li>Idee monarchistyczno-libertariańskie <strong>żyją dalej</strong> – są większe niż jeden serwer</li>
-                        <li>To co robiliśmy, <strong>miało sens</strong> – nawet jeśli wynik inny niż marzyliśmy</li>
-                    </ul>
+                <!-- Lewa kolumna z 2 członkami -->
+                <div class="members-container members-left">
+                    <a href="https://kmlpolska.pl/teek/" class="member-link" target="_blank">
+                        <i class="fas fa-user-tie member-icon"></i>
+                        <span class="member-name">teek</span>
+                        <span class="member-role">Poseł Rady Najwyższej<br>Specjalista ds. Rekrutacji</span>
+                    </a>
+                    
+                    <a href="https://kmlpolska.pl/Nabizon/" class="member-link" target="_blank">
+                        <i class="fas fa-shield-alt member-icon"></i>
+                        <span class="member-name">Nabizon</span>
+                        <span class="member-role">Poseł Rady Najwyższej<br>Strażnik Dyscypliny</span>
+                    </a>
                 </div>
                 
-                <p>Jeśli kiedyś – za rok, za 5 lat – zechcecie wrócić do tych idei w innej formie… wiedzcie: <strong>nie jesteście pierwsi</strong>. Ktoś już tę drogę przeszedł. I nie na darmo.</p>
+                <!-- Prawa kolumna z 2 członkami -->
+                <div class="members-container members-right">
+                    <a href="https://kmlpolska.pl/Mateusz/" class="member-link" target="_blank">
+                        <i class="fas fa-lightbulb member-icon"></i>
+                        <span class="member-name">Mateusz</span>
+                        <span class="member-role">Naczelnik KML<br>Wizjoner i Architekt</span>
+                    </a>
+                    
+                    <a href="https://kmlpolska.pl/jakub/" class="member-link" target="_blank">
+                        <i class="fas fa-balance-scale member-icon"></i>
+                        <span class="member-name">Jakub</span>
+                        <span class="member-role">Wiceprzewodniczący<br>Rady Najwyższej</span>
+                    </a>
+                </div>
                 
-                <p><strong>Dziękuję z całego serca</strong> każdemu, kto:</p>
-                
-                <ul class="principles-list">
-                    <li>napisał porządną odpowiedź weryfikacyjną</li>
-                    <li>siedział do nocy na moderacji</li>
-                    <li>bronił zasad do końca</li>
-                    <li>memował z nami do rana</li>
-                    <li>naprawdę uwierzył w to połączenie idei</li>
-                </ul>
-                
-                <p>Na dziś naprawdę kończymy.</p>
-                
-                <div class="closing">
-                    <p class="closing-text">Z głębokim szacunkiem, wdzięcznością i cichym smutkiem,</p>
-                    <p class="signature">StretchyDev/Mate/Jakub/Teek/Nabizon</p>
-                    <p class="signature-detail">(od pierwszego dnia do ostatniego) 🖤</p>
+                <div class="letter-content">
+                    <p class="salutation">Drodzy Członkowie, Sympatycy, wszyscy co szli z nami tą dziwną, piękną i cholernie trudną drogą… 💔</p>
+                    
+                    <p>Z wielkim bólem ogłaszam: <strong>Konfederacja Monarchistyczno-Libertariańska przestaje istnieć.</strong> Rozwiązujemy KML – formalnie i definitywnie.</p>
+                    
+                    <p>Pomimo setek godzin rozmów, weryfikacji, memów, eventów, wiadomości o 4 rano, prób ratowania wszystkiego… <strong>nie udało się</strong>.</p>
+                    
+                    <p>Nie było dramatu, zdrady ani wybuchu. Był <strong>powolny, cichy rozkład</strong> – motywacja gasła, ludzie odchodzili po cichu, ogień stał się wspomnieniem.</p>
+                    
+                    <p>Próbowaliśmy wszystkiego: rygor → luz → hybryda → małe cele → wielkie wizje → eventy → cisza → reanimacje. Nic nie przetrwało próby czasu.</p>
+                    
+                    <p>Utrzymywanie na siłę martwego projektu byłoby <strong>zdradą</strong> wobec tego, co głosiliśmy: jakość > ilość • autentyczność > fasada • wolność > przymus trwania.</p>
+                    
+                    <p>Dlatego składam <strong>oficjalną demisję</strong> i kończymy ten rozdział. <strong>Kropka.</strong></p>
+                    
+                    <p>Nie będzie KML 2.0, rebrandu ani soft resetu.</p>
+                    
+                    <div class="highlight-box">
+                        <p>Ale chcę, żeby zostało coś więcej:</p>
+                        <ul class="principles-list">
+                            <li>Nie żałuję <strong>ani minuty</strong></li>
+                            <li>Poznałem tu ludzi, których szanuję i z którymi zostanę w kontakcie</li>
+                            <li>Idee monarchistyczno-libertariańskie <strong>żyją dalej</strong> – są większe niż jeden serwer</li>
+                            <li>To co robiliśmy, <strong>miało sens</strong> – nawet jeśli wynik inny niż marzyliśmy</li>
+                        </ul>
+                    </div>
+                    
+                    <p>Jeśli kiedyś – za rok, za 5 lat – zechcecie wrócić do tych idei w innej formie… wiedzcie: <strong>nie jesteście pierwsi</strong>. Ktoś już tę drogę przeszedł. I nie na darmo.</p>
+                    
+                    <p><strong>Dziękuję z całego serca</strong> każdemu, kto:</p>
+                    
+                    <ul class="principles-list">
+                        <li>napisał porządną odpowiedź weryfikacyjną</li>
+                        <li>siedział do nocy na moderacji</li>
+                        <li>bronił zasad do końca</li>
+                        <li>memował z nami do rana</li>
+                        <li>naprawdę uwierzył w to połączenie idei</li>
+                    </ul>
+                    
+                    <p>Na dziś naprawdę kończymy.</p>
+                    
+                    <div class="closing">
+                        <p class="closing-text">Z głębokim szacunkiem, wdzięcznością i cichym smutkiem,</p>
+                        <p class="signature">StretchyDev/Mate/Jakub/Teek/Nabizon</p>
+                        <p class="signature-detail">(od pierwszego dnia do ostatniego) 🖤</p>
+                    </div>
                 </div>
             </div>
             
@@ -469,7 +656,7 @@
                     </a>
                 </div>
                 <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.7;">
-                    © 2024-2026 Konfederacja Monarchistyczno-Libertariańska. Wszelkie prawa zastrzeżone.
+                    © 2026 Konfederacja Monarchistyczno-Libertariańska. Wszelkie prawa zastrzeżone.
                 </p>
             </div>
         </div>
@@ -500,11 +687,25 @@
             });
         }, { threshold: 0.1 });
         
-        document.querySelectorAll('.letter-body p, .highlight-box, .closing').forEach(el => {
+        document.querySelectorAll('.letter-content p, .highlight-box, .closing').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
+        });
+        
+        // Animate member cards on hover
+        document.querySelectorAll('.member-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.member-icon');
+                icon.style.transform = 'scale(1.2)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.member-icon');
+                icon.style.transform = 'scale(1)';
+            });
         });
     </script>
 </body>
