@@ -489,9 +489,9 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-button">
+        <a href="https://kmlpolska.pl" class="back-button" target="_blank">
             <i class="fas fa-arrow-left"></i>
-            <span>Powrót do strony głównej</span>
+            <span>Powrót do strony głównej KML</span>
         </a>
         
         <div class="profile-wrapper">
@@ -614,37 +614,31 @@
                 <div class="section">
                     <h2 class="section-title">
                         <i class="fas fa-road"></i>
-                        Moja Podróż z KML
+                        Historia KML - 1 Miesiąc
                     </h2>
                     <div class="timeline">
                         <div class="timeline-item">
-                            <div class="timeline-date">Początek - 2024</div>
+                            <div class="timeline-date">Styczeń 2026</div>
                             <div class="timeline-content">
                                 <strong>Narodziny Wizji:</strong> Pomysł na serwer łączący monarchizm z libertarianizmem. Pierwsze szkice struktury i doktryny.
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-date">Faza Budowy</div>
+                            <div class="timeline-date">Początek Lutego 2026</div>
                             <div class="timeline-content">
                                 <strong>Tworzenie Fundamentów:</strong> Projektowanie hierarchii, systemu weryfikacji i zasad działania. Rekrutacja pierwszych członków.
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-date">Rozwój</div>
+                            <div class="timeline-date">Połowa Lutego 2026</div>
                             <div class="timeline-content">
-                                <strong>Aktywność i Wzrost:</strong> Organizacja debat, eventów, budowanie społeczności. Setki godzin pracy nad rozwojem projektu.
+                                <strong>Aktywność i Wzrost:</strong> Organizacja pierwszych debat, budowanie społeczności. Intensywna praca nad rozwojem projektu.
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-date">Wyzwania</div>
+                            <div class="timeline-date">Koniec Lutego 2026</div>
                             <div class="timeline-content">
-                                <strong>Próby Ratowania:</strong> Walka z malejącą aktywnością, próby reform i reanimacji projektu. Niezliczone rozmowy i pomysły.
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Koniec - 2026</div>
-                            <div class="timeline-content">
-                                <strong>Godne Zakończenie:</strong> Decyzja o rozwiązaniu KML. Wdzięczność za wszystko, co udało się zbudować i przeżyć.
+                                <strong>Wyzwania i Decyzja:</strong> Zmniejszająca się aktywność społeczności. Decyzja o godnym zakończeniu projektu po intensywnym miesiącu istnienia.
                             </div>
                         </div>
                     </div>
@@ -653,21 +647,22 @@
                 <div class="section">
                     <h2 class="section-title">
                         <i class="fas fa-heart"></i>
-                        Refleksje
+                        Refleksje po Miesiącu
                     </h2>
                     <div class="section-content">
-                        <p>KML był moim projektem od pierwszej iskry pomysłu. Widziałem jego potencjał, wierzyłem w jego misję i dałem z siebie wszystko, by go rozwijać.</p>
-                        <p>Choć kończymy, jestem dumny z tego, co stworzyliśmy. Każda dyskusja, każdy członek, każda chwila miała znaczenie. To była niezwykła podróż.</p>
-                        <p><strong>Dziękuję wszystkim</strong>, którzy uwierzyli w moją wizję i pomogli ją realizować. Bez Was KML nie byłoby tym, czym się stało.</p>
+                        <p>KML było moim projektem od pierwszej iskry pomysłu. Przez jeden intensywny miesiąc widziałem jego potencjał, wierzyłem w jego misję i dałem z siebie wszystko, by go rozwijać.</p>
+                        <p>Choć projekt trwał tylko miesiąc, jestem dumny z tego, co stworzyliśmy. Każda dyskusja, każdy członek, każda chwila miała znaczenie. To była intensywna i wartościowa przygoda.</p>
+                        <p><strong>Dziękuję wszystkim</strong>, którzy uwierzyli w moją wizję i dołączyli do tego miesięcznego eksperymentu. Bez Was KML nie byłoby tym, czym się stało nawet w tak krótkim czasie.</p>
+                        <p>To była moja wizja, moje dziecko. I choć żyło tylko miesiąc, pozostawiło ślad i doświadczenie, które warto było przeżyć.</p>
                     </div>
                 </div>
                 
                 <div class="contact-section">
                     <h3 class="contact-title">Kontakt</h3>
                     <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-discord"></i>
-                            <span>Discord: Mateusz</span>
+                        <a href="https://kmlpolska.pl" class="social-link" target="_blank">
+                            <i class="fas fa-globe"></i>
+                            <span>Strona Główna KML</span>
                         </a>
                     </div>
                 </div>
@@ -694,4 +689,14 @@
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
-              20:50<function_results>OK</function_calls>
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.stat-card, .achievement-item, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
