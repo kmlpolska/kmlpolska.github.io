@@ -3,223 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRUBYTEEK - Gitarzysta z nadwagą</title>
+    <title>GRUBYTEEK - Oliwier Bodek</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial Black', 'Impact', sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #f1f1f1;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: white;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            background: rgba(25, 25, 40, 0.85);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            margin-top: 20px;
-            position: relative;
-            border: 1px solid #4a4a6d;
-        }
-
-        header {
-            background: linear-gradient(90deg, #0f3460 0%, #533483 100%);
-            padding: 25px;
             text-align: center;
-            border-bottom: 5px solid #e94560;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: linear-gradient(90deg, #ff0000 0%, #ff5500 100%);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+            position: relative;
+            border: 5px solid #fff;
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 4rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: #b8b8d1;
-            font-style: italic;
-            margin-bottom: 5px;
-        }
-
-        .guitar-icon {
-            color: #e94560;
-            font-size: 2rem;
-            margin: 0 10px;
-        }
-
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 30px;
-            gap: 30px;
-        }
-
-        .image-section {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            border: 3px solid #533483;
-            position: relative;
-        }
-
-        .guitarist-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .image-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: #e94560;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .info-section {
-            flex: 1;
-            min-width: 300px;
-            padding: 20px;
-            background: rgba(40, 40, 60, 0.6);
-            border-radius: 15px;
-            border-left: 5px solid #e94560;
-        }
-
-        h2 {
-            color: #e94560;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #533483;
-            padding-bottom: 8px;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .stat-item {
-            background: rgba(83, 52, 131, 0.3);
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            background: rgba(83, 52, 131, 0.5);
-        }
-
-        .stat-value {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #e94560;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: #b8b8d1;
-        }
-
-        .description {
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #d1d1e9;
-        }
-
-        .controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-            flex-wrap: wrap;
-            padding: 0 30px;
-        }
-
-        .btn {
-            padding: 12px 25px;
-            background: #0f3460;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn:hover {
-            background: #e94560;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .btn i {
-            font-size: 1.2rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-            color: #8a8ab5;
-            border-top: 1px solid #4a4a6d;
-            width: 100%;
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #e94560;
             letter-spacing: 3px;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 5px 5px 0 #000;
+            margin-bottom: 10px;
+            color: #fff;
         }
 
-        .rock-on {
-            animation: rock 2s infinite;
+        .subtitle {
+            font-size: 1.8rem;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0 #fff;
+        }
+
+        .author {
+            background: #000;
+            color: #ff0000;
+            padding: 15px 30px;
             display: inline-block;
-        }
-
-        @keyframes rock {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(10deg); }
-            75% { transform: rotate(-10deg); }
-        }
-
-        .pulse {
-            animation: pulse 1.5s infinite;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 3px solid #ff0000;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
@@ -228,49 +68,135 @@
             100% { transform: scale(1); }
         }
 
-        .skibidi-frame {
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px solid #ff0000;
+        }
+
+        .image-container {
+            margin: 30px 0;
             position: relative;
+            border-radius: 15px;
             overflow: hidden;
+            border: 5px solid #ff5500;
+            box-shadow: 0 0 30px rgba(255, 85, 0, 0.5);
         }
 
-        .skibidi-frame::before {
-            content: "SKIBIDI!";
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #e94560;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
+        .guitarist-img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s;
+        }
+
+        .guitarist-img:hover {
+            transform: scale(1.02);
+        }
+
+        .image-label {
+            background: #ff0000;
+            color: #000;
+            padding: 15px;
+            font-size: 1.5rem;
             font-weight: bold;
-            z-index: 10;
-            animation: blink 2s infinite;
+            text-transform: uppercase;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
         }
 
-        .skibidi-counter {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            color: #e94560;
-            padding: 5px 10px;
-            border-radius: 20px;
+        .stat-item {
+            background: rgba(255, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #ff5500;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            color: #ff0000;
             font-weight: bold;
-            z-index: 10;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .btn {
+            background: #ff0000;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 3px solid #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn:hover {
+            background: #ff5500;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .signature {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 2px solid #ff0000;
+        }
+
+        .signature-title {
+            font-size: 2rem;
+            color: #ff0000;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .signature-name {
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 3px 3px 0 #ff0000;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            color: #888;
+            border-top: 2px solid #ff0000;
         }
 
         @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-            }
-            
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .stats {
@@ -291,384 +217,182 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">GRUBYTEEK</div>
-            <div class="tagline">Kultowy gitarzysta z legendarnym zdjęciem</div>
-            <h1>Gitarzysta 200% nadwaga</h1>
-            <div>
-                <i class="fas fa-guitar guitar-icon rock-on"></i>
-                <i class="fas fa-music guitar-icon"></i>
-                <i class="fas fa-volume-up guitar-icon rock-on"></i>
-            </div>
-        </header>
-        
-        <div class="content">
-            <div class="image-section skibidi-frame">
-                <div class="skibidi-counter" id="skibidiCounter">Wyświetlenia: 1</div>
-                <img id="guitaristImage" src="skibidi.jpg" alt="Skibidi gitarzysta" class="guitarist-img">
-                <div class="image-label">Legendarne zdjęcie SKIBIDI - zawsze to samo!</div>
-            </div>
-            
-            <div class="info-section">
-                <h2>O gitarzyście Skibidi</h2>
-                <p class="description">
-                    Niezwykły muzyk, który łamie stereotypy. Jego waga nie ogranicza talentu - wręcz przeciwnie! 
-                    Dzięki swojej posturze wydobywa z gitary niesamowicie głębokie brzmienie, które porusza serca fanów na całym świecie.
-                    Gra z pasją i energią, która inspiruje wszystkich wokół. Jego kultowe zdjęcie "skibidi" stało się ikoną rocka.
-                </p>
-                
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-value">200%</div>
-                        <div class="stat-label">Nadwaga</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">100%</div>
-                        <div class="stat-label">Talent</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">∞</div>
-                        <div class="stat-label">Skibidi mocy</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">1</div>
-                        <div class="stat-label">Legendarne zdjęcie</div>
-                    </div>
-                </div>
-                
-                <h2>Dlaczego tylko skibidi.jpg?</h2>
-                <ul style="list-style-type: none; line-height: 1.8; color: #d1d1e9;">
-                    <li><i class="fas fa-check-circle" style="color: #e94560;"></i> Kultowy obraz, który przeszedł do historii</li>
-                    <li><i class="fas fa-check-circle" style="color: #e94560;"></i> Niezmienne źródło inspiracji dla fanów</li>
-                    <li><i class="fas fa-check-circle" style="color: #e94560;"></i> Symbol rockowego ducha i buntu</li>
-                    <li><i class="fas fa-check-circle" style="color: #e94560;"></i> Gwarancja autentyczności GRUBYTEEKa</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="controls">
-            <button class="btn" id="rockBtn">
-                <i class="fas fa-play"></i> Zagraj rocka
-            </button>
-            <button class="btn" id="skibidiBtn">
-                <i class="fas fa-fire"></i> Wzmocnij Skibidi!
-            </button>
-            <button class="btn" id="colorBtn">
-                <i class="fas fa-palette"></i> Zmień motyw
-            </button>
-            <button class="btn" id="pulseBtn">
-                <i class="fas fa-heartbeat"></i> Aktywuj pulsowanie
-            </button>
-        </div>
-        
-        <div style="padding: 20px 30px; background: rgba(15, 52, 96, 0.3); margin: 0 30px 20px; border-radius: 10px;">
-            <h3 style="color: #e94560; margin-bottom: 10px; text-align: center;">
-                <i class="fas fa-info-circle"></i> Informacja o zdjęciu
-            </h3>
-            <p style="text-align: center; color: #d1d1e9;">
-                To zdjęcie <strong>skibidi.jpg</strong> jest zawsze wyświetlane i nigdy się nie zmienia! 
-                To kultowy obraz gitarzysty, który stał się legendą. Każde odświeżenie strony zwiększa licznik wyświetleń.
-            </p>
-        </div>
-        
-        <footer>
-            <p>© 2023 GRUBYTEEK - Wszystkie prawa zastrzeżone. Rock never dies!</p>
-            <p style="margin-top: 5px; font-size: 0.9rem;">
-                Strona wykonana z pasją do muzyki i nietypowych talentów | Zawsze to samo zdjęcie: skibidi.jpg
-            </p>
-        </footer>
+    <div class="header">
+        <h1>GRUBYTEEK</h1>
+        <div class="subtitle">GITARZYSTA 200% NADWAGA</div>
+        <div class="author">AUTOR: OLIWIER BODEK</div>
     </div>
 
+    <div class="content">
+        <div class="image-container">
+            <img id="guitaristImage" src="skibidi.jpg" alt="GrubyTeek" class="guitarist-img">
+            <div class="image-label">LEGENDARNY GRUBYTEEK</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value">200%</div>
+                <div class="stat-label">NADWAGA</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">TALENT</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">GOTOWOŚĆ</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">∞</div>
+                <div class="stat-label">ENERGIA</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" id="rockBtn">
+                <i class="fas fa-guitar"></i> ZAGRAJ ROCKA
+            </button>
+            <button class="btn" id="volumeBtn">
+                <i class="fas fa-volume-up"></i> ZWIĘKSZ GŁOŚNOŚĆ
+            </button>
+            <button class="btn" id="effectBtn">
+                <i class="fas fa-bolt"></i> EFEKTY SPECIALNE
+            </button>
+        </div>
+
+        <div class="signature">
+            <div class="signature-title">OFICJALNY PODPIS</div>
+            <div class="signature-name">GRUBYTEEK - OLIWIER BODEK</div>
+            <div style="margin-top: 15px; font-size: 1.2rem; color: #ff5500;">
+                <i class="fas fa-certificate"></i> ORYGINAŁ - NIE KOPIOWAĆ!
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026TEEK - Wszystkie prawa zastrzeżone</p>
+        <p>Stworzone z pasją do ciężkiego rocka przez Oliwiera Bodeka</p>
+    </footer>
+
     <script>
-        // Licznik wyświetleń zdjęcia skibidi.jpg
-        let skibidiViewCount = localStorage.getItem('skibidiViews') ? 
-            parseInt(localStorage.getItem('skibidiViews')) : 1;
-        
         // Elementy DOM
         const guitaristImage = document.getElementById('guitaristImage');
-        const skibidiCounter = document.getElementById('skibidiCounter');
         const rockBtn = document.getElementById('rockBtn');
-        const skibidiBtn = document.getElementById('skibidiBtn');
-        const colorBtn = document.getElementById('colorBtn');
-        const pulseBtn = document.getElementById('pulseBtn');
-        const container = document.querySelector('.container');
-        const header = document.querySelector('header');
-        const statItems = document.querySelectorAll('.stat-item');
-        const buttons = document.querySelectorAll('.btn');
-        const guitarIcons = document.querySelectorAll('.guitar-icon');
-        
-        // Lista kolorów motywów
-        const themes = [
-            { primary: "#0f3460", secondary: "#533483", accent: "#e94560" },
-            { primary: "#1e5128", secondary: "#4e9f3d", accent: "#d8e9a8" },
-            { primary: "#3d0c11", secondary: "#6d2c41", accent: "#d8a7ca" },
-            { primary: "#1a1a2e", secondary: "#16213e", accent: "#e94560" } // domyślny
-        ];
-        
-        let currentThemeIndex = 3;
-        
-        // Aktualizacja licznika wyświetleń
-        function updateSkibidiCounter() {
-            skibidiViewCount++;
-            localStorage.setItem('skibidiViews', skibidiViewCount);
-            skibidiCounter.textContent = `Wyświetlenia: ${skibidiViewCount}`;
-            
-            // Dodaj efekt wizualny przy aktualizacji licznika
-            skibidiCounter.style.transform = 'scale(1.2)';
-            skibidiCounter.style.color = '#fff';
-            skibidiCounter.style.background = '#e94560';
-            
-            setTimeout(() => {
-                skibidiCounter.style.transform = 'scale(1)';
-                skibidiCounter.style.color = '#e94560';
-                skibidiCounter.style.background = 'rgba(0, 0, 0, 0.7)';
-            }, 300);
-        }
-        
-        // Funkcja do odtwarzania dźwięku rocka
-        function playRockSound() {
-            // Tworzenie kontekstu audio
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            
-            // Tworzenie oscylatora dla dźwięku gitary
-            const oscillator = audioContext.createOscillator();
-            oscillator.type = 'sawtooth';
-            oscillator.frequency.setValueAtTime(110, audioContext.currentTime); // A2
-            
-            // Tworzenie filtra dla "rockowego" brzmienia
-            const filter = audioContext.createBiquadFilter();
-            filter.type = 'lowpass';
-            filter.frequency.setValueAtTime(800, audioContext.currentTime);
-            
-            // Tworzenie wzmocnienia (gain) dla efektu wybrzmiewania
-            const gainNode = audioContext.createGain();
-            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-            gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.1);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.5);
-            
-            // Łączenie elementów
-            oscillator.connect(filter);
-            filter.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            // Rozpoczęcie i zatrzymanie oscylatora
-            oscillator.start();
-            oscillator.stop(audioContext.currentTime + 1.5);
-            
-            // Wizualna animacja dla efektu rocka
-            document.querySelectorAll('.rock-on').forEach(icon => {
-                icon.style.animation = 'rock 0.2s 5';
-                setTimeout(() => {
-                    icon.style.animation = 'rock 2s infinite';
-                }, 1000);
-            });
-            
-            // Dodanie efektu "wstrząsu" na obrazku
-            guitaristImage.classList.add('pulse');
-            setTimeout(() => {
-                guitaristImage.classList.remove('pulse');
-            }, 1000);
-            
-            // Zmiana tekstu przycisku na chwilę
-            const originalText = rockBtn.innerHTML;
-            rockBtn.innerHTML = '<i class="fas fa-volume-up"></i> ROCKUJE!';
-            rockBtn.style.background = themes[currentThemeIndex].accent;
-            
-            setTimeout(() => {
-                rockBtn.innerHTML = originalText;
-                rockBtn.style.background = '';
-            }, 1500);
-            
-            // Zwiększenie licznika wyświetleń
-            updateSkibidiCounter();
-        }
-        
-        // Funkcja wzmocnienia Skibidi
-        function enhanceSkibidi() {
-            // Efekt specjalny dla zdjęcia skibidi
-            const imageFrame = document.querySelector('.skibidi-frame');
-            
-            // Dodanie efektu błysku
-            imageFrame.style.boxShadow = '0 0 30px 10px #e94560';
-            guitaristImage.style.filter = 'brightness(1.3) saturate(1.5)';
-            
-            // Animacja tekstu SKIBIDI
-            const skibidiLabel = imageFrame.querySelector('.image-label');
-            const originalText = skibidiLabel.textContent;
-            skibidiLabel.textContent = 'SKIBIDI TOŻ TOŻ TOŻ!';
-            skibidiLabel.style.fontSize = '1.3rem';
-            skibidiLabel.style.background = '#e94560';
-            skibidiLabel.style.color = '#fff';
-            
-            // Przycisk zmienia tekst
-            skibidiBtn.innerHTML = '<i class="fas fa-fire"></i> SKIBIDI MOC!';
-            skibidiBtn.style.background = '#e94560';
-            
+        const volumeBtn = document.getElementById('volumeBtn');
+        const effectBtn = document.getElementById('effectBtn');
+
+        // Sprawdzenie czy obrazek istnieje
+        guitaristImage.onerror = function() {
+            this.src = 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+            this.alt = 'Gruby gitarzysta';
+        };
+
+        // Funkcja odtwarzania rocka
+        function playRock() {
             // Efekt dźwiękowy
             try {
                 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
                 const oscillator = audioContext.createOscillator();
-                oscillator.type = 'sine';
-                oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
-                oscillator.frequency.exponentialRampToValueAtTime(880, audioContext.currentTime + 0.5);
-                
                 const gainNode = audioContext.createGain();
-                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
                 
                 oscillator.connect(gainNode);
                 gainNode.connect(audioContext.destination);
                 
-                oscillator.start();
-                oscillator.stop(audioContext.currentTime + 0.5);
-            } catch (e) {
-                console.log("Efekt dźwiękowy Skibidi nie mógł zostać odtworzony");
-            }
-            
-            // Przywrócenie po 2 sekundach
-            setTimeout(() => {
-                imageFrame.style.boxShadow = '';
-                guitaristImage.style.filter = '';
-                skibidiLabel.textContent = originalText;
-                skibidiLabel.style.fontSize = '';
-                skibidiLabel.style.background = '';
-                skibidiLabel.style.color = '';
-                skibidiBtn.innerHTML = '<i class="fas fa-fire"></i> Wzmocnij Skibidi!';
-                skibidiBtn.style.background = '';
-            }, 2000);
-            
-            // Zwiększenie licznika
-            updateSkibidiCounter();
-        }
-        
-        // Funkcja do zmiany motywu kolorystycznego
-        function changeTheme() {
-            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-            const theme = themes[currentThemeIndex];
-            
-            // Zmiana kolorów w CSS
-            document.documentElement.style.setProperty('--primary-color', theme.primary);
-            document.documentElement.style.setProperty('--secondary-color', theme.secondary);
-            document.documentElement.style.setProperty('--accent-color', theme.accent);
-            
-            // Ręczna zmiana elementów
-            header.style.background = `linear-gradient(90deg, ${theme.primary} 0%, ${theme.secondary} 100%)`;
-            header.style.borderBottomColor = theme.accent;
-            
-            statItems.forEach(item => {
-                item.style.background = `rgba(${hexToRgb(theme.secondary)}, 0.3)`;
-            });
-            
-            document.querySelectorAll('.stat-value').forEach(el => {
-                el.style.color = theme.accent;
-            });
-            
-            guitarIcons.forEach(icon => {
-                icon.style.color = theme.accent;
-            });
-            
-            document.querySelectorAll('h2').forEach(el => {
-                el.style.color = theme.accent;
-            });
-            
-            // Informacja o zmianie motywu
-            colorBtn.innerHTML = `<i class="fas fa-palette"></i> Motyw ${currentThemeIndex + 1}`;
-            
-            // Zwiększenie licznika
-            updateSkibidiCounter();
-        }
-        
-        // Funkcja pomocnicza do konwersji hex na rgb
-        function hexToRgb(hex) {
-            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-            return result ? 
-                `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` 
-                : null;
-        }
-        
-        // Funkcja do aktywacji pulsowania
-        function activatePulse() {
-            const elements = [guitaristImage, ...statItems];
-            
-            elements.forEach(el => {
-                el.classList.add('pulse');
-            });
-            
-            pulseBtn.innerHTML = `<i class="fas fa-heart"></i> Pulsowanie AKTYWNE`;
-            pulseBtn.style.background = themes[currentThemeIndex].accent;
-            
-            setTimeout(() => {
-                elements.forEach(el => {
-                    el.classList.remove('pulse');
-                });
-                pulseBtn.innerHTML = `<i class="fas fa-heartbeat"></i> Aktywuj pulsowanie`;
-                pulseBtn.style.background = '';
-            }, 3000);
-            
-            // Zwiększenie licznika
-            updateSkibidiCounter();
-        }
-        
-        // Dodanie nasłuchiwania zdarzeń
-        rockBtn.addEventListener('click', playRockSound);
-        skibidiBtn.addEventListener('click', enhanceSkibidi);
-        colorBtn.addEventListener('click', changeTheme);
-        pulseBtn.addEventListener('click', activatePulse);
-        
-        // Efekt przy najechaniu na obrazek
-        guitaristImage.addEventListener('mouseenter', () => {
-            guitaristImage.style.transform = 'scale(1.03)';
-        });
-        
-        guitaristImage.addEventListener('mouseleave', () => {
-            guitaristImage.style.transform = 'scale(1)';
-        });
-        
-        // Kliknięcie w zdjęcie też zwiększa licznik
-        guitaristImage.addEventListener('click', updateSkibidiCounter);
-        
-        // Inicjalizacja przy ładowaniu strony
-        window.addEventListener('load', () => {
-            // Ustawienie licznika
-            skibidiCounter.textContent = `Wyświetlenia: ${skibidiViewCount}`;
-            
-            // Sprawdzenie czy obrazek się załadował
-            guitaristImage.onload = function() {
-                console.log('Zdjęcie skibidi.jpg zostało załadowane!');
-            };
-            
-            guitaristImage.onerror = function() {
-                // Jeśli obrazek skibidi.jpg nie istnieje, używamy placeholder
-                console.log('Nie znaleziono skibidi.jpg, używam placeholder...');
-                guitaristImage.src = 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
-                guitaristImage.alt = 'Placeholder dla skibidi.jpg';
+                oscillator.type = 'sawtooth';
+                oscillator.frequency.setValueAtTime(110, audioContext.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(440, audioContext.currentTime + 0.5);
                 
-                // Informacja dla użytkownika
-                const label = document.querySelector('.image-label');
-                label.textContent = 'Placeholder (oryginalne skibidi.jpg nie znalezione)';
-                label.style.background = '#ff9900';
-            };
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1);
+                
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 1);
+            } catch(e) {
+                console.log("Rock gra w twojej głowie!");
+            }
+
+            // Efekty wizualne
+            document.body.style.background = "linear-gradient(135deg, #ff0000 0%, #000000 100%)";
+            guitaristImage.style.filter = "brightness(1.5)";
+            rockBtn.innerHTML = '<i class="fas fa-guitar"></i> ROCKUJE!';
+            rockBtn.style.background = '#00ff00';
+            rockBtn.style.color = '#000';
+
+            setTimeout(() => {
+                document.body.style.background = "linear-gradient(135deg, #000000 0%, #1a1a1a 100%)";
+                guitaristImage.style.filter = "brightness(1)";
+                rockBtn.innerHTML = '<i class="fas fa-guitar"></i> ZAGRAJ ROCKA';
+                rockBtn.style.background = '';
+                rockBtn.style.color = '';
+            }, 1000);
+        }
+
+        // Funkcja zwiększenia głośności
+        function increaseVolume() {
+            const header = document.querySelector('.header');
+            header.style.transform = 'scale(1.05)';
+            header.style.boxShadow = '0 0 50px rgba(255, 0, 0, 0.8)';
             
-            // Efekt ładowania strony
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 1s';
+            volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i> MAX VOLUME!';
+            volumeBtn.style.background = '#ffff00';
+            volumeBtn.style.color = '#000';
+
+            // Wibracje tekstu
+            const elements = document.querySelectorAll('h1, .subtitle, .author');
+            elements.forEach(el => {
+                el.style.animation = 'none';
+                setTimeout(() => {
+                    el.style.animation = 'pulse 0.1s infinite';
+                }, 10);
+            });
+
+            setTimeout(() => {
+                header.style.transform = '';
+                header.style.boxShadow = '';
+                volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i> ZWIĘKSZ GŁOŚNOŚĆ';
+                volumeBtn.style.background = '';
+                volumeBtn.style.color = '';
+                elements.forEach(el => {
+                    el.style.animation = '';
+                });
+            }, 2000);
+        }
+
+        // Funkcja efektów specjalnych
+        function specialEffects() {
+            // Losowe kolory
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            document.querySelector('.header').style.background = `linear-gradient(90deg, ${randomColor} 0%, #000 100%)`;
+            document.querySelector('.image-container').style.borderColor = randomColor;
+            document.querySelector('.image-label').style.background = randomColor;
+            
+            effectBtn.innerHTML = `<i class="fas fa-bolt"></i> EFEKT: ${randomColor}`;
+            effectBtn.style.background = randomColor;
+            
+            // Animacja obrazka
+            guitaristImage.style.transform = 'rotate(5deg) scale(1.1)';
             
             setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 100);
-            
-            // Powitanie w konsoli
-            console.log('%c🎸 GRUBYTEEK - ZAWSZE TO SAMO ZDJĘCIE: skibidi.jpg 🎸', 'color: #e94560; font-size: 18px; font-weight: bold;');
-            console.log(`%cLicznik wyświetleń: ${skibidiViewCount}`, 'color: #533483; font-size: 14px;');
-        });
-        
-        // Automatyczne zwiększanie licznika co 30 sekund, gdy strona jest aktywna
-        setInterval(() => {
-            if (!document.hidden) {
-                updateSkibidiCounter();
-            }
-        }, 30000);
+                document.querySelector('.header').style.background = '';
+                document.querySelector('.image-container').style.borderColor = '';
+                document.querySelector('.image-label').style.background = '';
+                guitaristImage.style.transform = '';
+                effectBtn.innerHTML = '<i class="fas fa-bolt"></i> EFEKTY SPECIALNE';
+                effectBtn.style.background = '';
+            }, 3000);
+        }
+
+        // Event listeners
+        rockBtn.addEventListener('click', playRock);
+        volumeBtn.addEventListener('click', increaseVolume);
+        effectBtn.addEventListener('click', specialEffects);
+
+        // Powitanie
+        console.log('=== GRUBYTEEK - OLIWIER BODEK ===');
+        console.log('Strona oficjalna legendy gitary!');
+        console.log('© Wszystkie prawa zastrzeżone');
     </script>
 </body>
 </html>
