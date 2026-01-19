@@ -3,483 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teek - Poseł Rady Najwyższej KML | Specjalista ds. Rekrutacji</title>
+    <title>GRUBYTEEK - Gitarzysta z nadwagą</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700;900&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        :root {
-            --primary: #0d153a;
-            --accent: #4682b4;
-            --gold: #c9a145;
-            --light: #f5f5f5;
-            --dark: #1a1a1a;
-        }
-        
+
         body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.8;
-            color: var(--dark);
-            background: linear-gradient(135deg, #0d153a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f1f1f1;
             min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
         }
-        
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.4;
-            z-index: 0;
-        }
-        
+
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 25px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .back-button:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: var(--gold);
-            transform: translateX(-5px);
-        }
-        
-        .profile-wrapper {
-            background: rgba(255, 255, 255, 0.98);
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(25, 25, 40, 0.85);
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             overflow: hidden;
-            animation: fadeIn 1s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .profile-header {
-            background: linear-gradient(135deg, #4682b4 0%, #2c5282 100%);
-            padding: 60px 40px;
-            text-align: center;
+            margin-top: 20px;
             position: relative;
-            border-bottom: 6px solid var(--gold);
+            border: 1px solid #4a4a6d;
         }
-        
-        .profile-header::before {
-            content: "";
+
+        header {
+            background: linear-gradient(90deg, #0f3460 0%, #533483 100%);
+            padding: 25px;
+            text-align: center;
+            border-bottom: 5px solid #e94560;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #b8b8d1;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .guitar-icon {
+            color: #e94560;
+            font-size: 2rem;
+            margin: 0 10px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        .image-section {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border: 3px solid #533483;
+            position: relative;
+        }
+
+        .guitarist-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image-label {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
-        }
-        
-        .seat-icon {
-            font-size: 4rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-            animation: float 3s ease-in-out infinite;
-            position: relative;
-            z-index: 2;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(3deg); }
-        }
-        
-        .profile-image-container {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 30px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 6px solid var(--gold);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            object-fit: cover;
-            background: linear-gradient(135deg, #4682b4 0%, #5dade2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: white;
-        }
-        
-        .profile-title {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            color: white;
-            margin-bottom: 15px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .profile-subtitle {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: var(--gold);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .profile-body {
-            padding: 60px 50px;
-        }
-        
-        .quote-section {
-            background: linear-gradient(135deg, rgba(70, 130, 180, 0.08) 0%, rgba(70, 130, 180, 0.03) 100%);
-            border-left: 6px solid var(--accent);
-            padding: 40px;
-            margin-bottom: 50px;
-            border-radius: 10px;
-            position: relative;
-        }
-        
-        .quote-section::before {
-            content: "\f10d";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            font-size: 4rem;
-            color: var(--accent);
-            opacity: 0.1;
-        }
-        
-        .quote-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--primary);
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .quote-author {
+            background: rgba(0, 0, 0, 0.7);
+            color: #e94560;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
             font-size: 1.1rem;
-            color: var(--accent);
-            font-weight: 700;
-            text-align: right;
         }
-        
-        .section {
-            margin-bottom: 50px;
-        }
-        
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .section-title i {
-            color: var(--accent);
-            font-size: 1.8rem;
-        }
-        
-        .section-content {
-            font-size: 1.15rem;
-            color: #2a2a2a;
-            line-height: 1.9;
-        }
-        
-        .section-content p {
-            margin-bottom: 20px;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .stat-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border-top: 4px solid var(--accent);
-            transition: all 0.3s ease;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .stat-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-        
-        .stat-value {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .stat-label {
-            font-size: 1rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .achievements-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-        
-        .achievement-item {
-            padding: 20px;
-            margin-bottom: 15px;
-            background: rgba(70, 130, 180, 0.05);
-            border-left: 4px solid var(--accent);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .achievement-item:hover {
-            background: rgba(70, 130, 180, 0.1);
-            transform: translateX(5px);
-        }
-        
-        .achievement-icon {
-            font-size: 2rem;
-            color: var(--accent);
-            min-width: 50px;
-            text-align: center;
-        }
-        
-        .achievement-text {
+
+        .info-section {
             flex: 1;
-        }
-        
-        .achievement-title {
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-        
-        .achievement-desc {
-            color: #666;
-            font-size: 0.95rem;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 50px;
-            margin-top: 30px;
-        }
-        
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--accent), var(--gold));
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
+            min-width: 300px;
             padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -38px;
-            top: 25px;
-            width: 15px;
-            height: 15px;
-            background: var(--accent);
-            border: 3px solid white;
-            border-radius: 50%;
-            box-shadow: 0 0 0 3px var(--accent);
-        }
-        
-        .timeline-date {
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            color: var(--accent);
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        
-        .timeline-content {
-            color: #2a2a2a;
-            line-height: 1.6;
-        }
-        
-        .contact-section {
-            background: linear-gradient(135deg, var(--primary) 0%, #0a0f28 100%);
-            padding: 40px;
+            background: rgba(40, 40, 60, 0.6);
             border-radius: 15px;
-            text-align: center;
-            color: white;
+            border-left: 5px solid #e94560;
         }
-        
-        .contact-title {
-            font-family: 'Cinzel', serif;
+
+        h2 {
+            color: #e94560;
+            margin-bottom: 20px;
             font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--gold);
+            border-bottom: 2px solid #533483;
+            padding-bottom: 8px;
         }
-        
-        .social-links {
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-item {
+            background: rgba(83, 52, 131, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(83, 52, 131, 0.5);
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e94560;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #b8b8d1;
+        }
+
+        .description {
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #d1d1e9;
+        }
+
+        .controls {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
+            margin: 20px 0;
             flex-wrap: wrap;
+            padding: 0 30px;
         }
-        
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
+
+        .btn {
+            padding: 12px 25px;
+            background: #0f3460;
             color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        
-        .social-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: var(--gold);
+
+        .btn:hover {
+            background: #e94560;
             transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
         }
-        
-        .social-link i {
-            font-size: 1.3rem;
+
+        .btn i {
+            font-size: 1.2rem;
         }
-        
-        /* Responsive */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            color: #8a8ab5;
+            border-top: 1px solid #4a4a6d;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #e94560;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .rock-on {
+            animation: rock 2s infinite;
+            display: inline-block;
+        }
+
+        @keyframes rock {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+        }
+
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .skibidi-frame {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skibidi-frame::before {
+            content: "SKIBIDI!";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e94560;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            z-index: 10;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .skibidi-counter {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #e94560;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            z-index: 10;
+        }
+
         @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px;
+            .content {
+                flex-direction: column;
             }
             
-            .profile-header {
-                padding: 40px 25px;
-            }
-            
-            .profile-image-container {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .profile-image {
-                font-size: 4rem;
-            }
-            
-            .profile-title {
+            h1 {
                 font-size: 2rem;
             }
             
-            .profile-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .profile-body {
-                padding: 40px 30px;
-            }
-            
-            .quote-text {
-                font-size: 1.4rem;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .stats-grid {
+            .stats {
                 grid-template-columns: 1fr;
             }
             
-            .timeline {
-                padding-left: 40px;
-            }
-            
-            .social-links {
+            .controls {
                 flex-direction: column;
                 align-items: center;
             }
             
-            .social-link {
+            .btn {
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
@@ -489,214 +292,383 @@
 </head>
 <body>
     <div class="container">
-        <a href="https://kmlpolska.pl" class="back-button" target="_blank">
-            <i class="fas fa-arrow-left"></i>
-            <span>Powrót do strony głównej KML</span>
-        </a>
+        <header>
+            <div class="logo">GRUBYTEEK</div>
+            <div class="tagline">Kultowy gitarzysta z legendarnym zdjęciem</div>
+            <h1>Gitarzysta 200% nadwaga</h1>
+            <div>
+                <i class="fas fa-guitar guitar-icon rock-on"></i>
+                <i class="fas fa-music guitar-icon"></i>
+                <i class="fas fa-volume-up guitar-icon rock-on"></i>
+            </div>
+        </header>
         
-        <div class="profile-wrapper">
-            <div class="profile-header">
-                <div class="seat-icon">
-                    <i class="fas fa-chair"></i>
-                </div>
-                <div class="profile-image-container">
-                    <div class="profile-image">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                </div>
-                <h1 class="profile-title">teek</h1>
-                <p class="profile-subtitle">Poseł Rady Najwyższej KML | Specjalista ds. Rekrutacji</p>
+        <div class="content">
+            <div class="image-section skibidi-frame">
+                <div class="skibidi-counter" id="skibidiCounter">Wyświetlenia: 1</div>
+                <img id="guitaristImage" src="skibidi.jpg" alt="Skibidi gitarzysta" class="guitarist-img">
+                <div class="image-label">Legendarne zdjęcie SKIBIDI - zawsze to samo!</div>
             </div>
             
-            <div class="profile-body">
-                <div class="quote-section">
-                    <p class="quote-text">"Rekrutacja to nie tylko proces, to budowanie fundamentów naszej społeczności."</p>
-                    <p class="quote-author">— teek</p>
-                </div>
+            <div class="info-section">
+                <h2>O gitarzyście Skibidi</h2>
+                <p class="description">
+                    Niezwykły muzyk, który łamie stereotypy. Jego waga nie ogranicza talentu - wręcz przeciwnie! 
+                    Dzięki swojej posturze wydobywa z gitary niesamowicie głębokie brzmienie, które porusza serca fanów na całym świecie.
+                    Gra z pasją i energią, która inspiruje wszystkich wokół. Jego kultowe zdjęcie "skibidi" stało się ikoną rocka.
+                </p>
                 
-                <div class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-user-shield"></i>
-                        Kim jestem?
-                    </h2>
-                    <div class="section-content">
-                        <p>Poseł Rady Najwyższej Konfederacji Monarchistyczno-Libertariańskiej oraz główny specjalista ds. rekrutacji. Byłem jednym z najbardziej zaangażowanych członków w procesie pozyskiwania nowych ludzi do naszej organizacji.</p>
-                        <p>Moja rola w KML była dwojaka: z jednej strony jako <strong>Poseł Rady Najwyższej</strong> uczestniczyłem w kluczowych decyzjach organizacji, z drugiej jako <strong>specjalista ds. rekrutacji</strong> dbałem o to, by do KML trafiali wartościowi ludzie.</p>
-                        <p>Rekrutacja była moją pasją - wierzyłem, że odpowiedni ludzie to podstawa każdej organizacji. Spędzałem długie godziny na rozmowach z kandydatami, weryfikacji i wprowadzaniu nowych członków.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value">200%</div>
+                        <div class="stat-label">Nadwaga</div>
                     </div>
-                </div>
-                
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="stat-value">Rekruter</div>
-                        <div class="stat-label">Najbardziej Zaangażowany</div>
+                    <div class="stat-item">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Talent</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-gavel"></i>
-                        </div>
-                        <div class="stat-value">Poseł</div>
-                        <div class="stat-label">Rady Najwyższej</div>
+                    <div class="stat-item">
+                        <div class="stat-value">∞</div>
+                        <div class="stat-label">Skibidi mocy</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="stat-value">Grudzień - Styczeń</div>
-                        <div class="stat-label">Okres Aktywności</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <div class="stat-value">Integrator</div>
-                        <div class="stat-label">Budowniczy Społeczności</div>
+                    <div class="stat-item">
+                        <div class="stat-value">1</div>
+                        <div class="stat-label">Legendarne zdjęcie</div>
                     </div>
                 </div>
                 
-                <div class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-trophy"></i>
-                        Osiągnięcia w KML
-                    </h2>
-                    <ul class="achievements-list">
-                        <li class="achievement-item">
-                            <div class="achievement-icon">
-                                <i class="fas fa-user-plus"></i>
-                            </div>
-                            <div class="achievement-text">
-                                <div class="achievement-title">Główny Rekruter</div>
-                                <div class="achievement-desc">Najbardziej zaangażowana osoba w procesie pozyskiwania nowych członków</div>
-                            </div>
-                        </li>
-                        <li class="achievement-item">
-                            <div class="achievement-icon">
-                                <i class="fas fa-landmark"></i>
-                            </div>
-                            <div class="achievement-text">
-                                <div class="achievement-title">Poseł Rady Najwyższej</div>
-                                <div class="achievement-desc">Członek najwyższego organu decyzyjnego KML</div>
-                            </div>
-                        </li>
-                        <li class="achievement-item">
-                            <div class="achievement-icon">
-                                <i class="fas fa-filter"></i>
-                            </div>
-                            <div class="achievement-text">
-                                <div class="achievement-title">System Weryfikacji</div>
-                                <div class="achievement-desc">Aktywny udział w tworzeniu i implementacji procesu weryfikacji kandydatów</div>
-                            </div>
-                        </li>
-                        <li class="achievement-item">
-                            <div class="achievement-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <div class="achievement-text">
-                                <div class="achievement-title">Rozmowy Kwalifikacyjne</div>
-                                <div class="achievement-desc">Przeprowadzanie dziesiątek rozmów z potencjalnymi członkami</div>
-                            </div>
-                        </li>
-                        <li class="achievement-item">
-                            <div class="achievement-icon">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                            <div class="achievement-text">
-                                <div class="achievement-title">Budowa Sieci</div>
-                                <div class="achievement-desc">Tworzenie sieci kontaktów i pozyskiwanie wartościowych osób</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-road"></i>
-                        Moja Historia z KML
-                    </h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">Grudzień 2025</div>
-                            <div class="timeline-content">
-                                <strong>Początek Zaangażowania:</strong> Dołączenie do KML i natychmiastowe zaangażowanie w procesy rekrutacyjne. Od razu wykazałem się aktywnością w pozyskiwaniu nowych członków.
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Początek Stycznia 2026</div>
-                            <div class="timeline-content">
-                                <strong>Awans na Posła:</strong> Ze względu na moje zaangażowanie i efekty w rekrutacji, zostałem powołany na stanowisko Posła Rady Najwyższej.
-                            </div>
-                        </li>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Styczeń 2026</div>
-                            <div class="timeline-content">
-                                <strong>Szczyt Aktywności:</strong> Intensywna praca nad rekrutacją nowych członków. Przeprowadzanie rozmów, weryfikacja kandydatów, dbanie o jakość społeczności.
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Koniec Stycznia 2026</div>
-                            <div class="timeline-content">
-                                <strong>Zakończenie Działalności:</strong> Wraz z końcem KML zakończyłem moją działalność jako Poseł i główny rekruter. Projekt zakończył się po intensywnym okresie.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="section">
-                    <h2 class="section-title">
-                        <i class="fas fa-heart"></i>
-                        Refleksje
-                    </h2>
-                    <div class="section-content">
-                        <p>KML było dla mnie niezwykłym doświadczeniem, gdzie mogłem połączyć dwie pasje: politykę i rekrutację. Jako Poseł Rady Najwyższej miałem realny wpływ na kształt organizacji, a jako rekruter budowałem jej fundamenty ludzkie.</p>
-                        <p>Najwięcej satysfakcji czerpałem z <strong>procesu rekrutacji</strong> - rozmowy z ciekawymi ludźmi, weryfikacja ich poglądów, wprowadzanie nowych osób do społeczności. Wierzę, że dzięki mojej pracy do KML trafili wartościowi ludzie.</p>
-                        <p>Jako Poseł zawsze starałem się pamiętać, że organizacja to przede wszystkim ludzie. Moje doświadczenie rekruterskie pomagało mi w podejmowaniu decyzji w Radzie Najwyższej.</p>
-                        <p>Dziękuję wszystkim, z którymi współpracowałem, zarówno w rekrutacji, jak i w pracach Rady. To był intensywny, ale niezwykle wartościowy czas.</p>
-                    </div>
-                </div>
-                
-                <div class="contact-section">
-                    <h3 class="contact-title">Strona KML</h3>
-                    <div class="social-links">
-                        <a href="https://kmlpolska.pl" class="social-link" target="_blank">
-                            <i class="fas fa-globe"></i>
-                            <span>Strona Główna KML</span>
-                        </a>
-                    </div>
-                </div>
+                <h2>Dlaczego tylko skibidi.jpg?</h2>
+                <ul style="list-style-type: none; line-height: 1.8; color: #d1d1e9;">
+                    <li><i class="fas fa-check-circle" style="color: #e94560;"></i> Kultowy obraz, który przeszedł do historii</li>
+                    <li><i class="fas fa-check-circle" style="color: #e94560;"></i> Niezmienne źródło inspiracji dla fanów</li>
+                    <li><i class="fas fa-check-circle" style="color: #e94560;"></i> Symbol rockowego ducha i buntu</li>
+                    <li><i class="fas fa-check-circle" style="color: #e94560;"></i> Gwarancja autentyczności GRUBYTEEKa</li>
+                </ul>
             </div>
         </div>
+        
+        <div class="controls">
+            <button class="btn" id="rockBtn">
+                <i class="fas fa-play"></i> Zagraj rocka
+            </button>
+            <button class="btn" id="skibidiBtn">
+                <i class="fas fa-fire"></i> Wzmocnij Skibidi!
+            </button>
+            <button class="btn" id="colorBtn">
+                <i class="fas fa-palette"></i> Zmień motyw
+            </button>
+            <button class="btn" id="pulseBtn">
+                <i class="fas fa-heartbeat"></i> Aktywuj pulsowanie
+            </button>
+        </div>
+        
+        <div style="padding: 20px 30px; background: rgba(15, 52, 96, 0.3); margin: 0 30px 20px; border-radius: 10px;">
+            <h3 style="color: #e94560; margin-bottom: 10px; text-align: center;">
+                <i class="fas fa-info-circle"></i> Informacja o zdjęciu
+            </h3>
+            <p style="text-align: center; color: #d1d1e9;">
+                To zdjęcie <strong>skibidi.jpg</strong> jest zawsze wyświetlane i nigdy się nie zmienia! 
+                To kultowy obraz gitarzysty, który stał się legendą. Każde odświeżenie strony zwiększa licznik wyświetleń.
+            </p>
+        </div>
+        
+        <footer>
+            <p>© 2023 GRUBYTEEK - Wszystkie prawa zastrzeżone. Rock never dies!</p>
+            <p style="margin-top: 5px; font-size: 0.9rem;">
+                Strona wykonana z pasją do muzyki i nietypowych talentów | Zawsze to samo zdjęcie: skibidi.jpg
+            </p>
+        </footer>
     </div>
-    
+
     <script>
-        // Add subtle parallax effect on mouse move
-        document.addEventListener('mousemove', function(e) {
-            const icon = document.querySelector('.seat-icon i');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
+        // Licznik wyświetleń zdjęcia skibidi.jpg
+        let skibidiViewCount = localStorage.getItem('skibidiViews') ? 
+            parseInt(localStorage.getItem('skibidiViews')) : 1;
+        
+        // Elementy DOM
+        const guitaristImage = document.getElementById('guitaristImage');
+        const skibidiCounter = document.getElementById('skibidiCounter');
+        const rockBtn = document.getElementById('rockBtn');
+        const skibidiBtn = document.getElementById('skibidiBtn');
+        const colorBtn = document.getElementById('colorBtn');
+        const pulseBtn = document.getElementById('pulseBtn');
+        const container = document.querySelector('.container');
+        const header = document.querySelector('header');
+        const statItems = document.querySelectorAll('.stat-item');
+        const buttons = document.querySelectorAll('.btn');
+        const guitarIcons = document.querySelectorAll('.guitar-icon');
+        
+        // Lista kolorów motywów
+        const themes = [
+            { primary: "#0f3460", secondary: "#533483", accent: "#e94560" },
+            { primary: "#1e5128", secondary: "#4e9f3d", accent: "#d8e9a8" },
+            { primary: "#3d0c11", secondary: "#6d2c41", accent: "#d8a7ca" },
+            { primary: "#1a1a2e", secondary: "#16213e", accent: "#e94560" } // domyślny
+        ];
+        
+        let currentThemeIndex = 3;
+        
+        // Aktualizacja licznika wyświetleń
+        function updateSkibidiCounter() {
+            skibidiViewCount++;
+            localStorage.setItem('skibidiViews', skibidiViewCount);
+            skibidiCounter.textContent = `Wyświetlenia: ${skibidiViewCount}`;
             
-            const xMove = (x - 0.5) * 10;
-            const yMove = (y - 0.5) * 10;
-            icon.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            // Dodaj efekt wizualny przy aktualizacji licznika
+            skibidiCounter.style.transform = 'scale(1.2)';
+            skibidiCounter.style.color = '#fff';
+            skibidiCounter.style.background = '#e94560';
+            
+            setTimeout(() => {
+                skibidiCounter.style.transform = 'scale(1)';
+                skibidiCounter.style.color = '#e94560';
+                skibidiCounter.style.background = 'rgba(0, 0, 0, 0.7)';
+            }, 300);
+        }
+        
+        // Funkcja do odtwarzania dźwięku rocka
+        function playRockSound() {
+            // Tworzenie kontekstu audio
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Tworzenie oscylatora dla dźwięku gitary
+            const oscillator = audioContext.createOscillator();
+            oscillator.type = 'sawtooth';
+            oscillator.frequency.setValueAtTime(110, audioContext.currentTime); // A2
+            
+            // Tworzenie filtra dla "rockowego" brzmienia
+            const filter = audioContext.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(800, audioContext.currentTime);
+            
+            // Tworzenie wzmocnienia (gain) dla efektu wybrzmiewania
+            const gainNode = audioContext.createGain();
+            gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.1);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.5);
+            
+            // Łączenie elementów
+            oscillator.connect(filter);
+            filter.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            // Rozpoczęcie i zatrzymanie oscylatora
+            oscillator.start();
+            oscillator.stop(audioContext.currentTime + 1.5);
+            
+            // Wizualna animacja dla efektu rocka
+            document.querySelectorAll('.rock-on').forEach(icon => {
+                icon.style.animation = 'rock 0.2s 5';
+                setTimeout(() => {
+                    icon.style.animation = 'rock 2s infinite';
+                }, 1000);
+            });
+            
+            // Dodanie efektu "wstrząsu" na obrazku
+            guitaristImage.classList.add('pulse');
+            setTimeout(() => {
+                guitaristImage.classList.remove('pulse');
+            }, 1000);
+            
+            // Zmiana tekstu przycisku na chwilę
+            const originalText = rockBtn.innerHTML;
+            rockBtn.innerHTML = '<i class="fas fa-volume-up"></i> ROCKUJE!';
+            rockBtn.style.background = themes[currentThemeIndex].accent;
+            
+            setTimeout(() => {
+                rockBtn.innerHTML = originalText;
+                rockBtn.style.background = '';
+            }, 1500);
+            
+            // Zwiększenie licznika wyświetleń
+            updateSkibidiCounter();
+        }
+        
+        // Funkcja wzmocnienia Skibidi
+        function enhanceSkibidi() {
+            // Efekt specjalny dla zdjęcia skibidi
+            const imageFrame = document.querySelector('.skibidi-frame');
+            
+            // Dodanie efektu błysku
+            imageFrame.style.boxShadow = '0 0 30px 10px #e94560';
+            guitaristImage.style.filter = 'brightness(1.3) saturate(1.5)';
+            
+            // Animacja tekstu SKIBIDI
+            const skibidiLabel = imageFrame.querySelector('.image-label');
+            const originalText = skibidiLabel.textContent;
+            skibidiLabel.textContent = 'SKIBIDI TOŻ TOŻ TOŻ!';
+            skibidiLabel.style.fontSize = '1.3rem';
+            skibidiLabel.style.background = '#e94560';
+            skibidiLabel.style.color = '#fff';
+            
+            // Przycisk zmienia tekst
+            skibidiBtn.innerHTML = '<i class="fas fa-fire"></i> SKIBIDI MOC!';
+            skibidiBtn.style.background = '#e94560';
+            
+            // Efekt dźwiękowy
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(880, audioContext.currentTime + 0.5);
+                
+                const gainNode = audioContext.createGain();
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 0.5);
+            } catch (e) {
+                console.log("Efekt dźwiękowy Skibidi nie mógł zostać odtworzony");
+            }
+            
+            // Przywrócenie po 2 sekundach
+            setTimeout(() => {
+                imageFrame.style.boxShadow = '';
+                guitaristImage.style.filter = '';
+                skibidiLabel.textContent = originalText;
+                skibidiLabel.style.fontSize = '';
+                skibidiLabel.style.background = '';
+                skibidiLabel.style.color = '';
+                skibidiBtn.innerHTML = '<i class="fas fa-fire"></i> Wzmocnij Skibidi!';
+                skibidiBtn.style.background = '';
+            }, 2000);
+            
+            // Zwiększenie licznika
+            updateSkibidiCounter();
+        }
+        
+        // Funkcja do zmiany motywu kolorystycznego
+        function changeTheme() {
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            const theme = themes[currentThemeIndex];
+            
+            // Zmiana kolorów w CSS
+            document.documentElement.style.setProperty('--primary-color', theme.primary);
+            document.documentElement.style.setProperty('--secondary-color', theme.secondary);
+            document.documentElement.style.setProperty('--accent-color', theme.accent);
+            
+            // Ręczna zmiana elementów
+            header.style.background = `linear-gradient(90deg, ${theme.primary} 0%, ${theme.secondary} 100%)`;
+            header.style.borderBottomColor = theme.accent;
+            
+            statItems.forEach(item => {
+                item.style.background = `rgba(${hexToRgb(theme.secondary)}, 0.3)`;
+            });
+            
+            document.querySelectorAll('.stat-value').forEach(el => {
+                el.style.color = theme.accent;
+            });
+            
+            guitarIcons.forEach(icon => {
+                icon.style.color = theme.accent;
+            });
+            
+            document.querySelectorAll('h2').forEach(el => {
+                el.style.color = theme.accent;
+            });
+            
+            // Informacja o zmianie motywu
+            colorBtn.innerHTML = `<i class="fas fa-palette"></i> Motyw ${currentThemeIndex + 1}`;
+            
+            // Zwiększenie licznika
+            updateSkibidiCounter();
+        }
+        
+        // Funkcja pomocnicza do konwersji hex na rgb
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? 
+                `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` 
+                : null;
+        }
+        
+        // Funkcja do aktywacji pulsowania
+        function activatePulse() {
+            const elements = [guitaristImage, ...statItems];
+            
+            elements.forEach(el => {
+                el.classList.add('pulse');
+            });
+            
+            pulseBtn.innerHTML = `<i class="fas fa-heart"></i> Pulsowanie AKTYWNE`;
+            pulseBtn.style.background = themes[currentThemeIndex].accent;
+            
+            setTimeout(() => {
+                elements.forEach(el => {
+                    el.classList.remove('pulse');
+                });
+                pulseBtn.innerHTML = `<i class="fas fa-heartbeat"></i> Aktywuj pulsowanie`;
+                pulseBtn.style.background = '';
+            }, 3000);
+            
+            // Zwiększenie licznika
+            updateSkibidiCounter();
+        }
+        
+        // Dodanie nasłuchiwania zdarzeń
+        rockBtn.addEventListener('click', playRockSound);
+        skibidiBtn.addEventListener('click', enhanceSkibidi);
+        colorBtn.addEventListener('click', changeTheme);
+        pulseBtn.addEventListener('click', activatePulse);
+        
+        // Efekt przy najechaniu na obrazek
+        guitaristImage.addEventListener('mouseenter', () => {
+            guitaristImage.style.transform = 'scale(1.03)';
         });
         
-        // Fade in animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {
-            threshold: 0.1
+        guitaristImage.addEventListener('mouseleave', () => {
+            guitaristImage.style.transform = 'scale(1)';
         });
-
-        document.querySelectorAll('.stat-card, .achievement-item, .timeline-item').forEach(el => {
-            observer.observe(el);
+        
+        // Kliknięcie w zdjęcie też zwiększa licznik
+        guitaristImage.addEventListener('click', updateSkibidiCounter);
+        
+        // Inicjalizacja przy ładowaniu strony
+        window.addEventListener('load', () => {
+            // Ustawienie licznika
+            skibidiCounter.textContent = `Wyświetlenia: ${skibidiViewCount}`;
+            
+            // Sprawdzenie czy obrazek się załadował
+            guitaristImage.onload = function() {
+                console.log('Zdjęcie skibidi.jpg zostało załadowane!');
+            };
+            
+            guitaristImage.onerror = function() {
+                // Jeśli obrazek skibidi.jpg nie istnieje, używamy placeholder
+                console.log('Nie znaleziono skibidi.jpg, używam placeholder...');
+                guitaristImage.src = 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+                guitaristImage.alt = 'Placeholder dla skibidi.jpg';
+                
+                // Informacja dla użytkownika
+                const label = document.querySelector('.image-label');
+                label.textContent = 'Placeholder (oryginalne skibidi.jpg nie znalezione)';
+                label.style.background = '#ff9900';
+            };
+            
+            // Efekt ładowania strony
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 1s';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+            
+            // Powitanie w konsoli
+            console.log('%c🎸 GRUBYTEEK - ZAWSZE TO SAMO ZDJĘCIE: skibidi.jpg 🎸', 'color: #e94560; font-size: 18px; font-weight: bold;');
+            console.log(`%cLicznik wyświetleń: ${skibidiViewCount}`, 'color: #533483; font-size: 14px;');
         });
+        
+        // Automatyczne zwiększanie licznika co 30 sekund, gdy strona jest aktywna
+        setInterval(() => {
+            if (!document.hidden) {
+                updateSkibidiCounter();
+            }
+        }, 30000);
     </script>
 </body>
 </html>
