@@ -1,0 +1,152 @@
+/* courses.css */
+.lesson-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.lesson-sidebar {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    height: fit-content;
+}
+
+.lesson-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.lesson-item {
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.lesson-item:hover {
+    background: #f1f5f9;
+}
+
+.lesson-item.active {
+    background: #2563eb;
+    color: white;
+}
+
+.lesson-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.lesson-content h1 {
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.lesson-instruction {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #2563eb;
+}
+
+.code-editor {
+    margin: 2rem 0;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.editor-header {
+    background: #1e293b;
+    color: white;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.code-area {
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    border: none;
+    resize: vertical;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+.btn-run, .btn-check, .btn-next {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.btn-run:hover, .btn-check:hover, .btn-next:hover {
+    background: #1d4ed8;
+}
+
+.preview {
+    margin: 2rem 0;
+}
+
+.preview iframe {
+    width: 100%;
+    height: 300px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+}
+
+.lesson-tips {
+    background: #fff7ed;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border-left: 4px solid #f59e0b;
+}
+
+.lesson-tips code {
+    background: #fed7aa;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.lesson-next {
+    text-align: right;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e2e8f0;
+}
+
+@media (max-width: 768px) {
+    .lesson-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .lesson-sidebar {
+        order: 2;
+    }
+}
