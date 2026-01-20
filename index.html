@@ -3,102 +3,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeStack - Nauka programowania</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>CodeEdu - Edytor HTML Online</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/editor.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Nawigacja -->
-    <nav class="navbar">
+    <!-- GÓRNA NAWIGACJA -->
+    <nav class="top-nav">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <div class="logo">
                 <i class="fas fa-code"></i>
-                <span>CodeStack</span>
-            </a>
-            
-            <div class="nav-links">
-                <a href="index.html" class="nav-link active">Strona główna</a>
-                <a href="courses/html/index.html" class="nav-link">Kursy</a>
-                <a href="#about" class="nav-link">O projekcie</a>
-                <a href="login.html" class="nav-link btn-login">Zaloguj się</a>
-                <a href="register.html" class="nav-link btn-register">Zarejestruj się</a>
+                <span>CODE-EDU</span>
             </div>
             
-            <button class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-right">
+                <button class="btn btn-small btn-outline" onclick="saveProject()">
+                    <i class="fas fa-save"></i> Zapisz
+                </button>
+                <button class="btn btn-small btn-outline" onclick="resetEditor()">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+                <button class="btn btn-small btn-primary" onclick="runCode()">
+                    <i class="fas fa-play"></i> Uruchom
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Naucz się programować</h1>
-            <p>Praktyczne lekcje HTML i CSS. Bez teorii, tylko kod.</p>
-            <a href="#courses" class="btn-primary">Rozpocznij naukę</a>
-        </div>
-    </section>
-
-    <!-- Kursy -->
-    <section id="courses" class="courses">
-        <h2>Dostępne kursy</h2>
-        <div class="courses-grid">
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fab fa-html5"></i>
+    <!-- GŁÓWNY LAYOUT -->
+    <div class="main-layout">
+        <!-- LEWY PANEL - KURS -->
+        <div class="left-panel">
+            <div class="course-section">
+                <h3><i class="fas fa-graduation-cap"></i> Kurs HTML - Lekcja 1</h3>
+                <div class="lesson-content">
+                    <h4>Zadanie: Stwórz stronę z:</h4>
+                    <ul>
+                        <li>Nagłówkiem <code>&lt;h1&gt;</code></li>
+                        <li>Paragrafem tekstu</li>
+                        <li>Listą 3 elementów</li>
+                        <li>Przyciskiem</li>
+                    </ul>
+                    
+                    <div class="hint">
+                        <h5><i class="fas fa-lightbulb"></i> Podpowiedź:</h5>
+                        <p>Użyj tych znaczników:</p>
+                        <code>&lt;h1&gt;Tekst&lt;/h1&gt;</code><br>
+                        <code>&lt;p&gt;Tekst&lt;/p&gt;</code><br>
+                        <code>&lt;ul&gt;&lt;li&gt;Element&lt;/li&gt;&lt;/ul&gt;</code><br>
+                        <code>&lt;button&gt;Kliknij&lt;/button&gt;</code>
+                    </div>
                 </div>
-                <h3>HTML Podstawy</h3>
-                <p>10 lekcji, tylko praktyka. Naucz się tworzyć struktury stron.</p>
-                <a href="courses/html/index.html" class="btn-secondary">Rozpocznij kurs</a>
+            </div>
+
+            <!-- PRZYCISKI PRZYKŁADÓW -->
+            <div class="examples">
+                <h4><i class="fas fa-file-code"></i> Gotowe przykłady:</h4>
+                <button class="example-btn" onclick="loadExample('basic')">
+                    Podstawowa strona
+                </button>
+                <button class="example-btn" onclick="loadExample('form')">
+                    Formularz
+                </button>
+                <button class="example-btn" onclick="loadExample('card')">
+                    Karta produktu
+                </button>
+            </div>
+        </div>
+
+        <!-- ŚRODKOWY PANEL - EDYTOR -->
+        <div class="center-panel">
+            <div class="editor-tabs">
+                <button class="tab-btn active" data-tab="html">
+                    <i class="fab fa-html5"></i> index.html
+                </button>
+                <button class="tab-btn" data-tab="css">
+                    <i class="fab fa-css3-alt"></i> style.css
+                </button>
+                <button class="tab-btn" data-tab="js">
+                    <i class="fab fa-js"></i> script.js
+                </button>
+            </div>
+
+            <div class="editor-container">
+                <!-- HTML EDITOR -->
+                <textarea id="html-editor" class="code-editor active" spellcheck="false">
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja strona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2563eb;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Witaj w edytorze CODE-EDU!</h1>
+        <p>Edytuj ten kod i kliknij "Uruchom" żeby zobaczyć wynik.</p>
+        
+        <h2>Przykładowa lista:</h2>
+        <ul>
+            <li>HTML - struktura strony</li>
+            <li>CSS - stylowanie</li>
+            <li>JavaScript - interakcja</li>
+        </ul>
+        
+        <button onclick="showMessage()">Kliknij mnie</button>
+    </div>
+
+    <script>
+        function showMessage() {
+            alert('Działa! Kod JavaScript działa poprawnie!');
+        }
+    </script>
+</body>
+</html></textarea>
+
+                <!-- CSS EDITOR -->
+                <textarea id="css-editor" class="code-editor" spellcheck="false">
+/* Dodaj swoje style CSS tutaj */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2563eb;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 20px;
+}
+
+button {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}</textarea>
+
+                <!-- JS EDITOR -->
+                <textarea id="js-editor" class="code-editor" spellcheck="false">
+// Dodaj swój JavaScript tutaj
+console.log('Edytor CODE-EDU działa!');
+
+function showMessage() {
+    alert('Witaj! Twój kod JavaScript działa poprawnie.');
+    
+    // Możesz też zmieniać zawartość strony
+    document.querySelector('h1').style.color = '#dc2626';
+    
+    // Dodaj nowy element
+    const newElement = document.createElement('p');
+    newElement.textContent = 'Dodano przez JavaScript!';
+    newElement.style.color = '#059669';
+    document.querySelector('.container').appendChild(newElement);
+}
+
+// Inne funkcje
+function changeBackground() {
+    document.body.style.backgroundColor = '#fef3c7';
+}
+
+function resetPage() {
+    location.reload();
+}</textarea>
+            </div>
+
+            <!-- AUTOKOMPLET -->
+            <div class="autocomplete-box">
+                <h4><i class="fas fa-magic"></i> Szybkie wstawki:</h4>
+                <div class="snippets">
+                    <button class="snippet" onclick="insertSnippet('html', '<h1></h1>')">
+                        &lt;h1&gt;
+                    </button>
+                    <button class="snippet" onclick="insertSnippet('html', '<p></p>')">
+                        &lt;p&gt;
+                    </button>
+                    <button class="snippet" onclick="insertSnippet('html', '<button></button>')">
+                        &lt;button&gt;
+                    </button>
+                    <button class="snippet" onclick="insertSnippet('css', 'color: #2563eb;')">
+                        color
+                    </button>
+                    <button class="snippet" onclick="insertSnippet('css', 'margin: 0 auto;')">
+                        margin
+                    </button>
+                    <button class="snippet" onclick="insertSnippet('js', 'console.log()')">
+                        console.log
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRAWY PANEL - PODGLĄD -->
+        <div class="right-panel">
+            <div class="preview-header">
+                <h3><i class="fas fa-eye"></i> Podgląd na żywo</h3>
+                <div class="preview-actions">
+                    <button class="btn-small" onclick="refreshPreview()">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                    <button class="btn-small" onclick="toggleFullscreen()">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fab fa-css3-alt"></i>
+            <iframe id="live-preview" class="live-preview-frame"></iframe>
+            
+            <div class="output-console">
+                <h4><i class="fas fa-terminal"></i> Konsola:</h4>
+                <div id="console-output"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOLNY PANEL - POMOC -->
+    <div class="bottom-panel">
+        <div class="help-tabs">
+            <button class="help-tab active" data-help="tags">
+                <i class="fas fa-tags"></i> Znaczniki HTML
+            </button>
+            <button class="help-tab" data-help="css">
+                <i class="fas fa-palette"></i> Właściwości CSS
+            </button>
+            <button class="help-tab" data-help="js">
+                <i class="fas fa-code"></i> Funkcje JS
+            </button>
+        </div>
+        
+        <div class="help-content">
+            <div id="help-tags" class="help-section active">
+                <div class="help-item">
+                    <code>&lt;h1&gt; do &lt;h6&gt;</code>
+                    <span>Nagłówki (h1 największy)</span>
                 </div>
-                <h3>CSS Stylowanie</h3>
-                <p>8 lekcji. Flexbox, Grid, responsywność.</p>
-                <a href="courses/css/index.html" class="btn-secondary">Rozpocznij kurs</a>
+                <div class="help-item">
+                    <code>&lt;p&gt;</code>
+                    <span>Akapit tekstu</span>
+                </div>
+                <div class="help-item">
+                    <code>&lt;div&gt;</code>
+                    <span>Kontener blokowy</span>
+                </div>
+                <div class="help-item">
+                    <code>&lt;button&gt;</code>
+                    <span>Przycisk</span>
+                </div>
+                <div class="help-item">
+                    <code>&lt;ul&gt; & &lt;li&gt;</code>
+                    <span>Lista nieuporządkowana</span>
+                </div>
             </div>
             
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-code"></i>
+            <div id="help-css" class="help-section">
+                <div class="help-item">
+                    <code>color: #ffffff;</code>
+                    <span>Kolor tekstu</span>
                 </div>
-                <h3>Edytor online</h3>
-                <p>Pisz kod i od razu zobacz rezultat. Natychmiastowa informacja zwrotna.</p>
-                <a href="editor.html" class="btn-secondary">Otwórz edytor</a>
+                <div class="help-item">
+                    <code>background: #000000;</code>
+                    <span>Tło elementu</span>
+                </div>
+                <div class="help-item">
+                    <code>margin: 10px;</code>
+                    <span>Margines zewnętrzny</span>
+                </div>
+                <div class="help-item">
+                    <code>padding: 10px;</code>
+                    <span>Wewnętrzny odstęp</span>
+                </div>
+                <div class="help-item">
+                    <code>border-radius: 5px;</code>
+                    <span>Zaokrąglenie rogów</span>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- O projekcie -->
-    <section id="about" class="about">
-        <h2>Dlaczego CodeStack?</h2>
-        <div class="features">
-            <div class="feature">
-                <i class="fas fa-bolt"></i>
-                <h3>Szybka nauka</h3>
-                <p>Mało teorii, dużo praktyki. Każda lekcja to nowy projekt.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-code"></i>
-                <h3>Edytor w przeglądarce</h3>
-                <p>Nie instalujesz nic. Piszesz kod i od razu widzisz efekt.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-rocket"></i>
-                <h3>Darmowe</h3>
-                <p>Całkowicie za darmo. Zawsze będzie darmowe.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>CodeStack &copy; 2023 - Darmowa edukacja programistyczna</p>
-    </footer>
-
-    <script src="js/main.js"></script>
+    <!-- SKRYPTY -->
+    <script src="js/app.js"></script>
+    <script src="js/editor.js"></script>
+    
+    <script>
+        // Inicjalizacja po załadowaniu strony
+        document.addEventListener('DOMContentLoaded', function() {
+            runCode(); // Uruchom pierwszy podgląd
+            setupTabs(); // Ustaw zakładki
+            setupHelpTabs(); // Ustaw zakładki pomocy
+        });
+    </script>
 </body>
 </html>
