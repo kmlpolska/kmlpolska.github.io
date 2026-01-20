@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lekcja 1: Podstawy HTML - CodeStack</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/courses.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">
+                <i class="fas fa-code"></i>
+                <span>CodeStack</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Strona główna</a>
+                <a href="../index.html" class="nav-link active">Kurs HTML</a>
+                <a href="../css/index.html" class="nav-link">Kurs CSS</a>
+            </div>
+        </div>
+    </nav>
 
+    <div class="lesson-container">
+        <aside class="lesson-sidebar">
+            <h3>Kurs HTML - Spis lekcji</h3>
+            <ul class="lesson-list">
+                <li class="lesson-item active">
+                    <i class="fas fa-play-circle"></i>
+                    <span>Lekcja 1: Pierwsza strona</span>
+                </li>
+                <li class="lesson-item">
+                    <i class="far fa-circle"></i>
+                    <span>Lekcja 2: Nagłówki i tekst</span>
+                </li>
+                <li class="lesson-item">
+                    <i class="far fa-circle"></i>
+                    <span>Lekcja 3: Linki i obrazki</span>
+                </li>
+                <li class="lesson-item">
+                    <i class="far fa-circle"></i>
+                    <span>Lekcja 4: Listy</span>
+                </li>
+                <li class="lesson-item">
+                    <i class="far fa-circle"></i>
+                    <span>Lekcja 5: Formularze</span>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="lesson-content">
+            <h1>Lekcja 1: Twoja pierwsza strona HTML</h1>
+            
+            <div class="lesson-instruction">
+                <h2>Zadanie:</h2>
+                <p>Stwórz prostą stronę z nagłówkiem i paragrafem.</p>
+            </div>
+
+            <div class="code-editor">
+                <div class="editor-header">
+                    <span>index.html</span>
+                    <button onclick="runCode()" class="btn-run">
+                        <i class="fas fa-play"></i> Uruchom kod
+                    </button>
+                </div>
+                <textarea id="htmlCode" class="code-area">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moja strona</title>
+</head>
+<body>
+    <!-- Tu napisz swój kod -->
+    
+</body>
+</html></textarea>
+            </div>
+
+            <div class="preview">
+                <h3>Podgląd:</h3>
+                <iframe id="previewFrame"></iframe>
+            </div>
+
+            <div class="lesson-tips">
+                <h3>Podpowiedź:</h3>
+                <ul>
+                    <li>Użyj <code>&lt;h1&gt;Twój tekst&lt;/h1&gt;</code> do nagłówka</li>
+                    <li>Użyj <code>&lt;p&gt;Twój tekst&lt;/p&gt;</code> do paragrafu</li>
+                    <li>Kod pisz pomiędzy <code>&lt;body&gt;</code> a <code>&lt;/body&gt;</code></li>
+                </ul>
+            </div>
+
+            <button onclick="checkSolution()" class="btn-check">
+                <i class="fas fa-check"></i> Sprawdź rozwiązanie
+            </button>
+
+            <div class="lesson-next">
+                <a href="lekcja2.html" class="btn-next">
+                    Następna lekcja <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../js/editor.js"></script>
+    <script>
+        function checkSolution() {
+            const code = document.getElementById('htmlCode').value;
+            if (code.includes('<h1>') && code.includes('<p>')) {
+                alert('Dobrze! Możesz przejść dalej.');
+                completeLesson('html-lekcja1');
+            } else {
+                alert('Dodaj nagłówek (<h1>) i paragraf (<p>) do kodu.');
+            }
+        }
+    </script>
+</body>
+</html>
