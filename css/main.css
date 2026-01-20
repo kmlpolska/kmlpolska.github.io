@@ -1,0 +1,199 @@
+/* ===== RESET I PODSTAWY ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ===== NAWIGACJA GÓRNA ===== */
+.top-nav {
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+    padding: 12px 20px;
+    height: 60px;
+}
+
+.nav-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #60a5fa;
+}
+
+.logo i {
+    color: #fbbf24;
+}
+
+.nav-right {
+    display: flex;
+    gap: 10px;
+}
+
+/* ===== PRZYCISKI ===== */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+.btn-primary {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #475569;
+    color: #cbd5e1;
+}
+
+.btn-outline:hover {
+    border-color: #60a5fa;
+    color: #60a5fa;
+}
+
+/* ===== GŁÓWNY LAYOUT ===== */
+.main-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr 500px;
+    height: calc(100vh - 120px);
+    gap: 0;
+    background: #0f172a;
+}
+
+/* ===== LEWY PANEL - KURS ===== */
+.left-panel {
+    background: #1e293b;
+    border-right: 1px solid #334155;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.course-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.course-section h3 {
+    color: #60a5fa;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lesson-content {
+    line-height: 1.6;
+}
+
+.lesson-content h4 {
+    color: #fbbf24;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.lesson-content ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.lesson-content li {
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+.lesson-content code {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+}
+
+.hint {
+    background: rgba(251, 191, 36, 0.1);
+    border-left: 4px solid #fbbf24;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+.hint h5 {
+    color: #fbbf24;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+/* ===== PRZYKŁADY ===== */
+.examples {
+    margin-top: 30px;
+}
+
+.examples h4 {
+    color: #60a5fa;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.example-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid #334155;
+    color: #cbd5e1;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+}
+
+.example-btn:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: #60a5fa;
+    transform: translateX(5px);
+}
